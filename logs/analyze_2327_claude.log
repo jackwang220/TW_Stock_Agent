@@ -1,0 +1,50 @@
+﻿正在下載 2327.TW 技術指標...
+
+【技術面快照】Yageo Corporation (2327)
+  收盤價：826.0
+  成交量比：1.12x
+  MA5>MA20：True
+  RSI14：74.8
+  RS/0050：1.815
+  偵測型態：gap_up
+
+開始 LLM 辯論分析...
+
+uv.exe : Traceback (most recent call last):
+At line:4 char:1
++ & $uv run python scripts/analyze_stock.py 2327 2>&1 | Out-File logs\a ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\scripts\analyze_stock.py", line 138, in <module>
+    main()
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\scripts\analyze_stock.py", line 122, in main
+    result = run_debate(stock, [])
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\src\tw_stock_agent\debate\bear.py", line 336, in run_debate
+    bear_data = _call_llm(BEAR_SYSTEM, bear_prompt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\src\tw_stock_agent\debate\bear.py", line 228, in _call_llm
+    return _call_claude(system, user, model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\src\tw_stock_agent\debate\bear.py", line 202, in _call_claude
+    resp = client.messages.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\.venv\Lib\site-packages\anthropic\_utils\_utils.py", line 294,
+ in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\.venv\Lib\site-packages\anthropic\resources\messages\messages.
+py", line 1008, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\.venv\Lib\site-packages\anthropic\_base_client.py", line 1374,
+ in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\nycu\TSMC半導體分析agent\TW_Stock_Agent\.venv\Lib\site-packages\anthropic\_base_client.py", line 1147,
+ in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message':
+ 'invalid x-api-key'}, 'request_id': 'req_011CbssWQ9qramWwcmSEVnsi'}

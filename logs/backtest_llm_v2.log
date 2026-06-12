@@ -1,0 +1,777 @@
+﻿uv.exe : 21:24:13 | INFO | --tickers 篩選後：262 筆（25 支股票）
+At line:5 char:1
++ & $uv run python scripts/backtest_with_llm.py --tickers $tickers --fr ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (21:24:13 | INFO...後：262 筆（25 支股票）:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+21:24:13 | INFO | Level=PASS Group=AB：PASS=262 WARN=0 共 262 筆
+21:24:13 | INFO | 預估 LLM 呼叫次數：~786 次（每筆 3 次：Bear + Bull + Predict）
+21:24:13 | INFO | [1/262] 2026-04-09 3037 欣興電子 (PASS / golden_cross)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+21:25:11 | INFO |   -> bear=7 bull=9 pred=neutral(+0.2%) news=12+5
+21:25:13 | INFO | [2/262] 2026-04-09 2382 廣達電腦 (PASS / golden_cross)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+21:26:14 | INFO |   -> bear=7 bull=8 pred=neutral(+0.0%) news=12+5
+21:26:16 | INFO | [3/262] 2026-04-09 2308 台達電子 (PASS / none)
+21:27:12 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+21:27:14 | INFO | [4/262] 2026-04-09 2337 旺宏電子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+21:28:09 | INFO |   -> bear=7 bull=8 pred=neutral(-0.5%) news=12+5
+21:28:11 | INFO | [5/262] 2026-04-10 3037 欣興電子 (PASS / golden_cross)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+21:32:06 | INFO |   -> bear=6 bull=8 pred=neutral(+0.2%) news=12+5
+21:32:08 | INFO | [6/262] 2026-04-10 2382 廣達電腦 (PASS / golden_cross)
+21:32:53 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+21:32:55 | INFO | [7/262] 2026-04-10 2303 聯華電子 (PASS / golden_cross)
+21:33:33 | INFO |   -> bear=6 bull=8 pred=up(+1.0%) news=12+5
+21:33:35 | INFO | [8/262] 2026-04-10 2376 技嘉科技 (PASS / volume_breakout)
+21:35:04 | INFO |   -> bear=6 bull=8 pred=up(+2.2%) news=2+5
+21:35:06 | INFO | [9/262] 2026-04-10 2337 旺宏電子 (PASS / none)
+21:35:53 | INFO |   -> bear=7 bull=8 pred=neutral(+0.2%) news=12+5
+21:35:55 | INFO | [10/262] 2026-04-13 3037 欣興電子 (PASS / none)
+21:36:43 | INFO |   -> bear=7 bull=8 pred=neutral(+0.2%) news=12+5
+21:36:45 | INFO | [11/262] 2026-04-13 2303 聯華電子 (PASS / golden_cross)
+21:37:29 | INFO |   -> bear=7 bull=8 pred=neutral(+0.3%) news=12+5
+21:37:31 | INFO | [12/262] 2026-04-13 2376 技嘉科技 (PASS / golden_cross)
+21:38:12 | INFO |   -> bear=6 bull=8 pred=up(+1.2%) news=6+5
+21:38:14 | INFO | [13/262] 2026-04-13 2337 旺宏電子 (PASS / none)
+21:38:51 | INFO |   -> bear=8 bull=6 pred=down(-1.8%) news=12+5
+21:38:53 | INFO | [14/262] 2026-04-13 3711 日月光投控 (PASS / gap_up)
+21:39:46 | INFO |   -> bear=7 bull=9 pred=neutral(+0.2%) news=12+5
+21:39:48 | INFO | [15/262] 2026-04-14 2330 台積電 (PASS / gap_up)
+21:41:25 | INFO |   -> bear=6 bull=9 pred=neutral(-0.2%) news=12+5
+21:41:27 | INFO | [16/262] 2026-04-14 2454 聯發科技 (PASS / golden_cross)
+21:42:19 | INFO |   -> bear=6 bull=8 pred=up(+1.5%) news=12+5
+21:42:21 | INFO | [17/262] 2026-04-14 2376 技嘉科技 (PASS / golden_cross)
+21:42:55 | INFO |   -> bear=6 bull=8 pred=up(+1.0%) news=8+5
+21:42:57 | INFO | [18/262] 2026-04-14 2337 旺宏電子 (PASS / gap_up)
+21:47:19 | INFO |   -> bear=8 bull=7 pred=neutral(-0.5%) news=12+5
+21:47:21 | INFO | [19/262] 2026-04-14 2356 英業達 (PASS / golden_cross)
+21:48:26 | INFO |   -> bear=7 bull=8 pred=neutral(-0.3%) news=12+5
+21:48:28 | INFO | [20/262] 2026-04-15 2330 台積電 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+21:49:36 | INFO |   -> bear=6 bull=9 pred=neutral(+0.1%) news=12+5
+21:49:38 | INFO | [21/262] 2026-04-15 2382 廣達電腦 (PASS / none)
+21:51:12 | INFO |   -> bear=7 bull=8 pred=neutral(-0.5%) news=12+5
+21:51:14 | INFO | [22/262] 2026-04-15 2303 聯華電子 (PASS / strong_candle)
+21:51:55 | INFO |   -> bear=6 bull=8 pred=up(+1.5%) news=12+5
+21:51:57 | INFO | [23/262] 2026-04-15 2454 聯發科技 (PASS / golden_cross)
+21:59:35 | INFO |   -> bear=6 bull=9 pred=up(+1.8%) news=12+5
+21:59:37 | INFO | [24/262] 2026-04-15 2376 技嘉科技 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+22:01:46 | INFO |   -> bear=7 bull=8 pred=up(+1.8%) news=11+5
+22:01:48 | INFO | [25/262] 2026-04-15 2337 旺宏電子 (PASS / none)
+22:02:28 | INFO |   -> bear=8 bull=7 pred=neutral(-1.0%) news=12+5
+22:02:30 | INFO | [26/262] 2026-04-15 3711 日月光投控 (PASS / gap_up)
+22:03:38 | INFO |   -> bear=6 bull=9 pred=neutral(-0.5%) news=12+5
+22:03:40 | INFO | [27/262] 2026-04-15 2356 英業達 (PASS / golden_cross)
+22:04:15 | INFO |   -> bear=6 bull=7 pred=neutral(-0.3%) news=12+5
+22:04:17 | INFO | [28/262] 2026-04-16 2303 聯華電子 (PASS / gap_up)
+22:04:57 | INFO |   -> bear=6 bull=8 pred=up(+0.5%) news=12+5
+22:04:59 | INFO | [29/262] 2026-04-16 2454 聯發科技 (PASS / golden_cross)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+22:19:41 | INFO |   -> bear=6 bull=9 pred=up(+1.8%) news=12+5
+22:19:43 | INFO | [30/262] 2026-04-16 2376 技嘉科技 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+22:21:37 | INFO |   -> bear=7 bull=8 pred=neutral(+0.5%) news=12+5
+22:21:39 | INFO | [31/262] 2026-04-16 2337 旺宏電子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+22:40:57 | INFO |   -> bear=8 bull=6 pred=down(-2.8%) news=12+5
+22:40:59 | INFO | [32/262] 2026-04-17 2059 川湖科技 (PASS / golden_cross)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+22:57:25 | INFO |   -> bear=7 bull=8 pred=neutral(+0.3%) news=3+5
+22:57:27 | INFO | [33/262] 2026-04-17 6669 緯穎科技 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+23:05:54 | INFO |   -> bear=6 bull=8 pred=up(+1.8%) news=12+5
+23:05:56 | INFO | [34/262] 2026-04-17 2303 聯華電子 (PASS / strong_candle)
+23:08:38 | INFO |   -> bear=6 bull=8 pred=neutral(-0.3%) news=12+5
+23:08:40 | INFO | [35/262] 2026-04-17 2454 聯發科技 (PASS / none)
+23:10:51 | INFO |   -> bear=6 bull=8 pred=up(+1.0%) news=12+5
+23:10:53 | INFO | [36/262] 2026-04-17 2357 華碩電腦 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+23:13:38 | INFO |   -> bear=6 bull=8 pred=up(+1.2%) news=12+5
+23:13:40 | INFO | [37/262] 2026-04-17 2376 技嘉科技 (PASS / none)
+23:16:07 | INFO |   -> bear=6 bull=8 pred=up(+0.8%) news=6+5
+23:16:09 | INFO | [38/262] 2026-04-17 3711 日月光投控 (PASS / none)
+23:17:13 | INFO |   -> bear=6 bull=8 pred=neutral(-0.3%) news=12+5
+23:17:15 | INFO | [39/262] 2026-04-17 2356 英業達 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+23:21:07 | INFO |   -> bear=6 bull=8 pred=up(+0.8%) news=12+5
+23:21:09 | INFO | [40/262] 2026-04-20 3533 嘉澤端子 (PASS / volume_breakout)
+23:22:09 | INFO |   -> bear=7 bull=8 pred=neutral(+0.2%) news=0+5
+23:22:11 | INFO | [41/262] 2026-04-20 6669 緯穎科技 (PASS / gap_up)
+23:28:17 | INFO |   -> bear=6 bull=8 pred=up(+1.5%) news=12+5
+23:28:19 | INFO | [42/262] 2026-04-20 2303 聯華電子 (PASS / none)
+23:32:06 | INFO |   -> bear=7 bull=8 pred=neutral(+0.3%) news=12+5
+23:32:08 | INFO | [43/262] 2026-04-20 2356 英業達 (PASS / none)
+23:39:03 | INFO |   -> bear=6 bull=8 pred=up(+1.5%) news=12+5
+23:39:05 | INFO | [44/262] 2026-04-21 8046 南亞電路板 (PASS / none)
+23:39:55 | INFO |   -> bear=7 bull=8 pred=neutral(+0.5%) news=9+5
+23:39:57 | INFO | [45/262] 2026-04-21 6669 緯穎科技 (PASS / gap_up)
+23:44:35 | INFO |   -> bear=6 bull=9 pred=up(+2.0%) news=12+5
+23:44:37 | INFO | [46/262] 2026-04-21 2303 聯華電子 (PASS / none)
+23:47:20 | INFO |   -> bear=7 bull=8 pred=neutral(-0.2%) news=12+5
+23:47:22 | INFO | [47/262] 2026-04-21 2454 聯發科技 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+23:51:14 | INFO |   -> bear=7 bull=9 pred=up(+1.8%) news=12+5
+23:51:16 | INFO | [48/262] 2026-04-21 2357 華碩電腦 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+23:59:03 | INFO |   -> bear=7 bull=9 pred=neutral(+0.0%) news=12+5
+23:59:05 | INFO | [49/262] 2026-04-21 2376 技嘉科技 (PASS / gap_up)
+00:02:48 | INFO |   -> bear=6 bull=8 pred=up(+1.2%) news=12+5
+00:02:50 | INFO | [50/262] 2026-04-21 2356 英業達 (PASS / gap_up)
+00:05:19 | INFO |   -> bear=6 bull=8 pred=neutral(+0.2%) news=12+5
+00:05:21 | INFO | [51/262] 2026-04-22 6669 緯穎科技 (PASS / gap_up)
+00:08:39 | INFO |   -> bear=6 bull=9 pred=up(+2.0%) news=12+5
+00:08:41 | INFO | [52/262] 2026-04-22 2317 鴻海精密 (PASS / gap_up)
+00:09:44 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+00:09:46 | INFO | [53/262] 2026-04-22 2303 聯華電子 (PASS / strong_candle)
+00:11:28 | INFO |   -> bear=6 bull=8 pred=up(+1.5%) news=12+5
+00:11:30 | INFO | [54/262] 2026-04-22 2454 聯發科技 (PASS / gap_up)
+00:13:45 | INFO |   -> bear=7 bull=9 pred=up(+2.0%) news=12+5
+00:13:47 | INFO | [55/262] 2026-04-22 2357 華碩電腦 (PASS / strong_candle)
+00:16:33 | INFO |   -> bear=7 bull=8 pred=neutral(+0.3%) news=12+5
+00:16:35 | INFO | [56/262] 2026-04-22 2356 英業達 (PASS / none)
+00:19:56 | INFO |   -> bear=6 bull=8 pred=up(+0.5%) news=12+5
+00:19:58 | INFO | [57/262] 2026-04-22 3324 雙鴻 (PASS / strong_candle)
+00:21:54 | INFO |   -> bear=7 bull=9 pred=neutral(-0.2%) news=12+5
+00:21:56 | INFO | [58/262] 2026-04-23 2330 台積電 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+00:23:56 | INFO |   -> bear=6 bull=9 pred=up(+1.2%) news=12+5
+00:23:58 | INFO | [59/262] 2026-04-23 3017 奇鋐科技 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:26:10 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+00:26:12 | INFO | [60/262] 2026-04-23 3533 嘉澤端子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+00:28:58 | INFO |   -> bear=6 bull=8 pred=up(+1.0%) news=0+5
+00:29:00 | INFO | [61/262] 2026-04-23 8046 南亞電路板 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:31:18 | INFO |   -> bear=6 bull=8 pred=neutral(+0.0%) news=12+5
+00:31:20 | INFO | [62/262] 2026-04-23 6669 緯穎科技 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:33:35 | INFO |   -> bear=6 bull=9 pred=up(+1.2%) news=12+5
+00:33:37 | INFO | [63/262] 2026-04-23 2382 廣達電腦 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:35:09 | INFO |   -> bear=7 bull=9 pred=up(+1.2%) news=12+5
+00:35:11 | INFO | [64/262] 2026-04-23 2317 鴻海精密 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:37:23 | INFO |   -> bear=6 bull=9 pred=up(+1.8%) news=12+5
+00:37:25 | INFO | [65/262] 2026-04-23 2308 台達電子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+00:42:01 | INFO |   -> bear=6 bull=8 pred=up(+0.8%) news=12+5
+00:42:03 | INFO | [66/262] 2026-04-23 2303 聯華電子 (PASS / none)
+00:42:53 | INFO |   -> bear=6 bull=8 pred=up(+1.2%) news=12+5
+00:42:55 | INFO | [67/262] 2026-04-23 2454 聯發科技 (PASS / none)
+00:43:42 | INFO |   -> bear=7 bull=9 pred=up(+1.0%) news=12+5
+00:43:44 | INFO | [68/262] 2026-04-23 2357 華碩電腦 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:46:47 | INFO |   -> bear=7 bull=8 pred=neutral(+0.0%) news=12+5
+00:46:49 | INFO | [69/262] 2026-04-23 3711 日月光投控 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:51:25 | INFO |   -> bear=6 bull=9 pred=up(+1.2%) news=12+5
+00:51:27 | INFO | [70/262] 2026-04-23 2356 英業達 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:53:05 | INFO |   -> bear=6 bull=8 pred=up(+1.2%) news=12+5
+00:53:07 | INFO | [71/262] 2026-04-23 3324 雙鴻 (PASS / none)
+00:53:53 | INFO |   -> bear=6 bull=9 pred=up(+1.8%) news=12+5
+00:53:55 | INFO | [72/262] 2026-04-24 2330 台積電 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+00:54:57 | INFO |   -> bear=7 bull=9 pred=up(+0.8%) news=12+5
+00:54:59 | INFO | [73/262] 2026-04-24 2059 川湖科技 (PASS / gap_up)
+00:55:51 | INFO |   -> bear=6 bull=9 pred=up(+2.0%) news=6+5
+00:55:53 | INFO | [74/262] 2026-04-24 3533 嘉澤端子 (PASS / none)
+00:56:26 | INFO |   -> bear=6 bull=8 pred=up(+0.8%) news=0+5
+00:56:28 | INFO | [75/262] 2026-04-24 6669 緯穎科技 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+00:57:35 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=10+5
+00:57:37 | INFO | [76/262] 2026-04-24 2317 鴻海精密 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+00:58:39 | INFO |   -> bear=6 bull=9 pred=up(+1.8%) news=12+5
+00:58:41 | INFO | [77/262] 2026-04-24 2454 聯發科技 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+00:59:44 | INFO |   -> bear=7 bull=8 pred=neutral(+0.5%) news=12+5
+00:59:46 | INFO | [78/262] 2026-04-24 3711 日月光投控 (PASS / strong_candle)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+01:00:57 | INFO |   -> bear=6 bull=8 pred=up(+1.5%) news=12+5
+01:00:59 | INFO | [79/262] 2026-04-24 2356 英業達 (PASS / strong_candle)
+01:01:43 | INFO |   -> bear=7 bull=8 pred=neutral(+0.2%) news=10+5
+01:01:45 | INFO | [80/262] 2026-04-24 3324 雙鴻 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+01:02:55 | INFO |   -> bear=7 bull=8 pred=neutral(+0.1%) news=12+5
+01:02:57 | INFO | [81/262] 2026-04-27 2330 台積電 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+01:04:33 | INFO |   -> bear=6 bull=9 pred=up(+0.8%) news=12+5
+01:04:35 | INFO | [82/262] 2026-04-27 2059 川湖科技 (PASS / gap_up)
+01:05:33 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=10+5
+01:05:35 | INFO | [83/262] 2026-04-27 3017 奇鋐科技 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:06:56 | INFO |   -> bear=6 bull=9 pred=up(+2.5%) news=12+5
+01:06:58 | INFO | [84/262] 2026-04-27 3533 嘉澤端子 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+01:07:45 | INFO |   -> bear=6 bull=8 pred=up(+0.8%) news=1+5
+01:07:47 | INFO | [85/262] 2026-04-27 6669 緯穎科技 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:09:16 | INFO |   -> bear=7 bull=9 pred=neutral(+0.2%) news=12+5
+01:09:18 | INFO | [86/262] 2026-04-27 2317 鴻海精密 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+01:10:24 | INFO |   -> bear=5 bull=9 pred=up(+1.2%) news=12+5
+01:10:26 | INFO | [87/262] 2026-04-27 2308 台達電子 (PASS / none)
+01:11:03 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+01:11:05 | INFO | [88/262] 2026-04-27 2454 聯發科技 (PASS / none)
+01:11:40 | INFO |   -> bear=6 bull=9 pred=up(+1.2%) news=12+5
+01:11:42 | INFO | [89/262] 2026-04-27 3711 日月光投控 (PASS / none)
+01:12:28 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+01:12:30 | INFO | [90/262] 2026-04-27 2356 英業達 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+01:13:31 | INFO |   -> bear=6 bull=8 pred=neutral(+0.2%) news=12+5
+01:13:33 | INFO | [91/262] 2026-04-27 3324 雙鴻 (PASS / none)
+01:14:49 | INFO |   -> bear=7 bull=8 pred=neutral(-0.3%) news=12+5
+01:14:51 | INFO | [92/262] 2026-04-27 8299 群聯 (PASS / gap_up)
+01:15:34 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+01:15:36 | INFO | [93/262] 2026-04-28 2330 台積電 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+01:16:34 | INFO |   -> bear=7 bull=9 pred=neutral(-0.2%) news=12+5
+01:16:36 | INFO | [94/262] 2026-04-28 3017 奇鋐科技 (PASS / none)
+01:17:53 | INFO |   -> bear=7 bull=9 pred=up(+1.5%) news=12+5
+01:17:55 | INFO | [95/262] 2026-04-28 3037 欣興電子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:19:00 | INFO |   -> bear=7 bull=9 pred=neutral(+0.2%) news=12+5
+01:19:02 | INFO | [96/262] 2026-04-28 2317 鴻海精密 (PASS / none)
+01:19:55 | INFO |   -> bear=8 bull=8 pred=neutral(-1.0%) news=12+5
+01:19:57 | INFO | [97/262] 2026-04-28 2308 台達電子 (PASS / strong_candle)
+01:20:37 | INFO |   -> bear=7 bull=9 pred=neutral(-0.2%) news=12+5
+01:20:39 | INFO | [98/262] 2026-04-28 2454 聯發科技 (PASS / gap_up)
+01:21:57 | INFO |   -> bear=7 bull=9 pred=up(+1.5%) news=12+5
+01:21:59 | INFO | [99/262] 2026-04-28 2337 旺宏電子 (PASS / golden_cross)
+01:23:48 | INFO |   -> bear=6 bull=8 pred=neutral(+0.0%) news=12+5
+01:23:50 | INFO | [100/262] 2026-04-28 8299 群聯 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+01:24:35 | INFO |   -> bear=8 bull=8 pred=up(+1.2%) news=12+5
+01:24:37 | INFO | [101/262] 2026-04-29 3037 欣興電子 (PASS / none)
+01:25:16 | INFO |   -> bear=7 bull=9 pred=neutral(-0.2%) news=12+5
+01:25:18 | INFO | [102/262] 2026-04-29 2337 旺宏電子 (PASS / golden_cross)
+01:26:00 | INFO |   -> bear=7 bull=9 pred=neutral(+0.2%) news=12+5
+01:26:02 | INFO | [103/262] 2026-04-29 8299 群聯 (PASS / strong_candle)
+01:26:37 | INFO |   -> bear=8 bull=8 pred=neutral(-0.5%) news=12+5
+01:26:39 | INFO | [104/262] 2026-04-30 2330 台積電 (PASS / none)
+01:27:16 | INFO |   -> bear=6 bull=8 pred=neutral(-0.2%) news=12+5
+01:27:18 | INFO | [105/262] 2026-04-30 2059 川湖科技 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+01:29:41 | INFO |   -> bear=6 bull=9 pred=neutral(+0.5%) news=11+5
+01:29:43 | INFO | [106/262] 2026-04-30 3037 欣興電子 (PASS / volume_breakout)
+01:30:38 | INFO |   -> bear=6 bull=9 pred=neutral(+0.5%) news=12+5
+01:30:40 | INFO | [107/262] 2026-04-30 2308 台達電子 (PASS / none)
+01:31:17 | INFO |   -> bear=6 bull=9 pred=up(+1.0%) news=12+5
+01:31:19 | INFO | [108/262] 2026-04-30 2303 聯華電子 (PASS / none)
+01:31:56 | INFO |   -> bear=6 bull=9 pred=up(+0.8%) news=12+5
+01:31:58 | INFO | [109/262] 2026-04-30 2337 旺宏電子 (PASS / golden_cross)
+01:32:58 | INFO |   -> bear=7 bull=9 pred=neutral(-0.3%) news=12+5
+01:33:00 | INFO | [110/262] 2026-04-30 3711 日月光投控 (PASS / none)
+01:33:38 | INFO |   -> bear=6 bull=9 pred=up(+2.5%) news=12+5
+01:33:40 | INFO | [111/262] 2026-04-30 8299 群聯 (PASS / none)
+01:34:17 | INFO |   -> bear=8 bull=8 pred=neutral(-0.5%) news=12+5
+01:34:19 | INFO | [112/262] 2026-05-01 2330 台積電 (PASS / none)
+01:34:56 | INFO |   -> bear=7 bull=9 pred=neutral(+0.0%) news=12+5
+01:34:58 | INFO | [113/262] 2026-05-01 2059 川湖科技 (PASS / none)
+01:35:35 | INFO |   -> bear=7 bull=9 pred=neutral(+0.3%) news=7+5
+01:35:37 | INFO | [114/262] 2026-05-01 3037 欣興電子 (PASS / volume_breakout)
+01:36:25 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+01:36:27 | INFO | [115/262] 2026-05-01 2308 台達電子 (PASS / none)
+01:37:39 | INFO |   -> bear=6 bull=9 pred=up(+0.8%) news=12+5
+01:37:41 | INFO | [116/262] 2026-05-01 2303 聯華電子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:39:32 | INFO |   -> bear=6 bull=8 pred=up(+1.2%) news=12+5
+01:39:34 | INFO | [117/262] 2026-05-01 2337 旺宏電子 (PASS / golden_cross)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:40:17 | INFO |   -> bear=7 bull=8 pred=neutral(-0.3%) news=12+5
+01:40:19 | INFO | [118/262] 2026-05-01 3711 日月光投控 (PASS / none)
+01:40:51 | INFO |   -> bear=6 bull=9 pred=neutral(+0.2%) news=12+5
+01:40:53 | INFO | [119/262] 2026-05-01 8299 群聯 (PASS / none)
+01:41:30 | INFO |   -> bear=8 bull=8 pred=neutral(-0.5%) news=12+5
+01:41:32 | INFO | [120/262] 2026-05-04 3037 欣興電子 (PASS / none)
+01:42:09 | INFO |   -> bear=7 bull=8 pred=neutral(-0.5%) news=12+5
+01:42:11 | INFO | [121/262] 2026-05-04 2337 旺宏電子 (PASS / none)
+01:42:45 | INFO |   -> bear=7 bull=8 pred=neutral(+0.2%) news=12+5
+01:42:47 | INFO | [122/262] 2026-05-05 3017 奇鋐科技 (PASS / none)
+01:43:54 | INFO |   -> bear=8 bull=6 pred=down(-4.5%) news=12+5
+01:43:56 | INFO | [123/262] 2026-05-05 3533 嘉澤端子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:44:40 | INFO |   -> bear=7 bull=8 pred=neutral(-1.0%) news=0+5
+01:44:42 | INFO | [124/262] 2026-05-05 2317 鴻海精密 (PASS / strong_candle)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:45:22 | INFO |   -> bear=6 bull=9 pred=up(+1.5%) news=12+5
+01:45:24 | INFO | [125/262] 2026-05-05 3711 日月光投控 (PASS / none)
+01:46:00 | INFO |   -> bear=7 bull=9 pred=neutral(-0.3%) news=12+5
+01:46:02 | INFO | [126/262] 2026-05-06 2059 川湖科技 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:46:45 | INFO |   -> bear=7 bull=9 pred=up(+2.0%) news=12+5
+01:46:47 | INFO | [127/262] 2026-05-06 3017 奇鋐科技 (PASS / none)
+01:47:30 | INFO |   -> bear=8 bull=6 pred=down(-2.5%) news=12+5
+01:47:32 | INFO | [128/262] 2026-05-06 3533 嘉澤端子 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:51:19 | INFO |   -> bear=6 bull=7 pred=neutral(+0.3%) news=0+5
+01:51:21 | INFO | [129/262] 2026-05-06 3037 欣興電子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+01:52:26 | INFO |   -> bear=7 bull=8 pred=neutral(+0.0%) news=12+5
+01:52:28 | INFO | [130/262] 2026-05-06 2382 廣達電腦 (PASS / volume_breakout)
+01:53:02 | INFO |   -> bear=7 bull=9 pred=neutral(+0.3%) news=12+5
+01:53:04 | INFO | [131/262] 2026-05-06 2317 鴻海精密 (PASS / gap_up)
+01:53:37 | INFO |   -> bear=6 bull=9 pred=up(+1.8%) news=12+5
+01:53:39 | INFO | [132/262] 2026-05-06 2308 台達電子 (PASS / none)
+01:54:14 | INFO |   -> bear=6 bull=8 pred=up(+0.6%) news=12+5
+01:54:16 | INFO | [133/262] 2026-05-06 2454 聯發科技 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+01:55:28 | INFO |   -> bear=7 bull=8 pred=neutral(-1.0%) news=12+5
+01:55:30 | INFO | [134/262] 2026-05-06 2357 華碩電腦 (PASS / volume_breakout)
+01:56:04 | INFO |   -> bear=7 bull=8 pred=neutral(+0.5%) news=12+5
+01:56:06 | INFO | [135/262] 2026-05-06 2376 技嘉科技 (PASS / volume_breakout)
+01:56:34 | INFO |   -> bear=7 bull=9 pred=up(+2.2%) news=12+5
+01:56:36 | INFO | [136/262] 2026-05-06 2337 旺宏電子 (PASS / none)
+01:57:34 | INFO |   -> bear=8 bull=8 pred=neutral(+0.2%) news=12+5
+01:57:36 | INFO | [137/262] 2026-05-06 3711 日月光投控 (PASS / none)
+01:58:10 | INFO |   -> bear=7 bull=8 pred=neutral(-0.5%) news=12+5
+01:58:12 | INFO | [138/262] 2026-05-06 2356 英業達 (PASS / volume_breakout)
+01:58:48 | INFO |   -> bear=6 bull=8 pred=neutral(-0.2%) news=12+5
+01:58:50 | INFO | [139/262] 2026-05-06 2344 華邦電子 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+01:59:34 | INFO |   -> bear=6 bull=9 pred=up(+2.1%) news=12+5
+01:59:36 | INFO | [140/262] 2026-05-06 6125 廣運 (PASS / golden_cross)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+02:00:47 | INFO |   -> bear=7 bull=8 pred=neutral(+0.0%) news=12+5
+02:00:49 | INFO | [141/262] 2026-05-06 8299 群聯 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+02:02:07 | INFO |   -> bear=6 bull=9 pred=up(+1.8%) news=12+5
+02:02:09 | INFO | [142/262] 2026-05-07 3533 嘉澤端子 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+02:03:10 | INFO |   -> bear=4 bull=8 pred=up(+1.2%) news=0+5
+02:03:12 | INFO | [143/262] 2026-05-07 2317 鴻海精密 (PASS / none)
+02:03:48 | INFO |   -> bear=7 bull=9 pred=neutral(+0.2%) news=12+5
+02:03:50 | INFO | [144/262] 2026-05-07 2308 台達電子 (PASS / gap_up)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+02:05:34 | INFO |   -> bear=6 bull=9 pred=neutral(+0.0%) news=12+5
+02:05:36 | INFO | [145/262] 2026-05-07 2303 聯華電子 (PASS / none)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+02:06:39 | INFO |   -> bear=6 bull=8 pred=neutral(-0.2%) news=12+5
+02:06:41 | INFO | [146/262] 2026-05-07 2357 華碩電腦 (PASS / none)
+02:07:16 | INFO |   -> bear=6 bull=8 pred=up(+1.5%) news=12+5
+02:07:18 | INFO | [147/262] 2026-05-07 2376 技嘉科技 (PASS / volume_breakout)
+02:07:52 | INFO |   -> bear=6 bull=9 pred=up(+2.2%) news=12+5
+02:07:54 | INFO | [148/262] 2026-05-07 2356 英業達 (PASS / volume_breakout)
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+02:08:41 | INFO |   -> bear=6 bull=8 pred=neutral(-0.2%) news=12+5
+02:08:43 | INFO | [149/262] 2026-05-07 2344 華邦電子 (PASS / gap_up)

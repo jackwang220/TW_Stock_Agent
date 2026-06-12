@@ -1,0 +1,25 @@
+.env
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.uv/
+data/tw_stock_index.json
+data/signal_log.csv
+data/backtest_rules.csv
+data/scan_checkpoints.db
+data/cb_state.parquet
+data/positions.parquet
+data/paper_orders.parquet
+data/audit/
+reports/
+*.pfx
+
+# 大型快取/可重生資料(FinMind/yfinance)— 太肥,只留股票池定義
+data/*
+!data/base_universe.json
+# 永豐/暫存
+targets.json
+KILL_SWITCH
+scripts/_*.py
+Sinopac*.pfx

@@ -1,0 +1,108 @@
+[32m03:50:11[0m | [1mINFO[0m | Starting daily stock scan...
+[32m03:50:11[0m | [1mINFO[0m | Node 1: fetching news (no keyword filter)...
+[32m03:50:16[0m | [1mINFO[0m |   fetched 111 articles (unfiltered, dedup only)
+[32m03:50:16[0m | [1mINFO[0m | Node 2: extracting ticker entities...
+[32m03:50:18[0m | [1mINFO[0m |   found 25 candidates from 111 unfiltered articles
+[32m03:50:18[0m | [1mINFO[0m | Node 3: BFS supply chain expansion...
+[32m03:50:18[0m | [1mINFO[0m |   BFS added 6 + watchlist 13 = total 44
+[32m03:50:18[0m | [1mINFO[0m | Node 4: quantitative screening...
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 000660.TWO"}}}
+$000660.TWO: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+
+1 Failed download:
+['000660.TWO']: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 005930.TWO"}}}
+$005930.TWO: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+
+1 Failed download:
+['005930.TWO']: possibly delisted; no price data found  (period=3mo) (Yahoo error = "No data found, symbol may be delisted")
+[32m03:50:30[0m | [1mINFO[0m |   3711 ¤é¤ë¥ú§ë±± ¡÷ WARN  (vol=0.69<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   3105 Ã­À· ¡÷ REJECT  (vol=0.53<1.2|ma5<ma20)
+[32m03:50:30[0m | [1mINFO[0m |   8074 ¹d¾ó ¡÷ REJECT  (vol=0.72<1.2|ma5<ma20|rs=0.86<0.9)
+[32m03:50:30[0m | [1mINFO[0m |   2347 Áp±j°ê»Ú ¡÷ PASS  (pass)
+[32m03:50:30[0m | [1mINFO[0m |   2308 ¥x¹F¹q¤l ¡÷ PASS  (pass)
+[32m03:50:30[0m | [1mINFO[0m |   1815 ´I³ì ¡÷ REJECT  (vol=0.46<1.2|ma5<ma20|rs=0.88<0.9)
+[32m03:50:30[0m | [1mINFO[0m |   3580 ¤Í«Â¬ì ¡÷ REJECT  (vol=0.45<1.2|ma5<ma20)
+[32m03:50:30[0m | [1mINFO[0m |   2330 ¥x¿n¹q ¡÷ WARN  (vol=1.01<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   3260 «Â­è ¡÷ WARN  (vol=0.58<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   4953 ½n³n ¡÷ PASS  (pass)
+[32m03:50:30[0m | [1mINFO[0m |   2303 ÁpµØ¹q¤l ¡÷ WARN  (vol=1.16<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   3680 ®aµn ¡÷ REJECT  (vol=0.58<1.2|ma5<ma20|rs=0.84<0.9)
+[32m03:50:30[0m | [1mINFO[0m |   3587 ¶£±d ¡÷ REJECT  (vol=0.49<1.2|ma5<ma20|rs=0.76<0.9)
+[32m03:50:30[0m | [1mINFO[0m |   6026 ºÖ¨¹ÃÒ ¡÷ WARN  (vol=1.07<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   2317 ÂE®üºë±K ¡÷ WARN  (vol=0.72<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   2382 ¼s¹F¹q¸£ ¡÷ WARN  (vol=0.89<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   4923 ¤O¤h ¡÷ WARN  (vol=0.78<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   4556 ¦°µM ¡÷ WARN  (vol=1.14<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   2454 Ápµo¬ì§Þ ¡÷ PASS  (pass)
+[32m03:50:30[0m | [1mINFO[0m |   3037 ªY¿³¹q¤l ¡÷ WARN  (vol=0.94<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   6274 ¥xïú ¡÷ PASS  (pass)
+[32m03:50:30[0m | [1mINFO[0m |   6435 ¤j¤¤ ¡÷ WARN  (vol=0.40<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   4129 Áp¦X ¡÷ REJECT  (vol=0.58<1.2|ma5<ma20)
+[32m03:50:30[0m | [1mINFO[0m |   3162 ºë½T ¡÷ WARN  (ma5<ma20)
+[32m03:50:30[0m | [1mINFO[0m |   4716 ¤j¥ß ¡÷ WARN  (vol=1.04<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   8046 «n¨È¹q¸ôªO ¡÷ WARN  (vol=1.08<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   2059 ¤t´ò¬ì§Þ ¡÷ PASS  (pass)
+[32m03:50:30[0m | [1mINFO[0m |   3324 ÂùÂE¤uµ{ ¡÷ WARN  (vol=1.05<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   3017 ©_èb¬ì§Þ ¡÷ WARN  (vol=1.20<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   3533 ¹Å¿AºÝ¤l ¡÷ REJECT  (vol=0.57<1.2|ma5<ma20|rs=0.80<0.9)
+[32m03:50:30[0m | [1mINFO[0m |   3653 °·µ¦ºë±K ¡÷ PASS  (pass)
+[32m03:50:30[0m | [1mINFO[0m |   3231 ½n³Ð ¡÷ WARN  (vol=0.85<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   2356 ­^·~¹F ¡÷ WARN  (vol=0.80<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   6125 ¼s¹B¾÷±ñ ¡÷ WARN  (vol=0.48<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   6278 ¥xªí¬ì ¡÷ REJECT  (vol=0.78<1.2|ma5<ma20|rs=0.89<0.9)
+[32m03:50:30[0m | [1mINFO[0m |   000660 ®ü¤O¤h ¡÷ REJECT  (no_price_data)
+[32m03:50:30[0m | [1mINFO[0m |   005930 ¤T¬P ¡÷ REJECT  (no_price_data)
+[32m03:50:30[0m | [1mINFO[0m |   5274 «H÷~¬ì§Þ ¡÷ WARN  (vol=0.82<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   6669 ½n¿o¬ì§Þ ¡÷ REJECT  (vol=0.69<1.2|rs=0.88<0.9)
+[32m03:50:30[0m | [1mINFO[0m |   2376 §Þ¹Å¬ì§Þ ¡÷ WARN  (vol=0.61<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   2357 µØºÓ ¡÷ WARN  (vol=0.79<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   2337 ©ô§»¹q¤l ¡÷ REJECT  (vol=0.16<1.2|ma5<ma20)
+[32m03:50:30[0m | [1mINFO[0m |   2344 µØ¨¹¹q¤l ¡÷ WARN  (vol=0.77<1.2)
+[32m03:50:30[0m | [1mINFO[0m |   8299 ¸sÁp¹q¤l ¡÷ REJECT  (vol=0.59<1.2|ma5<ma20|rs=0.83<0.9)
+[32m03:50:30[0m | [1mINFO[0m |   30/44 PASS/WARN (REJECT=14)
+[32m03:50:30[0m | [1mINFO[0m | Node 5: K-line pattern matching...
+[32m03:50:35[0m | [1mINFO[0m |   pattern=18/19 have breakout/GC signal
+[32m03:50:35[0m | [1mINFO[0m | Node 6: Bear/Bull debate...
+[32m03:50:35[0m | [1mINFO[0m |   passing 111 unfiltered articles to LLM for relevance judgment
+[32m03:50:35[0m | [1mINFO[0m |   debating 3711 ¤é¤ë¥ú§ë±±...
+[32m03:51:01[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=2
+[32m03:51:01[0m | [1mINFO[0m |   debating 2347 Áp±j°ê»Ú...
+[32m03:51:25[0m | [1mINFO[0m |     ¡÷ quant=PASS debate=REJECT final=REJECT bear=7
+[32m03:51:25[0m | [1mINFO[0m |   debating 2308 ¥x¹F¹q¤l...
+[32m03:51:56[0m | [1mINFO[0m |     ¡÷ quant=PASS debate=PASS final=PASS bear=3
+[32m03:51:56[0m | [1mINFO[0m |   debating 4953 ½n³n...
+[32m03:52:34[0m | [1mINFO[0m |     ¡÷ quant=PASS debate=PASS final=PASS bear=4
+[32m03:52:34[0m | [1mINFO[0m |   debating 2303 ÁpµØ¹q¤l...
+[32m03:53:06[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=4
+[32m03:53:06[0m | [1mINFO[0m |   debating 6026 ºÖ¨¹ÃÒ...
+[32m03:53:29[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=WARN final=WARN bear=6
+[32m03:53:29[0m | [1mINFO[0m |   debating 2317 ÂE®üºë±K...
+[32m03:53:58[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=2
+[32m03:53:58[0m | [1mINFO[0m |   debating 4923 ¤O¤h...
+[32m03:54:35[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=REJECT final=REJECT bear=7
+[32m03:54:35[0m | [1mINFO[0m |   debating 4556 ¦°µM...
+[32m03:55:00[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=3
+[32m03:55:00[0m | [1mINFO[0m |   debating 2454 Ápµo¬ì§Þ...
+[32m03:55:30[0m | [1mINFO[0m |     ¡÷ quant=PASS debate=REJECT final=REJECT bear=7
+[32m03:55:30[0m | [1mINFO[0m |   debating 3037 ªY¿³¹q¤l...
+[32m03:56:11[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=3
+[32m03:56:11[0m | [1mINFO[0m |   debating 6274 ¥xïú...
+[32m03:56:44[0m | [1mINFO[0m |     ¡÷ quant=PASS debate=REJECT final=REJECT bear=7
+[32m03:56:44[0m | [1mINFO[0m |   debating 6435 ¤j¤¤...
+[32m03:57:05[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=3
+[32m03:57:05[0m | [1mINFO[0m |   debating 3162 ºë½T...
+[32m03:57:28[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=2
+[32m03:57:28[0m | [1mINFO[0m |   debating 8046 «n¨È¹q¸ôªO...
+[32m03:57:51[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=2
+[32m03:57:51[0m | [1mINFO[0m |   debating 2059 ¤t´ò¬ì§Þ...
+[32m03:58:15[0m | [1mINFO[0m |     ¡÷ quant=PASS debate=PASS final=PASS bear=3
+[32m03:58:15[0m | [1mINFO[0m |   debating 3653 °·µ¦ºë±K...
+[32m03:58:49[0m | [1mINFO[0m |     ¡÷ quant=PASS debate=REJECT final=REJECT bear=7
+[32m03:58:49[0m | [1mINFO[0m |   debating 2356 ­^·~¹F...
+[32m03:59:30[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=4
+[32m03:59:30[0m | [1mINFO[0m |   debating 2376 §Þ¹Å¬ì§Þ...
+[32m04:00:03[0m | [1mINFO[0m |     ¡÷ quant=WARN debate=PASS final=WARN bear=3
+[32m04:00:03[0m | [1mINFO[0m | Node 7: generating report...
+[32m04:00:03[0m | [1mINFO[0m |   report saved ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\2026-06-10.md
+[32m04:00:03[0m | [32m[1mSUCCESS[0m | Report saved: C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\2026-06-10.md

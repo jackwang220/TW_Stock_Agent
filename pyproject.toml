@@ -1,0 +1,51 @@
+[project]
+name = "tw-stock-agent"
+version = "0.1.0"
+description = "台股科技供應鏈自動分析 Agent"
+requires-python = ">=3.12"
+dependencies = [
+    "feedparser>=6.0",
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+    "tenacity>=8.2",
+    "yfinance>=0.2.40",
+    "networkx>=3.3",
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "langgraph>=0.2",
+    "langgraph-checkpoint-sqlite>=2.0",
+    "google-genai>=1.0",
+    "anthropic>=0.34",
+    "openai>=1.30",
+    "python-dotenv>=1.0",
+    "pandas-ta-classic>=0.4.25",
+    "loguru>=0.7",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "dateparser>=1.2",
+]
+
+[project.optional-dependencies]
+paper = [
+    "shioaji==1.3.3",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tw_stock_agent"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]

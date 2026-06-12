@@ -1,0 +1,51 @@
+﻿uv.exe : WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is
+ currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVA
+ILABLE'}}), retry 1/3 in 1s
+At line:4 char:1
++ & $uv run python scripts/analyze_stock.py 3026 2>&1 | Out-File logs\a ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING:root:Mo...retry 1/3 in 1s:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 3/3 in 4s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), trying fallback gemini-2.5-flash-lite
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 1/3 in 1s
+WARNING:root:Model gemini-3.5-flash failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currentl
+y experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+), retry 2/3 in 2s
+正在下載 3026.TW 技術指標...
+
+【技術面快照】Holy Stone Enterprise Co.,Ltd. (3026)
+  收盤價：661.0
+  成交量比：0.92x
+  MA5>MA20：True
+  RSI14：81.5
+  RS/0050：1.877
+  偵測型態：gap_up
+
+開始 LLM 辯論分析...
+
+
+============================================================
+  Holy Stone Enterprise Co.,Ltd. (3026) LLM 分析結果
+============================================================
+  多方分數：1
+  空方分數：5
+  裁決：WARN
+  預測方向：down  信心：0.55
+  預測區間：-3.5% ～ 0.5%  中位：-1.2%
+
+  多方理由：目前無任何新聞或市場資訊顯示對公司有直接或間接的利多影響。
+
+  空方理由：今日股價跳空上漲但成交量比僅0.92倍呈現量價背離，且在無任何利多新聞支撐下，面臨回補缺口與估值修正風險。
+
+  關鍵因素：量價背離且RSI指標超買，面臨獲利回吐與回補缺口壓力。

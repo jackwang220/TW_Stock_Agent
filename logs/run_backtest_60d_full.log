@@ -1,0 +1,812 @@
+[32m03:22:08[0m | [1mINFO[0m | ¹w§ì FinMind ¤T¤jªk¤H & ¤ëÀç¦¬¸ê®Æ...
+[32m03:22:08[0m | [1mINFO[0m | ¹w§ì FinMind ¸ê®Æ¡G18 ¤äªÑ²¼...
+[32m03:22:08[0m | [1mINFO[0m |   [1/18] 2059
+[32m03:22:09[0m | [1mINFO[0m |   [2/18] 2303
+[32m03:22:10[0m | [1mINFO[0m |   [3/18] 2308
+[32m03:22:11[0m | [1mINFO[0m |   [4/18] 2317
+[32m03:22:12[0m | [1mINFO[0m |   [5/18] 2330
+[32m03:22:13[0m | [1mINFO[0m |   [6/18] 2337
+[32m03:22:14[0m | [1mINFO[0m |   [7/18] 2356
+[32m03:22:15[0m | [1mINFO[0m |   [8/18] 2357
+[32m03:22:16[0m | [1mINFO[0m |   [9/18] 2376
+[32m03:22:17[0m | [1mINFO[0m |   [10/18] 2382
+[32m03:22:18[0m | [1mINFO[0m |   [11/18] 2454
+[32m03:22:19[0m | [1mINFO[0m |   [12/18] 3017
+[32m03:22:20[0m | [1mINFO[0m |   [13/18] 3037
+[32m03:22:21[0m | [1mINFO[0m |   [14/18] 3324
+[32m03:22:23[0m | [1mINFO[0m |   [15/18] 3533
+[32m03:22:24[0m | [1mINFO[0m |   [16/18] 3711
+[32m03:22:25[0m | [1mINFO[0m |   [17/18] 6669
+[32m03:22:26[0m | [1mINFO[0m |   [18/18] 8046
+[32m03:22:27[0m | [1mINFO[0m | ¹w§ì§¹¦¨¡C
+[32m03:22:27[0m | [1mINFO[0m | ============================================================
+[32m03:22:27[0m | [1mINFO[0m | §å¦¸ #1¡G2026-03-17 ¡ã 2026-03-23
+[32m03:22:27[0m | [1mINFO[0m |   §å¦¸ #1¡G2026-03-17¡ã2026-03-23¡A«Ý¶] 17 µ§
+[32m03:22:28[0m | [1mINFO[0m |     [1/17] 2026-03-17 3533 ¹Å¿AºÝ¤l (golden_cross)
+[32m03:23:03[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.0%)
+[32m03:23:03[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:23:06[0m | [1mINFO[0m |     [2/17] 2026-03-17 3037 ªY¿³¹q¤l (none)
+[32m03:23:42[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m03:23:42[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:23:46[0m | [1mINFO[0m |     [3/17] 2026-03-17 8046 «n¨È¹q¸ôªO (golden_cross)
+[32m03:24:23[0m | [1mINFO[0m |       bear=6 bull=7 pred=neutral(+0.5%)
+[32m03:24:23[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:24:26[0m | [1mINFO[0m |     [4/17] 2026-03-17 2376 §Þ¹Å¬ì§Þ (golden_cross)
+[32m03:24:54[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+2.0%)
+[32m03:24:54[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:24:57[0m | [1mINFO[0m |     [5/17] 2026-03-18 3533 ¹Å¿AºÝ¤l (gap_up)
+[32m03:25:23[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m03:25:23[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:25:25[0m | [1mINFO[0m |     [6/17] 2026-03-18 8046 «n¨È¹q¸ôªO (volume_breakout)
+[32m03:25:57[0m | [1mINFO[0m |       bear=7 bull=7 pred=neutral(-0.5%)
+[32m03:25:57[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:26:01[0m | [1mINFO[0m |     [7/17] 2026-03-18 6669 ½n¿o¬ì§Þ (none)
+[32m03:26:21[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.0%)
+[32m03:26:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:26:23[0m | [1mINFO[0m |     [8/17] 2026-03-18 2376 §Þ¹Å¬ì§Þ (golden_cross)
+[32m03:27:05[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m03:27:05[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:27:09[0m | [1mINFO[0m |     [9/17] 2026-03-18 2337 ©ô§»¹q¤l (volume_breakout)
+[32m03:27:49[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m03:27:49[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:27:52[0m | [1mINFO[0m |     [10/17] 2026-03-19 2059 ¤t´ò¬ì§Þ (volume_breakout)
+[32m03:28:10[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m03:28:10[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:28:13[0m | [1mINFO[0m |     [11/17] 2026-03-19 3017 ©_èb¬ì§Þ (strong_candle)
+[32m03:28:56[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m03:28:56[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:28:59[0m | [1mINFO[0m |     [12/17] 2026-03-19 3533 ¹Å¿AºÝ¤l (strong_candle)
+[32m03:29:24[0m | [1mINFO[0m |       bear=5 bull=6 pred=neutral(+0.0%)
+[32m03:29:24[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:29:27[0m | [1mINFO[0m |     [13/17] 2026-03-19 8046 «n¨È¹q¸ôªO (none)
+[32m03:29:46[0m | [1mINFO[0m |       bear=7 bull=7 pred=neutral(+0.0%)
+[32m03:29:46[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:29:50[0m | [1mINFO[0m |     [14/17] 2026-03-19 3324 ÂùÂE (golden_cross)
+[32m03:30:11[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m03:30:11[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:30:14[0m | [1mINFO[0m |     [15/17] 2026-03-20 2059 ¤t´ò¬ì§Þ (none)
+[32m03:30:36[0m | [1mINFO[0m |       bear=3 bull=7 pred=up(+1.5%)
+[32m03:30:36[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:30:38[0m | [1mINFO[0m |     [16/17] 2026-03-20 8046 «n¨È¹q¸ôªO (none)
+[32m03:31:10[0m | [1mINFO[0m |       bear=7 bull=7 pred=neutral(+0.5%)
+[32m03:31:10[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:31:12[0m | [1mINFO[0m |     [17/17] 2026-03-23 8046 «n¨È¹q¸ôªO (strong_candle)
+[32m03:31:51[0m | [1mINFO[0m |       bear=7 bull=7 pred=neutral(+0.0%)
+[32m03:31:51[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:31:53[0m | [1mINFO[0m | §å¦¸ #1 §¹¦¨ 17 µ§
+[32m03:31:53[0m | [1mINFO[0m | ============================================================
+[32m03:31:53[0m | [1mINFO[0m | §å¦¸ #2¡G2026-03-24 ¡ã 2026-03-30
+[32m03:31:53[0m | [1mINFO[0m | Resume: 17 already done, skipping.
+[32m03:31:53[0m | [1mINFO[0m |   §å¦¸ #2¡G2026-03-24¡ã2026-03-30¡A«Ý¶] 8 µ§
+[32m03:31:54[0m | [1mINFO[0m |     [1/8] 2026-03-24 2059 ¤t´ò¬ì§Þ (gap_up)
+[32m03:32:26[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m03:32:26[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:32:29[0m | [1mINFO[0m |     [2/8] 2026-03-24 8046 «n¨È¹q¸ôªO (none)
+[32m03:33:07[0m | [31m[1mERROR[0m |       LLM ¥¢±Ñ¡Gname 'logging' is not defined
+[32m03:33:07[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:33:10[0m | [1mINFO[0m |     [3/8] 2026-03-25 3533 ¹Å¿AºÝ¤l (gap_up)
+[32m03:33:36[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m03:33:36[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:33:39[0m | [1mINFO[0m |     [4/8] 2026-03-26 3017 ©_èb¬ì§Þ (gap_up)
+[32m03:34:22[0m | [1mINFO[0m |       bear=6 bull=9 pred=neutral(+0.5%)
+[32m03:34:22[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:34:25[0m | [1mINFO[0m |     [5/8] 2026-03-26 3533 ¹Å¿AºÝ¤l (gap_up)
+[32m03:34:41[0m | [1mINFO[0m |       bear=6 bull=7 pred=neutral(+0.5%)
+[32m03:34:41[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:34:44[0m | [1mINFO[0m |     [6/8] 2026-03-26 8046 «n¨È¹q¸ôªO (gap_up)
+[32m03:35:16[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m03:35:16[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:35:18[0m | [1mINFO[0m |     [7/8] 2026-03-27 8046 «n¨È¹q¸ôªO (none)
+[32m03:35:47[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m03:35:47[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:35:50[0m | [1mINFO[0m |     [8/8] 2026-03-30 8046 «n¨È¹q¸ôªO (strong_candle)
+[32m03:36:28[0m | [1mINFO[0m |       bear=7 bull=6 pred=down(-1.5%)
+[32m03:36:28[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:36:30[0m | [1mINFO[0m | §å¦¸ #2 §¹¦¨ 7 µ§
+[32m03:36:30[0m | [1mINFO[0m | ============================================================
+[32m03:36:30[0m | [1mINFO[0m | §å¦¸ #3¡G2026-03-31 ¡ã 2026-04-06
+[32m03:36:31[0m | [1mINFO[0m | Resume: 25 already done, skipping.
+[32m03:36:31[0m | [1mINFO[0m |   §å¦¸ #3¡G2026-03-31¡ã2026-04-06¡A«Ý¶] 11 µ§
+[32m03:36:32[0m | [1mINFO[0m |     [1/11] 2026-03-31 2059 ¤t´ò¬ì§Þ (none)
+[32m03:37:10[0m | [1mINFO[0m |       bear=5 bull=8 pred=neutral(+0.5%)
+[32m03:37:10[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:37:13[0m | [1mINFO[0m |     [2/11] 2026-03-31 3533 ¹Å¿AºÝ¤l (none)
+[32m03:37:28[0m | [1mINFO[0m |       bear=5 bull=7 pred=neutral(+0.5%)
+[32m03:37:28[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:37:32[0m | [1mINFO[0m |     [3/11] 2026-03-31 8046 «n¨È¹q¸ôªO (none)
+[32m03:38:00[0m | [1mINFO[0m |       bear=7 bull=4 pred=down(-5.0%)
+[32m03:38:00[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:38:04[0m | [1mINFO[0m |     [4/11] 2026-03-31 2308 ¥x¹F¹q¤l (none)
+[32m03:38:24[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m03:38:24[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:38:28[0m | [1mINFO[0m |     [5/11] 2026-04-01 2059 ¤t´ò¬ì§Þ (gap_up)
+[32m03:38:48[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m03:38:48[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:38:52[0m | [1mINFO[0m |     [6/11] 2026-04-02 8046 «n¨È¹q¸ôªO (none)
+[32m03:39:26[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m03:39:26[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:39:30[0m | [1mINFO[0m |     [7/11] 2026-04-02 3711 ¤é¤ë¥ú§ë±± (none)
+[32m03:40:04[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m03:40:04[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:40:07[0m | [1mINFO[0m |     [8/11] 2026-04-03 8046 «n¨È¹q¸ôªO (none)
+[32m03:40:46[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m03:40:46[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:40:48[0m | [1mINFO[0m |     [9/11] 2026-04-03 3711 ¤é¤ë¥ú§ë±± (none)
+[32m03:41:28[0m | [1mINFO[0m |       bear=5 bull=7 pred=neutral(+0.0%)
+[32m03:41:28[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:41:31[0m | [1mINFO[0m |     [10/11] 2026-04-06 8046 «n¨È¹q¸ôªO (none)
+[32m03:41:58[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+2.0%)
+[32m03:41:58[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:42:02[0m | [1mINFO[0m |     [11/11] 2026-04-06 3711 ¤é¤ë¥ú§ë±± (none)
+[32m03:42:29[0m | [1mINFO[0m |       bear=5 bull=8 pred=neutral(+0.5%)
+[32m03:42:29[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:42:31[0m | [1mINFO[0m | §å¦¸ #3 §¹¦¨ 11 µ§
+[32m03:42:31[0m | [1mINFO[0m | ============================================================
+[32m03:42:31[0m | [1mINFO[0m | §å¦¸ #4¡G2026-04-07 ¡ã 2026-04-13
+[32m03:42:31[0m | [1mINFO[0m | Resume: 36 already done, skipping.
+[32m03:42:31[0m | [1mINFO[0m |   §å¦¸ #4¡G2026-04-07¡ã2026-04-13¡A«Ý¶] 19 µ§
+[32m03:42:32[0m | [1mINFO[0m |     [1/19] 2026-04-07 8046 «n¨È¹q¸ôªO (gap_up)
+[32m03:42:59[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+2.0%)
+[32m03:42:59[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:43:02[0m | [1mINFO[0m |     [2/19] 2026-04-08 3037 ªY¿³¹q¤l (volume_breakout)
+[32m03:43:35[0m | [1mINFO[0m |       bear=4 bull=9 pred=up(+1.5%)
+[32m03:43:35[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:43:38[0m | [1mINFO[0m |     [3/19] 2026-04-08 8046 «n¨È¹q¸ôªO (none)
+[32m03:43:54[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m03:43:54[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:43:58[0m | [1mINFO[0m |     [4/19] 2026-04-08 2382 ¼s¹F¹q¸£ (golden_cross)
+[32m03:44:44[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m03:44:44[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:44:47[0m | [1mINFO[0m |     [5/19] 2026-04-08 3711 ¤é¤ë¥ú§ë±± (gap_up)
+[32m03:45:21[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+3.0%)
+[32m03:45:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:45:24[0m | [1mINFO[0m |     [6/19] 2026-04-09 3037 ªY¿³¹q¤l (golden_cross)
+[32m03:46:12[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m03:46:12[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m03:46:15[0m | [1mINFO[0m |     [7/19] 2026-04-09 2382 ¼s¹F¹q¸£ (golden_cross)
+[32m04:04:34[0m | [1mINFO[0m | ¹w§ì FinMind ¤T¤jªk¤H & ¤ëÀç¦¬¸ê®Æ...
+[32m04:04:34[0m | [1mINFO[0m | ¹w§ì FinMind ¸ê®Æ¡G18 ¤äªÑ²¼...
+[32m04:04:34[0m | [1mINFO[0m |   [1/18] 2059
+[32m04:04:35[0m | [1mINFO[0m |   [2/18] 2303
+[32m04:04:36[0m | [1mINFO[0m |   [3/18] 2308
+[32m04:04:37[0m | [1mINFO[0m |   [4/18] 2317
+[32m04:04:38[0m | [1mINFO[0m |   [5/18] 2330
+[32m04:04:39[0m | [1mINFO[0m |   [6/18] 2337
+[32m04:04:40[0m | [1mINFO[0m |   [7/18] 2356
+[32m04:04:41[0m | [1mINFO[0m |   [8/18] 2357
+[32m04:04:43[0m | [1mINFO[0m |   [9/18] 2376
+[32m04:04:44[0m | [1mINFO[0m |   [10/18] 2382
+[32m04:04:45[0m | [1mINFO[0m |   [11/18] 2454
+[32m04:04:46[0m | [1mINFO[0m |   [12/18] 3017
+[32m04:04:47[0m | [1mINFO[0m |   [13/18] 3037
+[32m04:04:48[0m | [1mINFO[0m |   [14/18] 3324
+[32m04:04:49[0m | [1mINFO[0m |   [15/18] 3533
+[32m04:04:51[0m | [1mINFO[0m |   [16/18] 3711
+[32m04:04:52[0m | [1mINFO[0m |   [17/18] 6669
+[32m04:04:53[0m | [1mINFO[0m |   [18/18] 8046
+[32m04:04:54[0m | [1mINFO[0m | ¹w§ì§¹¦¨¡C
+[32m04:04:54[0m | [1mINFO[0m | ============================================================
+[32m04:04:54[0m | [1mINFO[0m | §å¦¸ #1¡G2026-03-17 ¡ã 2026-03-23
+[32m04:04:54[0m | [1mINFO[0m | Resume: 42 already done, skipping.
+[32m04:04:54[0m | [1mINFO[0m |   §å¦¸ #1 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m04:04:54[0m | [1mINFO[0m | §å¦¸ #1 §¹¦¨ 0 µ§
+[32m04:04:54[0m | [1mINFO[0m | ============================================================
+[32m04:04:54[0m | [1mINFO[0m | §å¦¸ #2¡G2026-03-24 ¡ã 2026-03-30
+[32m04:04:54[0m | [1mINFO[0m | Resume: 42 already done, skipping.
+[32m04:04:54[0m | [1mINFO[0m |   §å¦¸ #2 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m04:04:54[0m | [1mINFO[0m | §å¦¸ #2 §¹¦¨ 0 µ§
+[32m04:04:54[0m | [1mINFO[0m | ============================================================
+[32m04:04:54[0m | [1mINFO[0m | §å¦¸ #3¡G2026-03-31 ¡ã 2026-04-06
+[32m04:04:54[0m | [1mINFO[0m | Resume: 42 already done, skipping.
+[32m04:04:54[0m | [1mINFO[0m |   §å¦¸ #3 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m04:04:54[0m | [1mINFO[0m | §å¦¸ #3 §¹¦¨ 0 µ§
+[32m04:04:54[0m | [1mINFO[0m | ============================================================
+[32m04:04:54[0m | [1mINFO[0m | §å¦¸ #4¡G2026-04-07 ¡ã 2026-04-13
+[32m04:04:54[0m | [1mINFO[0m | Resume: 42 already done, skipping.
+[32m04:04:54[0m | [1mINFO[0m |   §å¦¸ #4¡G2026-04-07¡ã2026-04-13¡A«Ý¶] 13 µ§
+[32m04:04:55[0m | [1mINFO[0m |     [1/13] 2026-04-09 2382 ¼s¹F¹q¸£ (golden_cross)
+[32m04:05:39[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:05:39[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:05:43[0m | [1mINFO[0m |     [2/13] 2026-04-09 2308 ¥x¹F¹q¤l (none)
+[32m04:06:28[0m | [1mINFO[0m |       bear=2 bull=8 pred=up(+1.5%)
+[32m04:06:28[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:06:31[0m | [1mINFO[0m |     [3/13] 2026-04-09 2337 ©ô§»¹q¤l (none)
+[32m04:07:16[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:07:16[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:07:20[0m | [1mINFO[0m |     [4/13] 2026-04-10 3037 ªY¿³¹q¤l (golden_cross)
+[32m04:07:53[0m | [1mINFO[0m |       bear=2 bull=8 pred=up(+2.0%)
+[32m04:07:53[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:08:00[0m | [1mINFO[0m |     [5/13] 2026-04-10 2382 ¼s¹F¹q¸£ (golden_cross)
+[32m04:08:38[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:08:38[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:08:41[0m | [1mINFO[0m |     [6/13] 2026-04-10 2303 ÁpµØ¹q¤l (golden_cross)
+[32m04:09:27[0m | [1mINFO[0m |       bear=2 bull=8 pred=up(+1.5%)
+[32m04:09:27[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:09:31[0m | [1mINFO[0m |     [7/13] 2026-04-10 2376 §Þ¹Å¬ì§Þ (volume_breakout)
+[32m04:10:09[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:10:09[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:10:13[0m | [1mINFO[0m |     [8/13] 2026-04-10 2337 ©ô§»¹q¤l (none)
+[32m04:10:51[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m04:10:51[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:10:54[0m | [1mINFO[0m |     [9/13] 2026-04-13 3037 ªY¿³¹q¤l (none)
+[32m04:11:40[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:11:40[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:11:44[0m | [1mINFO[0m |     [10/13] 2026-04-13 2303 ÁpµØ¹q¤l (golden_cross)
+[32m04:12:12[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:12:12[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:12:15[0m | [1mINFO[0m |     [11/13] 2026-04-13 2376 §Þ¹Å¬ì§Þ (golden_cross)
+[32m04:12:54[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:12:54[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:12:57[0m | [1mINFO[0m |     [12/13] 2026-04-13 2337 ©ô§»¹q¤l (none)
+[32m04:13:48[0m | [1mINFO[0m |       bear=7 bull=7 pred=neutral(+0.5%)
+[32m04:13:48[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:13:51[0m | [1mINFO[0m |     [13/13] 2026-04-13 3711 ¤é¤ë¥ú§ë±± (gap_up)
+[32m04:14:34[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+2.0%)
+[32m04:14:34[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:14:36[0m | [1mINFO[0m | §å¦¸ #4 §¹¦¨ 13 µ§
+[32m04:14:36[0m | [1mINFO[0m | ============================================================
+[32m04:14:36[0m | [1mINFO[0m | §å¦¸ #5¡G2026-04-14 ¡ã 2026-04-20
+[32m04:14:36[0m | [1mINFO[0m | Resume: 55 already done, skipping.
+[32m04:14:36[0m | [1mINFO[0m |   §å¦¸ #5¡G2026-04-14¡ã2026-04-20¡A«Ý¶] 29 µ§
+[32m04:14:38[0m | [1mINFO[0m |     [1/29] 2026-04-14 2330 ¥x¿n¹q (gap_up)
+[32m04:15:12[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+2.0%)
+[32m04:15:12[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:15:15[0m | [1mINFO[0m |     [2/29] 2026-04-14 2454 Ápµo¬ì§Þ (golden_cross)
+[32m04:15:48[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:15:48[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:15:51[0m | [1mINFO[0m |     [3/29] 2026-04-14 2376 §Þ¹Å¬ì§Þ (golden_cross)
+[32m04:16:25[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:16:25[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:16:28[0m | [1mINFO[0m |     [4/29] 2026-04-14 2337 ©ô§»¹q¤l (gap_up)
+[32m04:17:09[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m04:17:09[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:17:13[0m | [1mINFO[0m |     [5/29] 2026-04-14 2356 ­^·~¹F (golden_cross)
+[32m04:17:45[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.0%)
+[32m04:17:45[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:17:49[0m | [1mINFO[0m |     [6/29] 2026-04-15 2330 ¥x¿n¹q (none)
+[32m04:18:27[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:18:28[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:18:31[0m | [1mINFO[0m |     [7/29] 2026-04-15 2382 ¼s¹F¹q¸£ (none)
+[32m04:19:13[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.0%)
+[32m04:19:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:19:17[0m | [1mINFO[0m |     [8/29] 2026-04-15 2303 ÁpµØ¹q¤l (strong_candle)
+[32m04:19:51[0m | [1mINFO[0m |       bear=5 bull=7 pred=neutral(+0.5%)
+[32m04:19:51[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:19:54[0m | [1mINFO[0m |     [9/29] 2026-04-15 2454 Ápµo¬ì§Þ (golden_cross)
+[32m04:20:32[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:20:32[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:20:35[0m | [1mINFO[0m |     [10/29] 2026-04-15 2376 §Þ¹Å¬ì§Þ (gap_up)
+[32m04:21:13[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:21:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:21:17[0m | [1mINFO[0m |     [11/29] 2026-04-15 2337 ©ô§»¹q¤l (none)
+[32m04:22:01[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m04:22:01[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:22:04[0m | [1mINFO[0m |     [12/29] 2026-04-15 3711 ¤é¤ë¥ú§ë±± (gap_up)
+[32m04:22:40[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m04:22:40[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:22:43[0m | [1mINFO[0m |     [13/29] 2026-04-15 2356 ­^·~¹F (golden_cross)
+[32m04:23:29[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m04:23:29[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:23:32[0m | [1mINFO[0m |     [14/29] 2026-04-16 2303 ÁpµØ¹q¤l (gap_up)
+[32m04:24:12[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+2.0%)
+[32m04:24:12[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:24:15[0m | [1mINFO[0m |     [15/29] 2026-04-16 2454 Ápµo¬ì§Þ (golden_cross)
+[32m04:24:35[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+2.0%)
+[32m04:24:35[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:24:38[0m | [1mINFO[0m |     [16/29] 2026-04-16 2376 §Þ¹Å¬ì§Þ (none)
+[32m04:25:16[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:25:16[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:25:19[0m | [1mINFO[0m |     [17/29] 2026-04-16 2337 ©ô§»¹q¤l (none)
+[32m04:26:01[0m | [1mINFO[0m |       bear=7 bull=5 pred=down(-1.5%)
+[32m04:26:01[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:26:04[0m | [1mINFO[0m |     [18/29] 2026-04-17 2059 ¤t´ò¬ì§Þ (golden_cross)
+[32m04:26:26[0m | [1mINFO[0m |       bear=3 bull=7 pred=neutral(+0.5%)
+[32m04:26:26[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:26:29[0m | [1mINFO[0m |     [19/29] 2026-04-17 6669 ½n¿o¬ì§Þ (gap_up)
+[32m04:26:54[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m04:26:54[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:26:57[0m | [1mINFO[0m |     [20/29] 2026-04-17 2303 ÁpµØ¹q¤l (strong_candle)
+[32m04:27:33[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m04:27:33[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:27:36[0m | [1mINFO[0m |     [21/29] 2026-04-17 2454 Ápµo¬ì§Þ (none)
+[32m04:28:04[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:28:04[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:28:07[0m | [1mINFO[0m |     [22/29] 2026-04-17 2357 µØºÓ¹q¸£ (none)
+[32m04:28:34[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m04:28:34[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:28:37[0m | [1mINFO[0m |     [23/29] 2026-04-17 2376 §Þ¹Å¬ì§Þ (none)
+[32m04:29:08[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:29:08[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:29:11[0m | [1mINFO[0m |     [24/29] 2026-04-17 3711 ¤é¤ë¥ú§ë±± (none)
+[32m04:29:43[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.0%)
+[32m04:29:43[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:29:47[0m | [1mINFO[0m |     [25/29] 2026-04-17 2356 ­^·~¹F (none)
+[32m04:30:12[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m04:30:12[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:30:15[0m | [1mINFO[0m |     [26/29] 2026-04-20 3533 ¹Å¿AºÝ¤l (volume_breakout)
+[32m04:30:47[0m | [1mINFO[0m |       bear=3 bull=7 pred=up(+1.5%)
+[32m04:30:47[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:30:50[0m | [1mINFO[0m |     [27/29] 2026-04-20 6669 ½n¿o¬ì§Þ (gap_up)
+[32m04:31:24[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.0%)
+[32m04:31:24[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:31:27[0m | [1mINFO[0m |     [28/29] 2026-04-20 2303 ÁpµØ¹q¤l (none)
+[32m04:31:55[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:31:55[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:31:58[0m | [1mINFO[0m |     [29/29] 2026-04-20 2356 ­^·~¹F (none)
+[32m04:32:27[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:32:27[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:32:29[0m | [1mINFO[0m | §å¦¸ #5 §¹¦¨ 29 µ§
+[32m04:32:29[0m | [1mINFO[0m | ============================================================
+[32m04:32:29[0m | [1mINFO[0m | §å¦¸ #6¡G2026-04-21 ¡ã 2026-04-27
+[32m04:32:29[0m | [1mINFO[0m | Resume: 84 already done, skipping.
+[32m04:32:29[0m | [1mINFO[0m |   §å¦¸ #6¡G2026-04-21¡ã2026-04-27¡A«Ý¶] 48 µ§
+[32m04:32:30[0m | [1mINFO[0m |     [1/48] 2026-04-21 8046 «n¨È¹q¸ôªO (none)
+[32m04:33:00[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:33:00[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:33:03[0m | [1mINFO[0m |     [2/48] 2026-04-21 6669 ½n¿o¬ì§Þ (gap_up)
+[32m04:33:31[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m04:33:31[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:33:34[0m | [1mINFO[0m |     [3/48] 2026-04-21 2303 ÁpµØ¹q¤l (none)
+[32m04:34:04[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:34:04[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:34:07[0m | [1mINFO[0m |     [4/48] 2026-04-21 2454 Ápµo¬ì§Þ (gap_up)
+[32m04:34:39[0m | [1mINFO[0m |       bear=4 bull=9 pred=up(+2.0%)
+[32m04:34:39[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:34:42[0m | [1mINFO[0m |     [5/48] 2026-04-21 2357 µØºÓ¹q¸£ (none)
+[32m04:35:13[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m04:35:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:35:15[0m | [1mINFO[0m |     [6/48] 2026-04-21 2376 §Þ¹Å¬ì§Þ (gap_up)
+[32m04:35:51[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:35:51[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:35:54[0m | [1mINFO[0m |     [7/48] 2026-04-21 2356 ­^·~¹F (gap_up)
+[32m04:36:25[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.0%)
+[32m04:36:25[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:36:28[0m | [1mINFO[0m |     [8/48] 2026-04-22 6669 ½n¿o¬ì§Þ (gap_up)
+[32m04:37:04[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m04:37:04[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:37:07[0m | [1mINFO[0m |     [9/48] 2026-04-22 2317 ÂE®üºë±K (gap_up)
+[32m04:37:42[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:37:42[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:37:46[0m | [1mINFO[0m |     [10/48] 2026-04-22 2303 ÁpµØ¹q¤l (strong_candle)
+[32m04:38:14[0m | [1mINFO[0m |       bear=2 bull=8 pred=up(+1.5%)
+[32m04:38:14[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:38:18[0m | [1mINFO[0m |     [11/48] 2026-04-22 2454 Ápµo¬ì§Þ (gap_up)
+[32m04:38:57[0m | [1mINFO[0m |       bear=4 bull=9 pred=up(+1.5%)
+[32m04:38:57[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:39:00[0m | [1mINFO[0m |     [12/48] 2026-04-22 2357 µØºÓ¹q¸£ (strong_candle)
+[32m04:39:32[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.0%)
+[32m04:39:32[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:39:35[0m | [1mINFO[0m |     [13/48] 2026-04-22 2356 ­^·~¹F (none)
+[32m04:39:57[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:39:57[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:40:00[0m | [1mINFO[0m |     [14/48] 2026-04-22 3324 ÂùÂE (strong_candle)
+[32m04:40:36[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:40:36[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:40:39[0m | [1mINFO[0m |     [15/48] 2026-04-23 2330 ¥x¿n¹q (none)
+[32m04:41:21[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:41:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:41:24[0m | [1mINFO[0m |     [16/48] 2026-04-23 3017 ©_èb¬ì§Þ (none)
+[32m04:42:00[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:42:00[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:42:03[0m | [1mINFO[0m |     [17/48] 2026-04-23 3533 ¹Å¿AºÝ¤l (none)
+[32m04:42:53[0m | [1mINFO[0m |       bear=7 bull=7 pred=neutral(+0.5%)
+[32m04:42:53[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:42:56[0m | [1mINFO[0m |     [18/48] 2026-04-23 8046 «n¨È¹q¸ôªO (none)
+[32m04:43:47[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:43:47[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:43:50[0m | [1mINFO[0m |     [19/48] 2026-04-23 6669 ½n¿o¬ì§Þ (none)
+[32m04:44:26[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.0%)
+[32m04:44:26[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:44:29[0m | [1mINFO[0m |     [20/48] 2026-04-23 2382 ¼s¹F¹q¸£ (none)
+[32m04:45:19[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:45:19[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:45:22[0m | [1mINFO[0m |     [21/48] 2026-04-23 2317 ÂE®üºë±K (none)
+[32m04:46:13[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:46:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:46:16[0m | [1mINFO[0m |     [22/48] 2026-04-23 2308 ¥x¹F¹q¤l (none)
+[32m04:46:48[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:46:48[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:46:52[0m | [1mINFO[0m |     [23/48] 2026-04-23 2303 ÁpµØ¹q¤l (none)
+[32m04:47:28[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:47:28[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:47:31[0m | [1mINFO[0m |     [24/48] 2026-04-23 2454 Ápµo¬ì§Þ (none)
+[32m04:48:16[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:48:16[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:48:20[0m | [1mINFO[0m |     [25/48] 2026-04-23 2357 µØºÓ¹q¸£ (none)
+[32m04:48:40[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.0%)
+[32m04:48:40[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:48:43[0m | [1mINFO[0m |     [26/48] 2026-04-23 3711 ¤é¤ë¥ú§ë±± (none)
+[32m04:49:20[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:49:20[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:49:22[0m | [1mINFO[0m |     [27/48] 2026-04-23 2356 ­^·~¹F (none)
+[32m04:49:52[0m | [1mINFO[0m |       bear=2 bull=8 pred=up(+1.5%)
+[32m04:49:52[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:49:55[0m | [1mINFO[0m |     [28/48] 2026-04-23 3324 ÂùÂE (none)
+[32m04:50:28[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m04:50:28[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:50:31[0m | [1mINFO[0m |     [29/48] 2026-04-24 2330 ¥x¿n¹q (gap_up)
+[32m04:51:03[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:51:03[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:51:06[0m | [1mINFO[0m |     [30/48] 2026-04-24 2059 ¤t´ò¬ì§Þ (gap_up)
+[32m04:51:46[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m04:51:46[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:51:48[0m | [1mINFO[0m |     [31/48] 2026-04-24 3533 ¹Å¿AºÝ¤l (none)
+[32m04:52:16[0m | [1mINFO[0m |       bear=3 bull=7 pred=up(+1.5%)
+[32m04:52:16[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:52:19[0m | [1mINFO[0m |     [32/48] 2026-04-24 6669 ½n¿o¬ì§Þ (gap_up)
+[32m04:52:53[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:52:53[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:52:56[0m | [1mINFO[0m |     [33/48] 2026-04-24 2317 ÂE®üºë±K (none)
+[32m04:53:31[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.0%)
+[32m04:53:32[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:53:35[0m | [1mINFO[0m |     [34/48] 2026-04-24 2454 Ápµo¬ì§Þ (gap_up)
+[32m04:54:21[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:54:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:54:24[0m | [1mINFO[0m |     [35/48] 2026-04-24 3711 ¤é¤ë¥ú§ë±± (strong_candle)
+[32m04:55:02[0m | [1mINFO[0m |       bear=5 bull=8 pred=neutral(+0.5%)
+[32m04:55:02[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:55:05[0m | [1mINFO[0m |     [36/48] 2026-04-24 2356 ­^·~¹F (strong_candle)
+[32m04:55:43[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m04:55:43[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:55:46[0m | [1mINFO[0m |     [37/48] 2026-04-24 3324 ÂùÂE (gap_up)
+[32m04:56:24[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:56:24[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:56:27[0m | [1mINFO[0m |     [38/48] 2026-04-27 2330 ¥x¿n¹q (none)
+[32m04:56:46[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:56:46[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:56:49[0m | [1mINFO[0m |     [39/48] 2026-04-27 2059 ¤t´ò¬ì§Þ (gap_up)
+[32m04:57:08[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m04:57:08[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:57:11[0m | [1mINFO[0m |     [40/48] 2026-04-27 3017 ©_èb¬ì§Þ (none)
+[32m04:57:31[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:57:31[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:57:34[0m | [1mINFO[0m |     [41/48] 2026-04-27 3533 ¹Å¿AºÝ¤l (gap_up)
+[32m04:57:59[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:58:00[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:58:03[0m | [1mINFO[0m |     [42/48] 2026-04-27 6669 ½n¿o¬ì§Þ (none)
+[32m04:58:21[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m04:58:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:58:24[0m | [1mINFO[0m |     [43/48] 2026-04-27 2317 ÂE®üºë±K (gap_up)
+[32m04:59:04[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m04:59:04[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:59:07[0m | [1mINFO[0m |     [44/48] 2026-04-27 2308 ¥x¹F¹q¤l (none)
+[32m04:59:47[0m | [1mINFO[0m |       bear=5 bull=8 pred=up(+1.5%)
+[32m04:59:47[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m04:59:50[0m | [1mINFO[0m |     [45/48] 2026-04-27 2454 Ápµo¬ì§Þ (none)
+[32m05:00:31[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:00:31[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:00:34[0m | [1mINFO[0m |     [46/48] 2026-04-27 3711 ¤é¤ë¥ú§ë±± (none)
+[32m05:01:16[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:01:16[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:01:19[0m | [1mINFO[0m |     [47/48] 2026-04-27 2356 ­^·~¹F (none)
+[32m05:02:08[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m05:02:08[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:02:11[0m | [1mINFO[0m |     [48/48] 2026-04-27 3324 ÂùÂE (none)
+[32m05:02:57[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m05:02:57[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:02:59[0m | [1mINFO[0m | §å¦¸ #6 §¹¦¨ 48 µ§
+[32m05:02:59[0m | [1mINFO[0m | ============================================================
+[32m05:02:59[0m | [1mINFO[0m | §å¦¸ #7¡G2026-04-28 ¡ã 2026-05-04
+[32m05:02:59[0m | [1mINFO[0m | Resume: 132 already done, skipping.
+[32m05:02:59[0m | [1mINFO[0m |   §å¦¸ #7¡G2026-04-28¡ã2026-05-04¡A«Ý¶] 25 µ§
+[32m05:03:01[0m | [1mINFO[0m |     [1/25] 2026-04-28 2330 ¥x¿n¹q (none)
+[32m05:03:47[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.0%)
+[32m05:03:47[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:03:50[0m | [1mINFO[0m |     [2/25] 2026-04-28 3017 ©_èb¬ì§Þ (none)
+[32m05:04:34[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:04:34[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:04:38[0m | [1mINFO[0m |     [3/25] 2026-04-28 3037 ªY¿³¹q¤l (none)
+[32m05:05:24[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:05:24[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:05:27[0m | [1mINFO[0m |     [4/25] 2026-04-28 2317 ÂE®üºë±K (none)
+[32m05:08:48[0m | [1mINFO[0m | ¹w§ì FinMind ¤T¤jªk¤H & ¤ëÀç¦¬¸ê®Æ...
+[32m05:08:48[0m | [1mINFO[0m | ¹w§ì FinMind ¸ê®Æ¡G18 ¤äªÑ²¼...
+[32m05:08:48[0m | [1mINFO[0m |   [1/18] 2059
+[32m05:08:49[0m | [1mINFO[0m |   [2/18] 2303
+[32m05:08:51[0m | [1mINFO[0m |   [3/18] 2308
+[32m05:08:52[0m | [1mINFO[0m |   [4/18] 2317
+[32m05:08:53[0m | [1mINFO[0m |   [5/18] 2330
+[32m05:08:54[0m | [1mINFO[0m |   [6/18] 2337
+[32m05:08:55[0m | [1mINFO[0m |   [7/18] 2356
+[32m05:08:56[0m | [1mINFO[0m |   [8/18] 2357
+[32m05:08:57[0m | [1mINFO[0m |   [9/18] 2376
+[32m05:08:58[0m | [1mINFO[0m |   [10/18] 2382
+[32m05:09:00[0m | [1mINFO[0m |   [11/18] 2454
+[32m05:09:01[0m | [1mINFO[0m |   [12/18] 3017
+[32m05:09:02[0m | [1mINFO[0m |   [13/18] 3037
+[32m05:09:03[0m | [1mINFO[0m |   [14/18] 3324
+[32m05:09:04[0m | [1mINFO[0m |   [15/18] 3533
+[32m05:09:06[0m | [1mINFO[0m |   [16/18] 3711
+[32m05:09:07[0m | [1mINFO[0m |   [17/18] 6669
+[32m05:09:08[0m | [1mINFO[0m |   [18/18] 8046
+[32m05:09:09[0m | [1mINFO[0m | ¹w§ì§¹¦¨¡C
+[32m05:09:09[0m | [1mINFO[0m | ============================================================
+[32m05:09:09[0m | [1mINFO[0m | §å¦¸ #1¡G2026-03-17 ¡ã 2026-03-23
+[32m05:09:09[0m | [1mINFO[0m | Resume: 135 already done, skipping.
+[32m05:09:09[0m | [1mINFO[0m |   §å¦¸ #1 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m05:09:09[0m | [1mINFO[0m | §å¦¸ #1 §¹¦¨ 0 µ§
+[32m05:09:09[0m | [1mINFO[0m | ============================================================
+[32m05:09:09[0m | [1mINFO[0m | §å¦¸ #2¡G2026-03-24 ¡ã 2026-03-30
+[32m05:09:10[0m | [1mINFO[0m | Resume: 135 already done, skipping.
+[32m05:09:10[0m | [1mINFO[0m |   §å¦¸ #2 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #2 §¹¦¨ 0 µ§
+[32m05:09:10[0m | [1mINFO[0m | ============================================================
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #3¡G2026-03-31 ¡ã 2026-04-06
+[32m05:09:10[0m | [1mINFO[0m | Resume: 135 already done, skipping.
+[32m05:09:10[0m | [1mINFO[0m |   §å¦¸ #3 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #3 §¹¦¨ 0 µ§
+[32m05:09:10[0m | [1mINFO[0m | ============================================================
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #4¡G2026-04-07 ¡ã 2026-04-13
+[32m05:09:10[0m | [1mINFO[0m | Resume: 135 already done, skipping.
+[32m05:09:10[0m | [1mINFO[0m |   §å¦¸ #4 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #4 §¹¦¨ 0 µ§
+[32m05:09:10[0m | [1mINFO[0m | ============================================================
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #5¡G2026-04-14 ¡ã 2026-04-20
+[32m05:09:10[0m | [1mINFO[0m | Resume: 135 already done, skipping.
+[32m05:09:10[0m | [1mINFO[0m |   §å¦¸ #5 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #5 §¹¦¨ 0 µ§
+[32m05:09:10[0m | [1mINFO[0m | ============================================================
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #6¡G2026-04-21 ¡ã 2026-04-27
+[32m05:09:10[0m | [1mINFO[0m | Resume: 135 already done, skipping.
+[32m05:09:10[0m | [1mINFO[0m |   §å¦¸ #6 ¤w¥þ³¡§¹¦¨¡A¸õ¹L¡C
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #6 §¹¦¨ 0 µ§
+[32m05:09:10[0m | [1mINFO[0m | ============================================================
+[32m05:09:10[0m | [1mINFO[0m | §å¦¸ #7¡G2026-04-28 ¡ã 2026-05-04
+[32m05:09:10[0m | [1mINFO[0m | Resume: 135 already done, skipping.
+[32m05:09:10[0m | [1mINFO[0m |   §å¦¸ #7¡G2026-04-28¡ã2026-05-04¡A«Ý¶] 22 µ§
+[32m05:09:11[0m | [1mINFO[0m |     [1/22] 2026-04-28 2317 ÂE®üºë±K (none)
+[32m05:09:48[0m | [1mINFO[0m |       bear=8 bull=7 pred=neutral(+0.0%)
+[32m05:09:49[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:09:52[0m | [1mINFO[0m |     [2/22] 2026-04-28 2308 ¥x¹F¹q¤l (strong_candle)
+[32m05:10:33[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:10:33[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:10:37[0m | [1mINFO[0m |     [3/22] 2026-04-28 2454 Ápµo¬ì§Þ (gap_up)
+[32m05:11:03[0m | [1mINFO[0m |       bear=3 bull=9 pred=up(+1.5%)
+[32m05:11:03[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:11:07[0m | [1mINFO[0m |     [4/22] 2026-04-28 2337 ©ô§»¹q¤l (golden_cross)
+[32m05:11:35[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+2.0%)
+[32m05:11:36[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:11:39[0m | [1mINFO[0m |     [5/22] 2026-04-29 3037 ªY¿³¹q¤l (none)
+[32m05:12:08[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:12:08[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:12:10[0m | [1mINFO[0m |     [6/22] 2026-04-29 2337 ©ô§»¹q¤l (golden_cross)
+[32m05:12:42[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:12:42[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:12:45[0m | [1mINFO[0m |     [7/22] 2026-04-30 2330 ¥x¿n¹q (none)
+[32m05:13:21[0m | [1mINFO[0m |       bear=5 bull=7 pred=neutral(+0.5%)
+[32m05:13:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:13:24[0m | [1mINFO[0m |     [8/22] 2026-04-30 2059 ¤t´ò¬ì§Þ (none)
+[32m05:13:57[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m05:13:57[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:14:00[0m | [1mINFO[0m |     [9/22] 2026-04-30 3037 ªY¿³¹q¤l (volume_breakout)
+[32m05:14:30[0m | [1mINFO[0m |       bear=5 bull=9 pred=neutral(+0.5%)
+[32m05:14:30[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:14:33[0m | [1mINFO[0m |     [10/22] 2026-04-30 2308 ¥x¹F¹q¤l (none)
+[32m05:15:10[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m05:15:10[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:15:13[0m | [1mINFO[0m |     [11/22] 2026-04-30 2303 ÁpµØ¹q¤l (none)
+[32m05:15:50[0m | [1mINFO[0m |       bear=6 bull=7 pred=neutral(+0.5%)
+[32m05:15:50[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:15:53[0m | [1mINFO[0m |     [12/22] 2026-04-30 2337 ©ô§»¹q¤l (golden_cross)
+[32m05:16:13[0m | [1mINFO[0m |       bear=6 bull=9 pred=neutral(+0.5%)
+[32m05:16:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:16:16[0m | [1mINFO[0m |     [13/22] 2026-04-30 3711 ¤é¤ë¥ú§ë±± (none)
+[32m05:16:41[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:16:41[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:16:45[0m | [1mINFO[0m |     [14/22] 2026-05-01 2330 ¥x¿n¹q (none)
+[32m05:17:11[0m | [1mINFO[0m |       bear=7 bull=7 pred=neutral(+0.0%)
+[32m05:17:11[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:17:14[0m | [1mINFO[0m |     [15/22] 2026-05-01 2059 ¤t´ò¬ì§Þ (none)
+[32m05:18:00[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m05:18:00[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:18:03[0m | [1mINFO[0m |     [16/22] 2026-05-01 3037 ªY¿³¹q¤l (volume_breakout)
+[32m05:18:32[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:18:32[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:18:35[0m | [1mINFO[0m |     [17/22] 2026-05-01 2308 ¥x¹F¹q¤l (none)
+[32m05:19:09[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:19:09[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:19:13[0m | [1mINFO[0m |     [18/22] 2026-05-01 2303 ÁpµØ¹q¤l (none)
+[32m05:19:39[0m | [31m[1mERROR[0m |       LLM ¥¢±Ñ¡Gname 'logging' is not defined
+[32m05:19:39[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:19:42[0m | [1mINFO[0m |     [19/22] 2026-05-01 2337 ©ô§»¹q¤l (golden_cross)
+[32m05:20:21[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m05:20:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:20:24[0m | [1mINFO[0m |     [20/22] 2026-05-01 3711 ¤é¤ë¥ú§ë±± (none)
+[32m05:20:52[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:20:52[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:20:55[0m | [1mINFO[0m |     [21/22] 2026-05-04 3037 ªY¿³¹q¤l (none)
+[32m05:21:27[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:21:27[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:21:29[0m | [1mINFO[0m |     [22/22] 2026-05-04 2337 ©ô§»¹q¤l (none)
+[32m05:22:20[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:22:20[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:22:22[0m | [1mINFO[0m | §å¦¸ #7 §¹¦¨ 21 µ§
+[32m05:22:22[0m | [1mINFO[0m | ============================================================
+[32m05:22:22[0m | [1mINFO[0m | §å¦¸ #8¡G2026-05-05 ¡ã 2026-05-11
+[32m05:22:22[0m | [1mINFO[0m | Resume: 157 already done, skipping.
+[32m05:22:22[0m | [1mINFO[0m |   §å¦¸ #8¡G2026-05-05¡ã2026-05-11¡A«Ý¶] 35 µ§
+[32m05:22:23[0m | [1mINFO[0m |     [1/35] 2026-05-05 3017 ©_èb¬ì§Þ (none)
+[32m05:22:59[0m | [1mINFO[0m |       bear=7 bull=5 pred=down(-3.5%)
+[32m05:22:59[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:23:02[0m | [1mINFO[0m |     [2/35] 2026-05-05 3533 ¹Å¿AºÝ¤l (none)
+[32m05:23:15[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:23:15[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:23:18[0m | [1mINFO[0m |     [3/35] 2026-05-05 2317 ÂE®üºë±K (strong_candle)
+[32m05:23:41[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.8%)
+[32m05:23:41[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:23:44[0m | [1mINFO[0m |     [4/35] 2026-05-05 3711 ¤é¤ë¥ú§ë±± (none)
+[32m05:24:14[0m | [1mINFO[0m |       bear=5 bull=8 pred=neutral(+0.5%)
+[32m05:24:14[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:24:17[0m | [1mINFO[0m |     [5/35] 2026-05-06 2059 ¤t´ò¬ì§Þ (gap_up)
+[32m05:25:00[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m05:25:00[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:25:03[0m | [1mINFO[0m |     [6/35] 2026-05-06 3017 ©_èb¬ì§Þ (none)
+[32m05:25:39[0m | [1mINFO[0m |       bear=8 bull=3 pred=down(-5.0%)
+[32m05:25:39[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:25:42[0m | [1mINFO[0m |     [7/35] 2026-05-06 3533 ¹Å¿AºÝ¤l (gap_up)
+[32m05:26:18[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:26:18[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:26:21[0m | [1mINFO[0m |     [8/35] 2026-05-06 3037 ªY¿³¹q¤l (none)
+[32m05:27:12[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:27:12[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:27:15[0m | [1mINFO[0m |     [9/35] 2026-05-06 2382 ¼s¹F¹q¸£ (volume_breakout)
+[32m05:27:54[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:27:54[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:27:57[0m | [1mINFO[0m |     [10/35] 2026-05-06 2317 ÂE®üºë±K (gap_up)
+[32m05:28:13[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.0%)
+[32m05:28:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:28:17[0m | [1mINFO[0m |     [11/35] 2026-05-06 2308 ¥x¹F¹q¤l (none)
+[32m05:28:43[0m | [1mINFO[0m |       bear=6 bull=7 pred=neutral(+0.5%)
+[32m05:28:43[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:28:46[0m | [1mINFO[0m |     [12/35] 2026-05-06 2454 Ápµo¬ì§Þ (none)
+[32m05:29:06[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m05:29:06[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:29:09[0m | [1mINFO[0m |     [13/35] 2026-05-06 2357 µØºÓ¹q¸£ (volume_breakout)
+[32m05:29:31[0m | [1mINFO[0m |       bear=5 bull=8 pred=neutral(+0.5%)
+[32m05:29:31[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:29:34[0m | [1mINFO[0m |     [14/35] 2026-05-06 2376 §Þ¹Å¬ì§Þ (volume_breakout)
+[32m05:29:49[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:29:49[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:29:52[0m | [1mINFO[0m |     [15/35] 2026-05-06 2337 ©ô§»¹q¤l (none)
+[32m05:30:21[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+2.0%)
+[32m05:30:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:30:25[0m | [1mINFO[0m |     [16/35] 2026-05-06 3711 ¤é¤ë¥ú§ë±± (none)
+[32m05:30:42[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:30:42[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:30:45[0m | [1mINFO[0m |     [17/35] 2026-05-06 2356 ­^·~¹F (volume_breakout)
+[32m05:31:08[0m | [1mINFO[0m |       bear=2 bull=8 pred=up(+1.5%)
+[32m05:31:08[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:31:11[0m | [1mINFO[0m |     [18/35] 2026-05-07 3533 ¹Å¿AºÝ¤l (gap_up)
+[32m05:31:41[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:31:41[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:31:44[0m | [1mINFO[0m |     [19/35] 2026-05-07 2317 ÂE®üºë±K (none)
+[32m05:32:13[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:32:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:32:16[0m | [1mINFO[0m |     [20/35] 2026-05-07 2308 ¥x¹F¹q¤l (gap_up)
+[32m05:32:41[0m | [31m[1mERROR[0m |       LLM ¥¢±Ñ¡Gname 'logging' is not defined
+[32m05:32:41[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:32:44[0m | [1mINFO[0m |     [21/35] 2026-05-07 2303 ÁpµØ¹q¤l (none)
+[32m05:33:08[0m | [1mINFO[0m |       bear=5 bull=8 pred=up(+1.5%)
+[32m05:33:08[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:33:11[0m | [1mINFO[0m |     [22/35] 2026-05-07 2357 µØºÓ¹q¸£ (none)
+[32m05:33:48[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m05:33:48[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:33:51[0m | [1mINFO[0m |     [23/35] 2026-05-07 2376 §Þ¹Å¬ì§Þ (volume_breakout)
+[32m05:34:13[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:34:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:34:16[0m | [1mINFO[0m |     [24/35] 2026-05-07 2356 ­^·~¹F (volume_breakout)
+[32m05:34:32[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m05:34:32[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:34:35[0m | [1mINFO[0m |     [25/35] 2026-05-08 2059 ¤t´ò¬ì§Þ (gap_up)
+[32m05:34:54[0m | [1mINFO[0m |       bear=7 bull=8 pred=neutral(+0.5%)
+[32m05:34:54[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:34:57[0m | [1mINFO[0m |     [26/35] 2026-05-08 3037 ªY¿³¹q¤l (none)
+[32m05:35:20[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:35:20[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:35:24[0m | [1mINFO[0m |     [27/35] 2026-05-08 6669 ½n¿o¬ì§Þ (gap_up)
+[32m05:35:53[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m05:35:53[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:35:56[0m | [1mINFO[0m |     [28/35] 2026-05-08 2357 µØºÓ¹q¸£ (none)
+[32m05:36:24[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m05:36:24[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:36:27[0m | [1mINFO[0m |     [29/35] 2026-05-08 2376 §Þ¹Å¬ì§Þ (volume_breakout)
+[32m05:36:46[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:36:46[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:36:49[0m | [1mINFO[0m |     [30/35] 2026-05-08 2356 ­^·~¹F (none)
+[32m05:37:21[0m | [1mINFO[0m |       bear=5 bull=8 pred=neutral(+0.0%)
+[32m05:37:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:37:24[0m | [1mINFO[0m |     [31/35] 2026-05-11 2059 ¤t´ò¬ì§Þ (strong_candle)
+[32m05:38:03[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:38:03[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:38:07[0m | [1mINFO[0m |     [32/35] 2026-05-11 3533 ¹Å¿AºÝ¤l (strong_candle)
+[32m05:38:23[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m05:38:23[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:38:26[0m | [1mINFO[0m |     [33/35] 2026-05-11 3037 ªY¿³¹q¤l (gap_up)
+[32m05:39:01[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:39:01[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:39:04[0m | [1mINFO[0m |     [34/35] 2026-05-11 2357 µØºÓ¹q¸£ (gap_up)
+[32m05:39:38[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:39:38[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:39:41[0m | [1mINFO[0m |     [35/35] 2026-05-11 2376 §Þ¹Å¬ì§Þ (none)
+[32m05:40:17[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m05:40:17[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:40:19[0m | [1mINFO[0m | §å¦¸ #8 §¹¦¨ 34 µ§
+[32m05:40:19[0m | [1mINFO[0m | ============================================================
+[32m05:40:19[0m | [1mINFO[0m | §å¦¸ #9¡G2026-05-12 ¡ã 2026-05-18
+[32m05:40:19[0m | [1mINFO[0m | Resume: 192 already done, skipping.
+[32m05:40:19[0m | [1mINFO[0m |   §å¦¸ #9¡G2026-05-12¡ã2026-05-18¡A«Ý¶] 22 µ§
+[32m05:40:19[0m | [1mINFO[0m |     [1/22] 2026-05-12 3037 ªY¿³¹q¤l (none)
+[32m05:41:01[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.5%)
+[32m05:41:01[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:41:04[0m | [1mINFO[0m |     [2/22] 2026-05-12 6669 ½n¿o¬ì§Þ (gap_up)
+[32m05:41:45[0m | [1mINFO[0m |       bear=6 bull=8 pred=up(+1.5%)
+[32m05:41:45[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:41:48[0m | [1mINFO[0m |     [3/22] 2026-05-12 2303 ÁpµØ¹q¤l (gap_up)
+[32m05:42:13[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m05:42:13[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:42:16[0m | [1mINFO[0m |     [4/22] 2026-05-12 2357 µØºÓ¹q¸£ (none)
+[32m05:42:45[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.0%)
+[32m05:42:45[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:42:48[0m | [1mINFO[0m |     [5/22] 2026-05-12 3711 ¤é¤ë¥ú§ë±± (none)
+[32m05:43:26[0m | [1mINFO[0m |       bear=7 bull=7 pred=neutral(+0.5%)
+[32m05:43:26[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:43:29[0m | [1mINFO[0m |     [6/22] 2026-05-13 3533 ¹Å¿AºÝ¤l (none)
+[32m05:43:45[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m05:43:45[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:43:48[0m | [1mINFO[0m |     [7/22] 2026-05-13 3037 ªY¿³¹q¤l (strong_candle)
+[32m05:44:02[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:44:02[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:44:05[0m | [1mINFO[0m |     [8/22] 2026-05-13 2303 ÁpµØ¹q¤l (none)
+[32m05:44:37[0m | [31m[1mERROR[0m |       LLM ¥¢±Ñ¡Gname 'logging' is not defined
+[32m05:44:37[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:44:41[0m | [1mINFO[0m |     [9/22] 2026-05-13 2357 µØºÓ¹q¸£ (strong_candle)
+[32m05:44:53[0m | [31m[1mERROR[0m |       LLM ¥¢±Ñ¡Gname 'logging' is not defined
+[32m05:44:53[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:44:56[0m | [1mINFO[0m |     [10/22] 2026-05-13 2356 ­^·~¹F (strong_candle)
+[32m05:45:26[0m | [1mINFO[0m |       bear=3 bull=8 pred=neutral(+0.5%)
+[32m05:45:26[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:45:29[0m | [1mINFO[0m |     [11/22] 2026-05-14 3533 ¹Å¿AºÝ¤l (none)
+[32m05:45:54[0m | [1mINFO[0m |       bear=4 bull=7 pred=neutral(+0.5%)
+[32m05:45:54[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:45:57[0m | [1mINFO[0m |     [12/22] 2026-05-14 3037 ªY¿³¹q¤l (none)
+[32m05:46:21[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:46:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:46:24[0m | [1mINFO[0m |     [13/22] 2026-05-14 2303 ÁpµØ¹q¤l (gap_up)
+[32m05:46:58[0m | [1mINFO[0m |       bear=5 bull=8 pred=neutral(+0.5%)
+[32m05:46:58[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:47:02[0m | [1mINFO[0m |     [14/22] 2026-05-14 2376 §Þ¹Å¬ì§Þ (gap_up)
+[32m05:47:42[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m05:47:42[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:47:46[0m | [1mINFO[0m |     [15/22] 2026-05-14 2337 ©ô§»¹q¤l (none)
+[32m05:48:17[0m | [31m[1mERROR[0m |       LLM ¥¢±Ñ¡Gname 'logging' is not defined
+[32m05:48:17[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:48:20[0m | [1mINFO[0m |     [16/22] 2026-05-14 2356 ­^·~¹F (none)
+[32m05:48:57[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:48:57[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:49:00[0m | [1mINFO[0m |     [17/22] 2026-05-15 3037 ªY¿³¹q¤l (none)
+[32m05:49:45[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:49:45[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:49:49[0m | [1mINFO[0m |     [18/22] 2026-05-15 2317 ÂE®üºë±K (none)
+[32m05:50:21[0m | [1mINFO[0m |       bear=3 bull=8 pred=up(+1.5%)
+[32m05:50:21[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:50:24[0m | [1mINFO[0m |     [19/22] 2026-05-15 2303 ÁpµØ¹q¤l (none)
+[32m05:51:08[0m | [1mINFO[0m |       bear=6 bull=8 pred=neutral(+0.5%)
+[32m05:51:08[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:51:11[0m | [1mINFO[0m |     [20/22] 2026-05-15 2376 §Þ¹Å¬ì§Þ (none)
+[32m05:51:39[0m | [1mINFO[0m |       bear=5 bull=8 pred=neutral(+0.5%)
+[32m05:51:40[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:51:43[0m | [1mINFO[0m |     [21/22] 2026-05-15 2356 ­^·~¹F (none)
+[32m05:52:14[0m | [1mINFO[0m |       bear=4 bull=8 pred=up(+1.0%)
+[32m05:52:14[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:52:16[0m | [1mINFO[0m |     [22/22] 2026-05-18 2376 §Þ¹Å¬ì§Þ (none)
+[32m05:53:03[0m | [1mINFO[0m |       bear=6 bull=7 pred=neutral(+0.5%)
+[32m05:53:03[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:53:05[0m | [1mINFO[0m | §å¦¸ #9 §¹¦¨ 19 µ§
+[32m05:53:05[0m | [1mINFO[0m | ============================================================
+[32m05:53:05[0m | [1mINFO[0m | §å¦¸ #10¡G2026-05-19 ¡ã 2026-05-25
+[32m05:53:05[0m | [1mINFO[0m | Resume: 214 already done, skipping.
+[32m05:53:05[0m | [1mINFO[0m |   §å¦¸ #10¡G2026-05-19¡ã2026-05-25¡A«Ý¶] 10 µ§
+[32m05:53:05[0m | [1mINFO[0m |     [1/10] 2026-05-19 2376 §Þ¹Å¬ì§Þ (none)
+[32m05:53:50[0m | [1mINFO[0m |       bear=4 bull=8 pred=neutral(+0.5%)
+[32m05:53:50[0m | [32m[1mSUCCESS[0m | ³ø§i¤w§ó·s ¡÷ C:\Users\User\nycu\TSMC¥b¾ÉÅé¤ÀªRagent\TW_Stock_Agent\reports\llm_backtest_60d.md
+[32m05:53:53[0m | [1mINFO[0m |     [2/10] 2026-05-19 3711 ¤é¤ë¥ú§ë±± (none)

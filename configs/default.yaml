@@ -1,0 +1,124 @@
+llm:
+  provider: "openai"                  # "openai" | "claude" | "gemini"
+  # --- OpenAI 設定 ---
+  debate: "gpt-4o-mini"              # Bear/Bull 辯論（便宜穩定）
+  # --- Claude 設定（provider="claude" 時）---
+  # debate: "claude-haiku-4-5-20251001"
+  # --- Gemini 設定（provider="gemini" 時）---
+  # debate: "gemini-3.5-flash"
+  primary: "gemini-2.5-flash-lite"  # 輕量任務（報告生成等仍用 Gemini）
+  fallback: "gemini-2.5-flash-lite"
+
+schedule:
+  daily_run_time: "16:30"           # 收盤後，確保 yfinance 資料完整
+
+screener:
+  min_volume_ratio: 1.2             # 今日量 / 20日均量（>=2 才算 PASS 這項）
+  consolidation_ratio: 0.7          # 縮量整理門檻（低於20日均量）
+  consolidation_days: 3             # 縮量天數
+  rs_min: 0.9                       # 相對強度（vs 大盤）下限（>1=跑贏大盤）
+  ma5_above_ma20: true              # MA5 > MA20 才過關
+  weeks_52_warn: 0.95               # 股價 > 52週高點 95% 時標 WARN（不硬排除）
+  min_history_days: 60              # 資料不足 60 天跳過
+
+bfs:
+  max_hops: 3                       # 供應鏈 BFS 最大跳數
+  min_confidence: 0.6               # 邊的最低信心度
+
+news:
+  historical_source: "google"      # 60D LLM測試用google(finmind 2026-03~05有洞);注意google只有標題、clickbait污染
+  max_age_hours: 48                 # 超過 48 小時的新聞不處理
+  max_articles_per_source: 30
+  snippet_chars: 300
+  fetch_timeout_sec: 12
+
+debate:
+  bear_reject_threshold: 7          # bear_score >= 7 → REJECT
+  bear_warn_threshold: 5            # bear_score >= 5 → WARN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+universe:
+  as_of_top_n: 0                    # as_of模式掃描池:0=全部base_universe(對齊112回測);>0=當時流動性前N(0050代理)
+
+paper_trading:
+  capital_ntd: 100000               # 模擬資金 10 萬台幣
+  max_positions: 5                  # 最多同時持倉 5 支
+  order_time: "14:25"               # 盤後零股下單時間
+
+graduation:
+  window_days: 60
+  target_direction_accuracy: 0.55   # 方向準確率門檻
+  max_drawdown_pct: -0.10           # 最大回撤門檻
+
+# ── 交易規則（動態：改這裡就改行為，引擎每次讀）──────────────────────────────
+trading:
+  capital:                          # 資金模型
+    initial: 15000                  # 期初一次性投入
+    daily_budget: 1000              # 每交易日加碼
+    max_contribution: 50000         # 總投入上限，達到後停止再投錢
+  signals:                          # 訊號動態組合
+    llm_weight: 1.0                 # LLM edge（center%xconf）權重
+    rebound_weight: 1.0             # 跌深反彈 edge 權重
+    combine: "sum"                  # sum | max | llm_only | rebound_only
+    min_edge: 0.005                 # 組合後 edge 低於此 → 不進場
+    rebound_large_only: true        # true=反彈只在大型股觸發（中型不算）
+    rebound_min_depth: "d12"        # 最淺觸發深度: d8(-8%) | d12(-12%) | d20(-20%)
+    rebound_min_turnover: 1200000000 # 反彈只在日均成交額≥12億觸發(dose-response實證:高週轉反彈更強)
+    rebound_exclude_financial: false # 金融股不排(實測排不排幾乎沒差)
+  entry:                            # 進場（實際面）
+    timing: "next_open"             # next_open（隔日開盤，真實） | prev_close（舊，不真實）
+    max_chase_pct: 0.03             # 開盤比基準高超過此 → 放棄追高
+    skip_limit_up: true             # 隔日鎖漲停買不到 → 跳過
+    slippage_pct: 0.001             # 滑價
+  sizing:                           # 部位
+    max_signals: 3                  # 同時最多幾檔（分數接近放行第4）
+    pos_cap_frac: 0.0               # 單股佔權益上限比例（0=無上限）
+    pos_cap_abs: 0                  # 單股絕對金額上限（0=無）
+    daily_add_cap: 15000            # 單股「當天加碼」上限
+    max_pct_of_turnover: 0.02       # 單筆佔該股日均成交額上限（防自己推價）
+    exposure_cap: 0.90              # 總曝險上限
+    exposure_floor: 0.30            # 有訊號時最低曝險
+  exit:                             # 出場
+    max_hold_days: 5                # 最多抱幾天（反彈是短線）
+    take_profit_pct: 0.0            # 停利關 — LLM60d+2年純反彈雙測試台確認:停利在砍贏家、嚴重傷害報酬
+    conditional_stop: true          # 依進場論點分檔停損(反彈=均值回歸要寬;動能=破線要緊)
+    stop_loss_rebound: -0.12        # 反彈進場停損(2年純反彈驗證:含跳空穿價後仍最佳、回撤最低)
+    stop_loss_momentum: -0.08       # LLM/動能進場停損(無乾淨測試台,用安全預設)
+    stop_loss_pct: -0.10            # 非 conditional 時的單一值/fallback
+    exit_on_reverse: true           # 訊號翻空（edge<=0）就出
+  cost:
+    round_trip_pct: 0.005           # 來回成本

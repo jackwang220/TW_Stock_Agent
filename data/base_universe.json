@@ -1,0 +1,786 @@
+{
+  "1101": {
+    "name": "台泥",
+    "market": "TWSE",
+    "industry": "水泥工業",
+    "avg_turnover": 747885789.7833333,
+    "source": "core"
+  },
+  "1102": {
+    "name": "亞泥",
+    "market": "TWSE",
+    "industry": "水泥工業",
+    "avg_turnover": 501734360.5,
+    "source": "core"
+  },
+  "1216": {
+    "name": "統一",
+    "market": "TWSE",
+    "industry": "食品工業",
+    "avg_turnover": 1009111646.1666666,
+    "source": "core"
+  },
+  "1301": {
+    "name": "台塑",
+    "market": "TWSE",
+    "industry": "塑膠工業",
+    "avg_turnover": 1506052036.4166667,
+    "source": "core"
+  },
+  "1303": {
+    "name": "南亞",
+    "market": "TWSE",
+    "industry": "塑膠工業",
+    "avg_turnover": 7463925997.733334,
+    "source": "core"
+  },
+  "1326": {
+    "name": "台化",
+    "market": "TWSE",
+    "industry": "塑膠工業",
+    "avg_turnover": 1907133669.3333333,
+    "source": "core"
+  },
+  "1595": {
+    "name": "川寶",
+    "market": "TPEX",
+    "industry": "半導體業",
+    "avg_turnover": 174050433.88333333,
+    "source": "TPEX-top50"
+  },
+  "1736": {
+    "name": "喬山",
+    "market": "TWSE",
+    "industry": "運動休閒",
+    "avg_turnover": 85163904.25,
+    "source": "TWSE-top150"
+  },
+  "2002": {
+    "name": "中鋼",
+    "market": "TWSE",
+    "industry": "鋼鐵工業",
+    "avg_turnover": 1114881639.4166667,
+    "source": "core"
+  },
+  "2059": {
+    "name": "川湖",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 3236759990.25,
+    "source": "TWSE-top150+core"
+  },
+  "2105": {
+    "name": "正新",
+    "market": "TWSE",
+    "industry": "橡膠工業",
+    "avg_turnover": 456517486.45,
+    "source": "core"
+  },
+  "2207": {
+    "name": "和泰車",
+    "market": "TWSE",
+    "industry": "汽車工業",
+    "avg_turnover": 284254999.23333335,
+    "source": "core"
+  },
+  "2301": {
+    "name": "光寶科",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 6685823196.883333,
+    "source": "core"
+  },
+  "2303": {
+    "name": "聯電",
+    "market": "TWSE",
+    "industry": "半導體業",
+    "avg_turnover": 22366625508.283333,
+    "source": "TWSE-top150+core"
+  },
+  "2308": {
+    "name": "台達電",
+    "market": "TWSE",
+    "industry": "電子零組件業",
+    "avg_turnover": 24573575616.9,
+    "source": "TWSE-top150+core"
+  },
+  "2317": {
+    "name": "鴻海",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 20939877850.633335,
+    "source": "TWSE-top150+core"
+  },
+  "2327": {
+    "name": "國巨",
+    "market": "TWSE",
+    "industry": "電子零組件業",
+    "avg_turnover": 18947031913.8,
+    "source": "core"
+  },
+  "2330": {
+    "name": "台積電",
+    "market": "TWSE",
+    "industry": "半導體業",
+    "avg_turnover": 89413530247.68333,
+    "source": "TWSE-top150+core"
+  },
+  "2337": {
+    "name": "旺宏",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 20736740698.583332,
+    "source": "TWSE-top150+core"
+  },
+  "2340": {
+    "name": "台亞",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 381874727.71666664,
+    "source": "TWSE-top150"
+  },
+  "2344": {
+    "name": "華邦電",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 25944126667.8,
+    "source": "core"
+  },
+  "2345": {
+    "name": "智邦",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 10274755649.266666,
+    "source": "core"
+  },
+  "2347": {
+    "name": "聯強",
+    "market": "TWSE",
+    "industry": "電子通路業",
+    "avg_turnover": 614614970.5333333,
+    "source": "TWSE-top150+core"
+  },
+  "2356": {
+    "name": "英業達",
+    "market": "TWSE",
+    "industry": "電腦及週邊設備業",
+    "avg_turnover": 3516714633.766667,
+    "source": "TWSE-top150+core"
+  },
+  "2357": {
+    "name": "華碩",
+    "market": "TWSE",
+    "industry": "電腦及週邊設備業",
+    "avg_turnover": 3562734416.866667,
+    "source": "TWSE-top150+core"
+  },
+  "2360": {
+    "name": "致茂",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 8284154662.65,
+    "source": "core"
+  },
+  "2376": {
+    "name": "技嘉",
+    "market": "TWSE",
+    "industry": "電腦及週邊設備業",
+    "avg_turnover": 4259696767.8166666,
+    "source": "TWSE-top150+core"
+  },
+  "2377": {
+    "name": "微星",
+    "market": "TWSE",
+    "industry": "電腦及週邊設備業",
+    "avg_turnover": 2814263769.8,
+    "source": "core"
+  },
+  "2379": {
+    "name": "瑞昱",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 2626798591.7166667,
+    "source": "core"
+  },
+  "2382": {
+    "name": "廣達",
+    "market": "TWSE",
+    "industry": "電腦及週邊設備業",
+    "avg_turnover": 11121349068.85,
+    "source": "TWSE-top150+core"
+  },
+  "2395": {
+    "name": "研華",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 1713298141.7333333,
+    "source": "core"
+  },
+  "2408": {
+    "name": "南亞科",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 35685210789.166664,
+    "source": "core"
+  },
+  "2409": {
+    "name": "友達",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 6958197469.533334,
+    "source": "core"
+  },
+  "2412": {
+    "name": "中華電",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 1761589474.4666667,
+    "source": "core"
+  },
+  "2454": {
+    "name": "聯發科",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 38163986388.7,
+    "source": "TWSE-top150+core"
+  },
+  "2474": {
+    "name": "可成",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 1753575745.0,
+    "source": "core"
+  },
+  "2495": {
+    "name": "普安",
+    "market": "TWSE",
+    "industry": "電腦及週邊設備業",
+    "avg_turnover": 534775770.1666667,
+    "source": "TWSE-top150"
+  },
+  "2603": {
+    "name": "長榮",
+    "market": "TWSE",
+    "industry": "航運業",
+    "avg_turnover": 3579218943.516667,
+    "source": "core"
+  },
+  "2609": {
+    "name": "陽明",
+    "market": "TWSE",
+    "industry": "航運業",
+    "avg_turnover": 1339457768.5333333,
+    "source": "core"
+  },
+  "2615": {
+    "name": "萬海",
+    "market": "TWSE",
+    "industry": "航運業",
+    "avg_turnover": 864328031.0333333,
+    "source": "core"
+  },
+  "2727": {
+    "name": "王品",
+    "market": "TWSE",
+    "industry": "觀光餐旅",
+    "avg_turnover": 98065582.65,
+    "source": "TWSE-top150"
+  },
+  "2731": {
+    "name": "雄獅",
+    "market": "TWSE",
+    "industry": "觀光餐旅",
+    "avg_turnover": 176553104.68333334,
+    "source": "TWSE-top150"
+  },
+  "2753": {
+    "name": "八方雲集",
+    "market": "TWSE",
+    "industry": "觀光餐旅",
+    "avg_turnover": 47944637.96666667,
+    "source": "TWSE-top150"
+  },
+  "2812": {
+    "name": "台中銀",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 317952089.98333335,
+    "source": "core"
+  },
+  "2880": {
+    "name": "華南金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 1051658884.35,
+    "source": "core"
+  },
+  "2881": {
+    "name": "富邦金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 3907262968.266667,
+    "source": "core"
+  },
+  "2882": {
+    "name": "國泰金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 2881104522.3333335,
+    "source": "core"
+  },
+  "2883": {
+    "name": "凱基金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 1859317227.3333333,
+    "source": "core"
+  },
+  "2884": {
+    "name": "玉山金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 1351195343.9333334,
+    "source": "core"
+  },
+  "2885": {
+    "name": "元大金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 1564332774.05,
+    "source": "core"
+  },
+  "2886": {
+    "name": "兆豐金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 1211084073.0,
+    "source": "core"
+  },
+  "2887": {
+    "name": "台新新光金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 2569513922.3,
+    "source": "core"
+  },
+  "2890": {
+    "name": "永豐金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 1057208678.6666666,
+    "source": "core"
+  },
+  "2891": {
+    "name": "中信金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 3040058581.9,
+    "source": "core"
+  },
+  "2892": {
+    "name": "第一金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 1124842043.9833333,
+    "source": "core"
+  },
+  "2912": {
+    "name": "統一超",
+    "market": "TWSE",
+    "industry": "貿易百貨",
+    "avg_turnover": 1079143308.4166667,
+    "source": "core"
+  },
+  "3008": {
+    "name": "大立光",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 5664581830.25,
+    "source": "core"
+  },
+  "3017": {
+    "name": "奇鋐",
+    "market": "TWSE",
+    "industry": "電腦及週邊設備業",
+    "avg_turnover": 13297703707.433332,
+    "source": "TWSE-top150+core"
+  },
+  "3034": {
+    "name": "聯詠",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 2588799967.1666665,
+    "source": "core"
+  },
+  "3037": {
+    "name": "欣興",
+    "market": "TWSE",
+    "industry": "電子零組件業",
+    "avg_turnover": 18980915929.433334,
+    "source": "TWSE-top150+core"
+  },
+  "3045": {
+    "name": "台灣大",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 1293978790.7333333,
+    "source": "core"
+  },
+  "3162": {
+    "name": "精確",
+    "market": "TPEX",
+    "industry": "電機機械",
+    "avg_turnover": 431871986.93333334,
+    "source": "TPEX-top50"
+  },
+  "3219": {
+    "name": "倚強科",
+    "market": "TPEX",
+    "industry": "其他電子類",
+    "avg_turnover": 54867573.583333336,
+    "source": "TPEX-top50"
+  },
+  "3231": {
+    "name": "緯創",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 8025781794.116667,
+    "source": "core"
+  },
+  "3324": {
+    "name": "雙鴻",
+    "market": "TPEX",
+    "industry": "其他電子類",
+    "avg_turnover": 5121961806.766666,
+    "source": "TPEX-top50+core"
+  },
+  "3443": {
+    "name": "創意",
+    "market": "TWSE",
+    "industry": "半導體業",
+    "avg_turnover": 9861962373.416666,
+    "source": "core"
+  },
+  "3450": {
+    "name": "聯鈞",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 6150181812.283334,
+    "source": "TWSE-top150"
+  },
+  "3481": {
+    "name": "群創",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 18171770867.15,
+    "source": "core"
+  },
+  "3533": {
+    "name": "嘉澤",
+    "market": "TWSE",
+    "industry": "電子零組件業",
+    "avg_turnover": 4312036870.05,
+    "source": "TWSE-top150"
+  },
+  "3551": {
+    "name": "世禾",
+    "market": "TPEX",
+    "industry": "綠能環保類",
+    "avg_turnover": 366920706.98333335,
+    "source": "TPEX-top50"
+  },
+  "3653": {
+    "name": "健策",
+    "market": "TWSE",
+    "industry": "電子零組件業",
+    "avg_turnover": 6163723797.266666,
+    "source": "TWSE-top150+core"
+  },
+  "3708": {
+    "name": "上緯投控",
+    "market": "TWSE",
+    "industry": "綠能環保",
+    "avg_turnover": 170444057.43333334,
+    "source": "TWSE-top150"
+  },
+  "3711": {
+    "name": "日月光投控",
+    "market": "TWSE",
+    "industry": "半導體業",
+    "avg_turnover": 11853601565.2,
+    "source": "TWSE-top150+core"
+  },
+  "4904": {
+    "name": "遠傳",
+    "market": "TWSE",
+    "industry": "通信網路業",
+    "avg_turnover": 679276400.7166667,
+    "source": "core"
+  },
+  "4938": {
+    "name": "和碩",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 1490909781.55,
+    "source": "core"
+  },
+  "4953": {
+    "name": "緯軟",
+    "market": "TPEX",
+    "industry": "資訊服務業",
+    "avg_turnover": 80683371.35,
+    "source": "TPEX-top50"
+  },
+  "5274": {
+    "name": "信驊",
+    "market": "TPEX",
+    "industry": "半導體業",
+    "avg_turnover": 5160928361.666667,
+    "source": "core"
+  },
+  "5871": {
+    "name": "中租-KY",
+    "market": "TWSE",
+    "industry": "其他",
+    "avg_turnover": 1129827691.6166666,
+    "source": "core"
+  },
+  "5880": {
+    "name": "合庫金",
+    "market": "TWSE",
+    "industry": "金融保險",
+    "avg_turnover": 454206737.96666664,
+    "source": "core"
+  },
+  "5904": {
+    "name": "寶雅",
+    "market": "TPEX",
+    "industry": "居家生活類",
+    "avg_turnover": 242108754.11666667,
+    "source": "TPEX-top50"
+  },
+  "6274": {
+    "name": "台燿",
+    "market": "TPEX",
+    "industry": "電子零組件業",
+    "avg_turnover": 8342715480.566667,
+    "source": "TPEX-top50"
+  },
+  "6275": {
+    "name": "元山",
+    "market": "TPEX",
+    "industry": "電子零組件業",
+    "avg_turnover": 53989799.583333336,
+    "source": "TPEX-top50"
+  },
+  "6435": {
+    "name": "大中",
+    "market": "TPEX",
+    "industry": "半導體業",
+    "avg_turnover": 243463309.83333334,
+    "source": "TPEX-top50"
+  },
+  "6438": {
+    "name": "迅得",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 506612194.3833333,
+    "source": "TWSE-top150"
+  },
+  "6446": {
+    "name": "藥華藥",
+    "market": "TWSE",
+    "industry": "化學生技醫療",
+    "avg_turnover": 1995749584.0833333,
+    "source": "core"
+  },
+  "6488": {
+    "name": "環球晶",
+    "market": "TPEX",
+    "industry": "半導體業",
+    "avg_turnover": 4833504416.666667,
+    "source": "core"
+  },
+  "6505": {
+    "name": "台塑化",
+    "market": "TWSE",
+    "industry": "油電燃氣業",
+    "avg_turnover": 744889551.6166667,
+    "source": "core"
+  },
+  "6669": {
+    "name": "緯穎",
+    "market": "TWSE",
+    "industry": "電腦及週邊設備業",
+    "avg_turnover": 10506015268.75,
+    "source": "TWSE-top150+core"
+  },
+  "6670": {
+    "name": "復盛應用",
+    "market": "TWSE",
+    "industry": "運動休閒",
+    "avg_turnover": 117588833.83333333,
+    "source": "TWSE-top150"
+  },
+  "6757": {
+    "name": "台灣虎航",
+    "market": "TWSE",
+    "industry": "航運業",
+    "avg_turnover": 98935842.08333333,
+    "source": "TWSE-top150"
+  },
+  "6768": {
+    "name": "志強-KY",
+    "market": "TWSE",
+    "industry": "運動休閒",
+    "avg_turnover": 69983492.01666667,
+    "source": "TWSE-top150"
+  },
+  "6806": {
+    "name": "森崴能源",
+    "market": "TWSE",
+    "industry": "綠能環保",
+    "avg_turnover": 29825700.516666666,
+    "source": "TWSE-top150"
+  },
+  "6869": {
+    "name": "雲豹能源",
+    "market": "TWSE",
+    "industry": "綠能環保",
+    "avg_turnover": 68154957.7,
+    "source": "TWSE-top150"
+  },
+  "6873": {
+    "name": "泓德能源",
+    "market": "TWSE",
+    "industry": "綠能環保",
+    "avg_turnover": 69778646.86666666,
+    "source": "TWSE-top150"
+  },
+  "6949": {
+    "name": "沛爾生醫-創",
+    "market": "TWSE",
+    "industry": "創新板股票",
+    "avg_turnover": 141240284.3,
+    "source": "TWSE-top150"
+  },
+  "8046": {
+    "name": "南電",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 15502917503.783333,
+    "source": "TWSE-top150+core"
+  },
+  "8091": {
+    "name": "翔名",
+    "market": "TPEX",
+    "industry": "半導體業",
+    "avg_turnover": 256021820.98333332,
+    "source": "TPEX-top50"
+  },
+  "8299": {
+    "name": "群聯",
+    "market": "TPEX",
+    "industry": "半導體業",
+    "avg_turnover": 19508771265.483334,
+    "source": "TPEX-top50"
+  },
+  "8390": {
+    "name": "金益鼎",
+    "market": "TPEX",
+    "industry": "綠能環保類",
+    "avg_turnover": 125541563.21666667,
+    "source": "TPEX-top50"
+  },
+  "8422": {
+    "name": "可寧衛",
+    "market": "TWSE",
+    "industry": "綠能環保",
+    "avg_turnover": 357306793.15,
+    "source": "TWSE-top150"
+  },
+  "8438": {
+    "name": "昶昕",
+    "market": "TWSE",
+    "industry": "綠能環保",
+    "avg_turnover": 146258074.31666666,
+    "source": "TWSE-top150"
+  },
+  "8454": {
+    "name": "富邦媒",
+    "market": "TWSE",
+    "industry": "數位雲端",
+    "avg_turnover": 338779996.53333336,
+    "source": "TWSE-top150"
+  },
+  "8464": {
+    "name": "億豐",
+    "market": "TWSE",
+    "industry": "居家生活",
+    "avg_turnover": 373066933.56666666,
+    "source": "TWSE-top150"
+  },
+  "8473": {
+    "name": "山林水",
+    "market": "TWSE",
+    "industry": "綠能環保",
+    "avg_turnover": 86743713.76666667,
+    "source": "TWSE-top150"
+  },
+  "8499": {
+    "name": "鼎炫-KY",
+    "market": "TWSE",
+    "industry": "電子工業",
+    "avg_turnover": 49198402.3,
+    "source": "TWSE-top150"
+  },
+  "9105": {
+    "name": "泰金寶-DR",
+    "market": "TWSE",
+    "industry": "存託憑證",
+    "avg_turnover": 415049946.0833333,
+    "source": "TWSE-top150"
+  },
+  "9802": {
+    "name": "鈺齊-KY",
+    "market": "TWSE",
+    "industry": "運動休閒",
+    "avg_turnover": 92760517.68333334,
+    "source": "TWSE-top150"
+  },
+  "9904": {
+    "name": "寶成",
+    "market": "TWSE",
+    "industry": "運動休閒",
+    "avg_turnover": 377694669.73333335,
+    "source": "TWSE-top150"
+  },
+  "9910": {
+    "name": "豐泰",
+    "market": "TWSE",
+    "industry": "運動休閒",
+    "avg_turnover": 262479921.55,
+    "source": "TWSE-top150+core"
+  },
+  "9914": {
+    "name": "美利達",
+    "market": "TWSE",
+    "industry": "運動休閒",
+    "avg_turnover": 134504638.3,
+    "source": "TWSE-top150"
+  },
+  "9921": {
+    "name": "巨大",
+    "market": "TWSE",
+    "industry": "運動休閒",
+    "avg_turnover": 144090013.45,
+    "source": "TWSE-top150"
+  },
+  "9955": {
+    "name": "佳龍",
+    "market": "TWSE",
+    "industry": "綠能環保",
+    "avg_turnover": 13869655.5,
+    "source": "TWSE-top150"
+  }
+}
