@@ -23,3 +23,8 @@ targets.json
 KILL_SWITCH
 scripts/_*.py
 Sinopac*.pfx
+
+# 執行 log(含 session 資訊,勿上傳)
+shioaji.log
+*.log
+!data/tw_holidays.txt
