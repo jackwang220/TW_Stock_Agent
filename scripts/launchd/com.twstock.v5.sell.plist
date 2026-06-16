@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  v5 實盤「賣出腿」排程:每天 09:02(開盤後)觸發 run_leg.sh sell。
+  出清「今天掉出名單」的持倉。預設 dry-run。送單同 buy:末尾加 --sim 或 --live。
+  安裝:  cp scripts/launchd/com.twstock.v5.sell.plist ~/Library/LaunchAgents/
+         launchctl load -w ~/Library/LaunchAgents/com.twstock.v5.sell.plist
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.twstock.v5.sell</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/test/Documents/Code/TW_Stock_Agent/scripts/run_leg.sh</string>
+    <string>sell</string>
+    <string>--ledger</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>9</integer>
+    <key>Minute</key><integer>2</integer>
+  </dict>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>StandardOutPath</key>
+  <string>/Users/test/Documents/Code/TW_Stock_Agent/reports/live/launchd.sell.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/test/Documents/Code/TW_Stock_Agent/reports/live/launchd.sell.err.log</string>
+</dict>
+</plist>
