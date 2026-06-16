@@ -45,7 +45,7 @@ def features(tk):
     c = pd.Series([o[d]["close"] for d in ds], index=ds)
     v = pd.Series([o[d].get("volume", 0) for d in ds], index=ds)
     op = pd.Series([o[d]["open"] for d in ds], index=ds)
-    ma5 = c.rolling(5).mean(); ma20 = c.rolling(20).mean()
+    ma5 = c.rolling(5).mean(); ma20 = c.rolling(20).mean(); ma60 = c.rolling(60).mean()
     volr = v / v.rolling(20).mean()
     d_ = c.diff(); g = d_.clip(lower=0).rolling(14).mean(); l = (-d_.clip(upper=0)).rolling(14).mean()
     rsi = 100 - 100 / (1 + g / l.replace(0, 1e-9))
@@ -56,7 +56,7 @@ def features(tk):
     out = {}
     prev_c = c.shift(1)
     for i, dd in enumerate(ds):
-        out[dd] = {"close": c.iloc[i], "ma5": ma5.iloc[i], "ma20": ma20.iloc[i], "volr": volr.iloc[i],
+        out[dd] = {"close": c.iloc[i], "ma5": ma5.iloc[i], "ma20": ma20.iloc[i], "ma60": ma60.iloc[i], "volr": volr.iloc[i],
                    "rsi": rsi.iloc[i], "macdh": macdh.iloc[i], "ret20": (c.iloc[i]/c.iloc[i-20]-1) if i>=20 else float("nan"),
                    "high60": c.iloc[max(0,i-59):i+1].max(),
                    "vcp": (vol10.iloc[i] <= 0.6*vol10med60.iloc[i]) if (i>=60 and not math.isnan(vol10med60.iloc[i]) and vol10med60.iloc[i]>0) else False,

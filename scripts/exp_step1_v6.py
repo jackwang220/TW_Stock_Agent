@@ -134,6 +134,11 @@ def main():
     VAR = dict(v5.VAR); VAR["反彈only"] = {"base": "none"}
     bench = {wl: bench_0050(opens["0050"], closes["0050"], cal[-n:]) for wl, n in WINDOWS}
 
+    # ⑤執行引擎(收盤買+開盤賣買):延遲載入 ec(避免頂層循環 import)
+    ecs = importlib.util.spec_from_file_location("ec", ROOT/"scripts/exp_60d_entry_compare.py")
+    ecm = importlib.util.module_from_spec(ecs); ecs.loader.exec_module(ecm)
+    sim5 = ecm.sim_buyclose_sellopen
+
     res, conc = {}, {}
     for vn, cfg in VAR.items():
         if cfg["base"] == "none":
@@ -142,26 +147,20 @@ def main():
             rows_full = v5.build_rows(codes, names, feats, twii_feat, reb_cache, turn_pct, cfg, cal)
         for wl, n in WINDOWS:
             wd = set(cal[-n:]); rw = [r for r in rows_full if r[0] in wd]
-            track = (wl == "2年")
-            r = sim_real(rw, opens, closes, limitup, track=track)
-            res[(vn, wl)] = r
-            if track and r and r.get("pnl_tk") and r["total_pnl"] > 0:
-                pt = sorted(r["pnl_tk"].items(), key=lambda x: -x[1])
-                conc[vn] = (sum(v for _, v in pt[:3])/r["total_pnl"]*100,
-                            ", ".join(f"{names.get(tk,tk)[:3]}{v/r['total_pnl']*100:.0f}%" for tk, v in pt[:3]))
+            res[(vn, wl)] = sim5(rw, opens, closes, limitup)   # ⑤:收盤買/開盤賣買
         logger.info(f"{vn} 完成")
 
     def a(vn, wl): r = res.get((vn, wl)); return (r["ret"]-bench[wl]) if r else None
     order = sorted(VAR, key=lambda vn: min((a(vn, wl) for wl in ["1年","1年半","2年"] if a(vn, wl) is not None), default=-999), reverse=True)
-    L = ["# Step1 v6 真實版:隔日開盤成交+滑價+漲停買不到+手續費+降換手(inc1.5+hyst5)\n",
-         f"> 結束{END}｜112檔｜ALPHA=策略報酬-同資金DCA進0050｜0050基準:" +
+    L = ["# Step1 v6 — ⑤執行(收盤買+開盤賣+開盤補買)真實成交｜16變體 × 6窗口\n",
+         f"> 結束{END}｜112檔｜還原價｜手續費買0.14%/賣0.44%+滑價0.1%+漲停買不到｜資金15000+1000/日上限5萬\n",
+         f"> ALPHA=策略報酬-同資金DCA進0050｜0050基準:" +
          " ".join(f"{wl}{bench[wl]:+.0f}%" for wl,_ in WINDOWS) + "\n",
          "## 🎯 ALPHA %(扣大盤beta;排序=1年/1年半/2年最差alpha)\n",
-         "| 變體 | 60天 | 90天 | 半年 | 1年 | 1年半 | 2年 | 前3大佔利潤 |", "|---|---|---|---|---|---|---|---|"]
+         "| 變體 | 60天 | 90天 | 半年 | 1年 | 1年半 | 2年 |", "|---|---|---|---|---|---|---|"]
     for vn in order:
         cells = " | ".join(f"{a(vn,wl):+.0f}" if a(vn,wl) is not None else "—" for wl,_ in WINDOWS)
-        c3 = f"{conc[vn][0]:.0f}% ({conc[vn][1]})" if vn in conc else "—"
-        L.append(f"| {vn} | {cells} | {c3} |")
+        L.append(f"| {vn} | {cells} |")
     L += ["", "## 參考:真實版「原始報酬%」(未扣大盤)\n",
           "| 變體 | 60天 | 90天 | 半年 | 1年 | 1年半 | 2年 |", "|---|---|---|---|---|---|---|"]
     for vn in order:

@@ -17,14 +17,33 @@ v5 = importlib.util.module_from_spec(importlib.util.spec_from_file_location("v5"
 importlib.util.spec_from_file_location("v5", ROOT/"scripts/exp_step1_v5.py").loader.exec_module(v5)
 v6 = importlib.util.module_from_spec(importlib.util.spec_from_file_location("v6", ROOT/"scripts/exp_step1_v6.py"))
 importlib.util.spec_from_file_location("v6", ROOT/"scripts/exp_step1_v6.py").loader.exec_module(v6)
+ec = importlib.util.module_from_spec(importlib.util.spec_from_file_location("ec", ROOT/"scripts/exp_60d_entry_compare.py"))
+importlib.util.spec_from_file_location("ec", ROOT/"scripts/exp_60d_entry_compare.py").loader.exec_module(ec)
+sim5 = ec.sim_buyclose_sellopen   # ⑤:收盤買 + 開盤賣 + 開盤補買(rebalance)
 features, _factors = v5.features, v5._factors
 
 START = "2021-01-01"
 REGIMES = [("2021復甦","2021-04-01","2021-12-31"), ("2022空頭","2022-01-01","2022-12-31"),
            ("2023復甦","2023-01-01","2023-12-31"), ("2024-25多頭","2024-01-01","2025-06-30"),
            ("2025下-26","2025-07-01","2026-06-08")]
-# (多頭 H, 多頭 reb, 空頭 H, 空頭 reb)
-DUAL = {"H雙引擎A": (1.0,0.4,0.2,1.4), "H雙引擎B純切": (1.0,0.0,0.0,1.5), "H雙引擎C": (1.0,0.6,0.3,1.3)}
+# 固定策略=H雙引擎B純切(多頭純H動能、空頭純反彈)。只改「多頭偵測」門檻,擋掉2022空頭假多頭。
+DETECT = ["原版c>20MA", "加ret20>0", "加ma5>ma20", "加季線c>60MA", "全都要"]
+
+def is_bull(tf, mode):
+    """判斷今天大盤算不算多頭(可打H);否則=空頭(打反彈)。"""
+    c, m20, m5, m60, r20 = tf.get("close"), tf.get("ma20"), tf.get("ma5"), tf.get("ma60"), tf.get("ret20")
+    if not c or not m20 or math.isnan(m20):
+        return False
+    base = c > m20
+    r20ok = r20 is not None and not math.isnan(r20)
+    m5ok = m5 is not None and not math.isnan(m5)
+    m60ok = m60 is not None and not math.isnan(m60)
+    if mode == "原版c>20MA":   return base
+    if mode == "加ret20>0":    return base and r20ok and r20 > 0
+    if mode == "加ma5>ma20":   return base and m5ok and m5 > m20
+    if mode == "加季線c>60MA": return base and m60ok and c > m60
+    if mode == "全都要":       return base and r20ok and r20 > 0 and m5ok and m5 > m20 and m60ok and c > m60
+    return base
 
 def h_score(ff, tp):
     if ff is None: return 0.0
@@ -59,56 +78,63 @@ def main():
     for d in alld:
         vals = sorted(((c, feats[c][d]["turn"]) for c in codes if d in feats.get(c, {}) and feats[c][d]["turn"] > 0), key=lambda x: x[1])
         turn_pct[d] = {c: (i+1)/len(vals) for i, (c, _) in enumerate(vals)} if vals else {}
-    regime_bull = {d: bool(twii_feat.get(d, {}).get("close") and twii_feat[d].get("ma20") and twii_feat[d]["close"] > twii_feat[d]["ma20"]) for d in alld}
-
-    def rows_dual(w):
-        whb, wrb, whs, wrs = w; out = []
-        for d in alld:
-            ir = twii_feat.get(d, {}).get("ret20"); bull = regime_bull.get(d)
-            for c in codes:
-                f = feats.get(c, {})
-                if d not in f or math.isnan(f[d].get("ma20", float("nan"))): continue
-                hh = h_score(_factors(f[d], ir), turn_pct.get(d, {}).get(c, 0.5)); rb = reb_cache.get(c, {}).get(d, 0.0)
-                sc = max(hh*whb, rb*wrb) if bull else max(hh*whs, rb*wrs)
-                if sc > 0: out.append((d, c, sc/100))
-        return out
-    def rows_pure(kind):
-        out = []
+    # 固定 H雙引擎B純切(多頭純H、空頭純反彈),只變「多頭偵測」門檻
+    def rows_for(mode):
+        out = []; bdays = 0
         for d in alld:
             ir = twii_feat.get(d, {}).get("ret20")
+            bull = is_bull(twii_feat.get(d, {}), mode)
+            if bull: bdays += 1
             for c in codes:
                 f = feats.get(c, {})
                 if d not in f or math.isnan(f[d].get("ma20", float("nan"))): continue
-                rb = reb_cache.get(c, {}).get(d, 0.0)
-                sc = h_score(_factors(f[d], ir), turn_pct.get(d, {}).get(c, 0.5)) if kind == "H純" else rb
+                if bull:
+                    sc = h_score(_factors(f[d], ir), turn_pct.get(d, {}).get(c, 0.5))   # 多頭純H
+                else:
+                    sc = reb_cache.get(c, {}).get(d, 0.0) * 1.5                          # 空頭純反彈
                 if sc > 0: out.append((d, c, sc/100))
-        return out
+        return out, bdays
 
     bench = {lab: v6.bench_0050(opens["0050"], closes["0050"], [d for d in alld if s <= d <= e]) for lab, s, e in REGIMES}
-    allv = list(DUAL) + ["H純", "反彈純"]
-    res = {}
-    for vn in allv:
-        rows = rows_dual(DUAL[vn]) if vn in DUAL else rows_pure(vn)
+    res, bull_pct = {}, {}
+    for mode in DETECT:
+        rows, bdays = rows_for(mode)
+        bull_pct[mode] = bdays / len(alld) * 100
         for lab, s, e in REGIMES:
-            res[(vn, lab)] = v6.sim_real([r for r in rows if s <= r[0] <= e], opens, closes, limitup)
-        logger.info(f"{vn} 完成")
+            res[(mode, lab)] = sim5([r for r in rows if s <= r[0] <= e], opens, closes, limitup)
+        logger.info(f"{mode} 完成(多頭日{bull_pct[mode]:.0f}%)")
 
-    def alpha(vn, lab):
-        r = res.get((vn, lab)); return (r["ret"]-bench[lab]) if r else None
-    L = ["# Step1 v9:H+反彈雙引擎(空頭反彈保命/多頭H爆發)— 跨5regime ALPHA(清洗價/真實成交)\n",
-         "> 0050:" + " ".join(f"{lab}{bench[lab]:+.0f}%" for lab,_,_ in REGIMES) + "｜權重=(多頭H,reb/空頭H,reb)\n",
-         "## ALPHA %(正=贏大盤;要『最差別太負』+『2022保命』+『多頭噴』)\n",
-         "| 變體 | 2021 | 2022空頭 | 2023 | 2024-25 | 2025下-26 | 最差 | 平均 |",
+    def alpha(mode, lab):
+        r = res.get((mode, lab)); return (r["ret"]-bench[lab]) if r else None
+    def compound(mode):
+        p = 1.0
+        for lab, _, _ in REGIMES:
+            r = res.get((mode, lab))
+            p *= (1 + (r["ret"] if r else 0)/100)
+        return (p-1)*100
+    bench_comp = (math.prod((1+bench[l]/100) for l, _, _ in REGIMES)-1)*100
+
+    L = ["# 用 H 避開 2022 空頭 — 固定 H雙引擎(多頭純H/空頭純反彈) × 5種空頭偵測\n",
+         "> ⑤執行(收盤買+開盤賣買)、還原價、真實成交｜只改『多頭』門檻,讓空頭反彈別騙它進場打H\n",
+         f"> 0050各regime:" + " ".join(f"{lab}{bench[lab]:+.0f}%" for lab,_,_ in REGIMES) + f"｜0050全期複合 +{bench_comp:.0f}%\n",
+         "## ALPHA %(正=贏大盤;重點:2022空頭別再 -26%)\n",
+         "| 多頭偵測門檻 | 多頭日% | 2021 | **2022空頭** | 2023 | 2024-25 | 2025下-26 | 最差 |",
          "|---|---|---|---|---|---|---|---|"]
-    for vn in allv:
-        vals = [alpha(vn, lab) for lab,_,_ in REGIMES]
-        L.append(f"| {vn} | " + " | ".join(f"{v:+.0f}" for v in vals) + f" | **{min(vals):+.0f}** | {sum(vals)/len(vals):+.0f} |")
-    L += ["", "## 原始報酬 %\n", "| 變體 | 2021 | 2022空頭 | 2023 | 2024-25 | 2025下-26 |", "|---|---|---|---|---|---|",
-          "| 0050大盤 | " + " | ".join(f"{bench[lab]:+.0f}" for lab,_,_ in REGIMES) + " |"]
-    for vn in allv:
-        L.append(f"| {vn} | " + " | ".join(f"{res[(vn,lab)]['ret']:+.0f}" if res.get((vn,lab)) else "—" for lab,_,_ in REGIMES) + " |")
-    (ROOT/"reports"/"exp_step1_v9.md").write_text("\n".join(L), encoding="utf-8")
-    logger.success("報告 → reports/exp_step1_v9.md")
+    for mode in DETECT:
+        vals = [alpha(mode, lab) for lab,_,_ in REGIMES]
+        valid = [v for v in vals if v is not None]
+        c = [f"{v:+.0f}" if v is not None else "—" for v in vals]
+        worst = f"{min(valid):+.0f}" if valid else "—"
+        L.append(f"| {mode} | {bull_pct[mode]:.0f}% | {c[0]} | **{c[1]}** | {c[2]} | {c[3]} | {c[4]} | **{worst}** |")
+    L += ["", "## 原始報酬 %(未扣大盤)+ 全期複合\n",
+          "| 多頭偵測門檻 | 2021 | **2022空頭** | 2023 | 2024-25 | 2025下-26 | **全期複合** |", "|---|---|---|---|---|---|---|",
+          f"| 0050大盤 | " + " | ".join(f"{bench[lab]:+.0f}" for lab,_,_ in REGIMES) + f" | **+{bench_comp:.0f}%** |"]
+    for mode in DETECT:
+        cells = " | ".join(f"{res[(mode,lab)]['ret']:+.0f}" if res.get((mode,lab)) else "—" for lab,_,_ in REGIMES)
+        cc = cells.split(" | ")
+        L.append(f"| {mode} | {cc[0]} | **{cc[1]}** | {cc[2]} | {cc[3]} | {cc[4]} | **+{compound(mode):.0f}%** |")
+    (ROOT/"reports"/"exp_h_avoid2022.md").write_text("\n".join(L), encoding="utf-8")
+    logger.success("報告 → reports/exp_h_avoid2022.md")
 
 if __name__ == "__main__":
     main()

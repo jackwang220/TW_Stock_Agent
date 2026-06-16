@@ -453,6 +453,46 @@ def get_daily_prices(
     return {d: v["close"] for d, v in oh.items()}
 
 
+def _dividend_adjust(ticker: str, oh: dict, force_refresh: bool = False) -> dict:
+    """用官方除權息表(TaiwanStockDividendResult)精確還原:除息日及之前的歷史價 ×(after/before)。
+    抓得到中小額除息(殖利率 2~6%,跳空遠小於 ±10.5% 門檻,_sanitize_ohlcv 抓不到的)。
+    抓不到除息表就原樣回傳(交給 _sanitize_ohlcv 的跳動門檻當備援)。"""
+    if not oh:
+        return oh
+    try:
+        div = _get_data("TaiwanStockDividendResult", ticker,
+                        start="2021-01-01", force_refresh=force_refresh)
+    except Exception:
+        return oh
+    fac: dict[str, float] = {}
+    for r in div or []:
+        d = r.get("date")
+        try:
+            bp = float(r.get("before_price") or 0)
+            ap = float(r.get("after_price") or 0)
+        except (TypeError, ValueError):
+            continue
+        if d and bp > 0 and ap > 0 and ap < bp:       # 只取真的有除權息(after<before)
+            fac[d] = (fac.get(d, 1.0)) * (ap / bp)     # 同日多筆(除權+除息)連乘
+    if not fac:
+        return oh
+    ds = sorted(oh)
+    cum = 1.0
+    adj: dict[str, float] = {}
+    for d in reversed(ds):                            # 從最新往回累積:除息日之前的歷史往下調
+        adj[d] = cum
+        if d in fac:
+            cum *= fac[d]
+    out: dict[str, dict] = {}
+    for d in ds:
+        f = adj[d]
+        r = oh[d]
+        out[d] = {"open": r["open"] * f, "high": r["high"] * f, "low": r["low"] * f,
+                  "close": r["close"] * f,
+                  "volume": r["volume"] / f if f else r["volume"], "amount": r["amount"]}
+    return out
+
+
 def get_daily_ohlcv(
     ticker: str,
     start: str = "2024-01-01",
@@ -461,6 +501,7 @@ def get_daily_ohlcv(
     """回傳 {date: {open, high, low, close, volume, amount}} 的日線 OHLCV（本地快取）。
 
     複用 TaiwanStockPrice 快取（與 get_daily_prices 同一份），跨股研究/型態用。
+    還原順序:① 官方除權息表精確還原(抓中小額除息) → ② _sanitize_ohlcv 清壞tick+補大跳動(減資/分割)。
     """
     rows = _get_data("TaiwanStockPrice", ticker, start=start, force_refresh=force_refresh)
     out: dict[str, dict] = {}
@@ -479,6 +520,7 @@ def get_daily_ohlcv(
             }
         except (ValueError, TypeError):
             continue
+    out = _dividend_adjust(ticker, out, force_refresh=force_refresh)
     return _sanitize_ohlcv(out)
 
 

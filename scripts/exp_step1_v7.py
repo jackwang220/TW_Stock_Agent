@@ -17,6 +17,9 @@ v5 = importlib.util.module_from_spec(importlib.util.spec_from_file_location("v5"
 importlib.util.spec_from_file_location("v5", ROOT/"scripts/exp_step1_v5.py").loader.exec_module(v5)
 v6 = importlib.util.module_from_spec(importlib.util.spec_from_file_location("v6", ROOT/"scripts/exp_step1_v6.py"))
 importlib.util.spec_from_file_location("v6", ROOT/"scripts/exp_step1_v6.py").loader.exec_module(v6)
+ec = importlib.util.module_from_spec(importlib.util.spec_from_file_location("ec", ROOT/"scripts/exp_60d_entry_compare.py"))
+importlib.util.spec_from_file_location("ec", ROOT/"scripts/exp_60d_entry_compare.py").loader.exec_module(ec)
+sim5 = ec.sim_buyclose_sellopen   # ⑤:收盤買 + 開盤賣 + 開盤補買
 features = v5.features
 
 START = "2021-01-01"
@@ -67,12 +70,12 @@ def main():
             rows_full = v5.build_rows(codes, names, feats, twii_feat, reb_cache, turn_pct, v5.VAR[vn], alld)
         for lab, s, e in REGIMES:
             rw = [r for r in rows_full if s <= r[0] <= e]
-            res[(vn, lab)] = v6.sim_real(rw, opens, closes, limitup)
+            res[(vn, lab)] = sim5(rw, opens, closes, limitup)
         logger.info(f"{vn} 完成")
 
     def alpha(vn, lab):
         r = res.get((vn, lab)); return (r["ret"]-bench[lab]) if r else None
-    L = ["# Step1 v7 多 regime ALPHA(含2022空頭,真實成交,清洗後乾淨價)\n",
+    L = ["# Step1 v7 多 regime ALPHA(含2022空頭) — ⑤執行:收盤買+開盤賣買,還原價\n",
          "> 看防禦策略是否在熊市(2022)靠避跌贏 buy&hold｜0050各regime報酬:" +
          " ".join(f"{lab}{bench[lab]:+.0f}%" for lab,_,_ in REGIMES) + "\n",
          "## ALPHA %(策略 - 0050;正=贏大盤)\n",
