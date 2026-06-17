@@ -39,9 +39,11 @@ def main() -> int:
     for c in req:
         names.setdefault(c, c)
 
-    print(f"載入行情({len(allcodes)} 檔,算成交值百分位用)...")
-    OH = {c: get_daily_ohlcv(c) for c in set(allcodes) | set(req)}
-    OH["0050"] = get_daily_ohlcv("0050")
+    refresh = "--refresh" in sys.argv
+    print(f"載入行情({len(allcodes)} 檔,算成交值百分位用){'(查詢股強制更新)' if refresh else ''}...")
+    OH = {c: get_daily_ohlcv(c) for c in set(allcodes) - set(req)}
+    for c in set(req) | {"0050"}:                      # 查詢股+0050:可 --refresh 抓最新
+        OH[c] = get_daily_ohlcv(c, force_refresh=refresh)
     features.__globals__["_OH"] = OH
     twii = features("0050")
     d = max(twii)
@@ -59,24 +61,38 @@ def main() -> int:
           f"  (B純切:多頭只看H分、空頭只看反彈分×1.5)\n")
     for code in req:
         f = features(code)
-        if d not in f or math.isnan(f[d].get("ma20", float("nan"))):
+        valid = [x for x in sorted(f) if x <= d and not math.isnan(f[x].get("ma20", float("nan")))]
+        if not valid:
             print(f"{names.get(code,code)}({code}): 無足夠資料"); continue
-        ff = _factors(f[d], ir)
+        dc = valid[-1]                                  # 對不上決策日 → 用該股自己最新日
+        stale = f"  ⚠️用{dc}" if dc != d else ""
+        ff = _factors(f[dc], ir)
         tp = tp_map.get(code, 0.5)
         hh = h_score(ff, tp)
-        cl = [OH[code][x]["close"] for x in sorted(OH[code]) if x <= d]
-        g = rebound_signal(cl, turns_avg.get(code, 0.0))
+        cl = [OH[code][x]["close"] for x in sorted(OH[code]) if x <= dc]
+        amts = [OH[code][x].get("amount", 0) for x in sorted(OH[code]) if x <= dc][-120:]
+        avg_tn = sum(amts) / len(amts) if amts else turns_avg.get(code, 0.0)   # 真實成交額(池外股也準)
+        g = rebound_signal(cl, avg_tn)
         rb = g["score"] * 100 if g.get("fired") else 0.0
+        ret5 = (cl[-1] / cl[-6] - 1) * 100 if len(cl) > 5 else float("nan")
+        tier = "large" if avg_tn >= 5e8 else ("mid" if avg_tn >= 5e7 else "small")
         sc = hh if bull else rb * 1.5     # B純切
         eng = "H動能" if bull else "反彈"
         print(f"■ {names.get(code,code)}({code})  分數 {sc:.0f}  ←{eng}引擎"
-              f"   [H分{hh:.0f} / 反彈分{rb:.0f}]")
+              f"   [H分{hh:.0f} / 反彈分{rb:.0f}]  成交{avg_tn/1e8:.0f}億({tier}){stale}")
         if ff:
             t, rs, vo, ri, ma, br, bias = ff
-            print(f"    因子(0~1):趨勢{t:.2f} 相對強度{rs:.2f} 量{vo:.2f} RSI{ri:.2f} 均線{ma:.2f} 突破{br:.2f}"
+            print(f"    H因子(0~1):趨勢{t:.2f} 相對強度{rs:.2f} 量{vo:.2f} RSI{ri:.2f} 均線{ma:.2f} 突破{br:.2f}"
                   f"｜成交值百分位{tp:.0%}｜乖離{bias:+.1%}")
         else:
-            print(f"    (不在動能上升結構:MA5≤MA20 或 RSI 無效 → H分=0;此時只剩反彈分)")
+            print(f"    (不在動能上升結構:MA5≤MA20 → H分=0)")
+        # 反彈診斷(為什麼觸發/沒觸發)
+        bias_pct = (cl[-1]/(sum(cl[-20:])/20) - 1)*100 if len(cl) >= 20 else float("nan")
+        if g.get("fired"):
+            print(f"    反彈:✅觸發({g.get('depth','')})｜近5日{ret5:+.1f}% 乖離{bias_pct:+.1f}%")
+        else:
+            why = "小型股不適用" if tier == "small" else f"跌不夠深(近5日{ret5:+.1f}%、乖離{bias_pct:+.1f}%;需近5日≤−12%或乖離≤−10%)"
+            print(f"    反彈:✗未觸發 — {why}")
     return 0
 
 
