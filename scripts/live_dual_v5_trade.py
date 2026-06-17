@@ -55,7 +55,11 @@ features, _factors = _v5.features, _v5._factors
 
 # ── 策略參數（與 dual_engine_targets / 回測同步）─────────────────────────────
 MAX_SIG, EXPO_CAP, EXPO_FLOOR, TIE = 3, 0.90, 0.30, 0.90
-INC = 1.5   # 持股加權(incumbent):排名時持股分數 ×INC,讓持股黏著、不易被踢(對齊回測;v14:1.5最高報酬/2.0最穩)
+INC = 1.75  # 持股加權(incumbent):排名時持股分數 ×INC,讓持股黏著、不易被踢。1.75=穩健中間值(2026-06驗:1.5暴衝/2.0最穩,1.75哪種行情都不太差、不在刀尖)
+PROTECT_MA = 60      # 下檔保險:0050 收盤跌破 MAn(下降趨勢)→ 降曝險(2026-06驗:趨勢濾網是唯一可上線改進,2022 −58→−24,多頭爆衝全留)
+# PROTECT_SCALE=0.0 → A2 完全空手(★預設;唯一「忠實驗證+純exit_only零新邏輯」,go-live安全)
+# PROTECT_SCALE=0.5 → 半倉(需賣腿 trim 才真生效;此 trim 為新增邏輯、回測用P&L overlay理想化過、未經實單驗證 → 暫不建議上線)
+PROTECT_SCALE = 0.0
 ALT_MIN_SCORE_PCT = 0.85   # 備選分數門檻:須 ≥ 正取最低分 × 此比例,否則不補(避免拉進爛股)
 
 # ── 資金模型(DCA:起始15000、每交易日+1000、5萬封頂;正式上線後可調)────────────
@@ -261,6 +265,10 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
         raise SystemExit(f"❌ 決策日 {d} 無 0050 資料")
     bull = bool(twii_feat[d].get("close") and twii_feat[d].get("ma20")
                 and twii_feat[d]["close"] > twii_feat[d]["ma20"])
+    # 下檔保險:0050 收盤跌破 MA60 = 下降趨勢 → 當天曝險砍半(見頂部 PROTECT_*)
+    _mn = twii_feat[d].get(f"ma{PROTECT_MA}")
+    defensive = bool(_mn and not math.isnan(_mn) and twii_feat[d].get("close")
+                     and twii_feat[d]["close"] < _mn)
     ir = twii_feat[d].get("ret20")
     # 資金優先序:--capital 指定 > 手動現金池(capital.json) > DCA 自動
     if capital is None:
@@ -278,7 +286,8 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
             n_td = sum(1 for x in sorted(OH["0050"]) if CAP_START <= x <= d)   # 起算日以來的交易日數
             capital = min(CAP_INITIAL + CAP_DAILY * max(0, n_td - 1), CAP_MAX)
             log(f"資金(DCA):起算 {CAP_START} 以來第 {max(1, n_td)} 個交易日 → 可部署 {capital:,.0f} TWD(封頂{CAP_MAX:,.0f})")
-    log(f"決策日 {d}｜大盤 {'多頭(站上20MA)→ 打H動能' if bull else '空頭(跌破20MA)→ 打反彈'}")
+    log(f"決策日 {d}｜大盤 {'多頭(站上20MA)→ 打H動能' if bull else '空頭(跌破20MA)→ 打反彈'}"
+        + (f"｜⚠️下檔保險:跌破MA{PROTECT_MA}→曝險砍半({PROTECT_SCALE:.0%})" if defensive else ""))
 
     vals = sorted(((c, feats[c][d]["turn"]) for c in codes
                    if d in feats.get(c, {}) and feats[c][d].get("turn", 0) > 0),
@@ -311,6 +320,11 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
     if sel:
         avg = sum(s for s, _ in sel) / len(sel) / 100
         expo = min(EXPO_CAP, max(EXPO_FLOOR, avg))
+        if defensive:
+            if PROTECT_SCALE <= 0:
+                sel = []; expo = 0.0          # A2:下降趨勢完全空手(名單清空→賣腿exit_only全出清、買腿不買)
+            else:
+                expo *= PROTECT_SCALE         # 半倉:減曝險(需賣腿trim,見PROTECT_SCALE註)
         ssum = sum(s for s, _ in sel)
         for s, c in sel:
             targets[c] = round(capital * expo * (s / ssum))
@@ -320,7 +334,7 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
 
     # ranked = 完整排名(給「主名單買不到時往下補備選」用),per-stock 預算 = capital*expo/檔數
     per_slot = round(capital * expo / max(1, len(sel))) if sel else 0
-    return {"date": d, "bull": bull, "expo": expo, "targets": targets,
+    return {"date": d, "bull": bull, "defensive": defensive, "expo": expo, "targets": targets,
             "sel": sel, "names": names, "ref_price": ref_price, "capital": capital,
             "ranked": scored[:15], "per_slot": per_slot}
 
@@ -604,7 +618,29 @@ def main() -> int:
             if sell_qty < min_qty:
                 continue
             plan.append((code, "Sell", sell_qty, limit_px, f"掉出名單→出清 {qty}股"))
-        log(f"賣出腿:出清掉出名單 {len(plan)} 檔")
+        n_exit = len(plan)
+        # 下檔保險:防禦日(0050<MA60),把「還在名單但部位超過半倉目標」的減碼到目標(讓半倉真生效;非防禦日維持exit_only不減碼)
+        if picks.get("defensive"):
+            for code, qty in cur.items():
+                if code not in keep or qty < min_qty:
+                    continue
+                px, ref = snapshot_price(api, code)
+                if px <= 0:
+                    continue
+                tgt = min(targets.get(code, 0.0), MAX_POSITION_TWD)
+                excess = qty * px - tgt
+                if excess < MIN_ORDER_TWD:    # 超出不多 → 不動(避免碎單)
+                    continue
+                limit_px = align_tick(px * (1 - LIMIT_BUFFER), "Sell")
+                trim_qty = round_lots(int(excess / limit_px)) if not ODD_LOT else int(excess / limit_px)
+                max_sell = qty if ODD_LOT else round_lots(qty)
+                trim_qty = min(trim_qty, max_sell)
+                if trim_qty < min_qty:
+                    continue
+                plan.append((code, "Sell", trim_qty, limit_px, f"🛡️防禦減碼→半倉目標{tgt:,.0f}"))
+            log(f"賣出腿:出清掉出名單 {n_exit} 檔 + 🛡️防禦減碼 {len(plan)-n_exit} 檔(0050<MA{PROTECT_MA})")
+        else:
+            log(f"賣出腿:出清掉出名單 {len(plan)} 檔")
 
     plan = plan[:MAX_ORDERS]
 
