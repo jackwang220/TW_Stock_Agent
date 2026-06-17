@@ -12,7 +12,8 @@ data/cb_state.parquet
 data/positions.parquet
 data/paper_orders.parquet
 data/audit/
-reports/
+reports/*
+!reports/*.md
 *.pfx
 
 # 大型快取/可重生資料(FinMind/yfinance)— 太肥,只留股票池定義
