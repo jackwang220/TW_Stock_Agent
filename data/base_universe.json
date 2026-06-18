@@ -782,5 +782,33 @@
     "industry": "綠能環保",
     "avg_turnover": 13869655.5,
     "source": "TWSE-top150"
+  },
+  "2492": {
+    "name": "華新科",
+    "market": "TWSE",
+    "industry": "電子零組件業",
+    "avg_turnover": 2396533574.6666665,
+    "source": "passive-add"
+  },
+  "3026": {
+    "name": "禾伸堂",
+    "market": "TWSE",
+    "industry": "電子零組件業",
+    "avg_turnover": 1270579270.275,
+    "source": "passive-add"
+  },
+  "6173": {
+    "name": "信昌電",
+    "market": "TPEX",
+    "industry": "電子零組件業",
+    "avg_turnover": 827736211.9,
+    "source": "passive-add"
+  },
+  "2456": {
+    "name": "奇力新",
+    "market": "TWSE",
+    "industry": "電子零組件業",
+    "avg_turnover": 198788144.625,
+    "source": "passive-add"
   }
 }
