@@ -12,12 +12,41 @@
 - v14 結論:要報酬→B純切(1,0,0,1.5)或多頭混反彈(1,0.3,0,1.5,微勝);要抗跌→H雙C(1,0.6,0.3,1.3,最差≈0但報酬降)。
 - 已做成持久設定:`ledger.py weights 1,0.3,0,1.5`(排程也用)、`weights auto` 恢復預設。目前維持預設 B純切。
 
-## 3. 被動元件
-- 研究被動元件族群(國巨/華新科/禾伸堂…)是否值得納入 universe 或做主題。
-- 注意:加股票進 universe 沒被回測驗證過,先評估再加。
+## 3. ✅ 已做:被動元件納入 universe(2026-06-18,雙驗證)
+- 加 4 檔:華新科 2492、禾伸堂 3026、信昌電 6173、奇力新 2456(+原有國巨 2327 = 5 檔)。base_universe.json 112→116。
+- **v19 全樣本**:平均 +215→+217(持平)、最差 −38→−27(抗跌變好)。
+- **walk-forward(樣本外,更嚴)**:regime 現行固定 +93→+107、真OOS +45→+66、滾動最差 −14→−12,最近一窗明顯更強。兩套都同意該加。
+- **功率半導體否決**:v19 平均 +215→+158(重稀釋)、walk-forward 把 +107 拉回 +86。原因=高動能股 peak 才入選然後回檔,擠掉更好的持股。環球晶+大中已在名單,夠了。
+- 重要:walk-forward 也量出帳面數字灌水約一半(haircut +68pp),真實 OOS regime alpha ≈ +45~66。
+- 工具:`walk_forward.py` 加了可傳 universe 路徑的參數,之後測別組用。
 
 ## 4. 元大新聞加入 API
 - 把元大(或其他)新聞來源接進資料管線,供訊號/輔助判斷或 LLM 分析用。
+
+## 5. 盤前試撮、賣在開盤(實測後再決定)
+- **代辦**:下個交易日盤前(最近 2026-06-22)08:30~09:10 實測 Shioaji 在零股試撮時段能否讀到「估計撮合價」。
+- 若讀得到 → 評估把賣腿挪到 ~08:50、掛限價賣進開盤競價(賣在開盤)。改的是真錢下單邏輯,務必 dry-run+sim 再上。
+- **背景**:零股第一撮在 09:10(非連續交易),現在 09:02 賣單已排進 09:10 撮合 = 已賣在零股開盤 → 這是邊際優化,非必要。先測再決定,別盲改。
+
+## 6. 手動加減分 + DC agent 系統(2026-06-18 建 Phase 1-3)
+- **目標**:觀察股手動 +N分/維持X交易日(不被×1.75)、DC 傳訊息操作、改設定前先試算+確認;agent 只能用既有 code、不能下單。
+- **Phase 1 ✅**:`manual_scores.json` + compute_picks 注入(加在排名分上、不被×INC;sc=0觀察股也能被拉進來;到期自動失效)。CLI `manual_score.py`(show/preview/add/rm),preview=過去5交易日加分後vs原本試算。
+- **Phase 2 ✅**:`agent_tools.py` 分級工具庫(read=query/test 唯讀、mutate=set 需閘門;下單不在庫)。`run_tool(allow_mutate=)` 硬閘門;`openai_schema()` 給 GPT 用。CLI:list/schema/run。
+- **Phase 3 ✅(待 OpenAI key 才能即時測)**:`agent_chat.py` GPT-4o-mini REPL。三道關:① LLM 只能用白名單工具 ② 意圖閘門(訊息含設定關鍵字才開放 mutate 工具)③ 確認閘門(mutate 先試算→問確定→allow_mutate 執行)。agent 同意權限=分數/weights/capital,**永遠不能下單**。
+- **Phase 4 待做**:Discord bot(需 bot token + 把確認流程改成訊息式 across-message)。先測完 Phase 3 UX 再做。
+- 待辦:① 在 .env 加 `OPENAI_API_KEY=` 測 Phase 3 ② preview 跑10次compute_picks約80秒,接DC前優化快取。
+
+## 7. ✅ 趨勢gate實驗(2026-06-18,否決軟化)
+- 測「MA5≤MA20沒趨勢就硬切0」改軟化(nogate/signed/penalty)→ 全部更差(平均+184→+153~157)。`scripts/exp_trend_gate.py`。
+- 結論:斷崖切0是對的(放行非確立趨勢=撿假突破)。強茂那種漲停但沒站上MA的,系統不追,要卡位用手動加分。
+
+---
+## ✅ 2026-06-18 正式真實上線 + 修上線 bug
+- 手動 `--live` 第一筆真單成交(南亞科/環球晶/聯電/中信金 4 檔零股,~11,941,帳戶0670383)。
+- 整合另一台 Claude 的 INC1.75 + A2 下檔保險;買腿 13:05→13:15;DCA 起算日改 2026-06-18。
+- 修三個 bug:① `get_daily_ohlcv` 快取自動增量補(`topup_field`,以前凍住不補新交易日)② `compute_picks` fail-closed(`require_today`:即時 bar 沒灌成功/歷史過期→中止,不再「名單空就全清」,曾誤賣廣達)③ `fetch_all_snapshots` 開盤抓太少重試3次。
+- `data/tw_holidays.txt` 補齊 2026 全年休市日。
+- 自動排程仍 `--ledger` 訊號模式,手動 `--live` 過渡中。
 
 ---
 > 建立於 2026-06-16。完成的項目打勾或移到底部。
