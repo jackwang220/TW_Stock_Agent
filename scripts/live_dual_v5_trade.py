@@ -287,7 +287,7 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
             capital = min(CAP_INITIAL + CAP_DAILY * max(0, n_td - 1), CAP_MAX)
             log(f"資金(DCA):起算 {CAP_START} 以來第 {max(1, n_td)} 個交易日 → 可部署 {capital:,.0f} TWD(封頂{CAP_MAX:,.0f})")
     log(f"決策日 {d}｜大盤 {'多頭(站上20MA)→ 打H動能' if bull else '空頭(跌破20MA)→ 打反彈'}"
-        + (f"｜⚠️下檔保險:跌破MA{PROTECT_MA}→曝險砍半({PROTECT_SCALE:.0%})" if defensive else ""))
+        + (f"｜🛡️下檔保險:跌破MA{PROTECT_MA}→{'完全空手' if PROTECT_SCALE<=0 else f'曝險×{PROTECT_SCALE:.0%}'}" if defensive else ""))
 
     vals = sorted(((c, feats[c][d]["turn"]) for c in codes
                    if d in feats.get(c, {}) and feats[c][d].get("turn", 0) > 0),
