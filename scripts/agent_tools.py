@@ -28,6 +28,9 @@ _s = importlib.util.spec_from_file_location("v5live", ROOT / "scripts/live_dual_
 v5live = importlib.util.module_from_spec(_s); _s.loader.exec_module(v5live)
 _m = importlib.util.spec_from_file_location("mscore", ROOT / "scripts/manual_score.py")
 mscore = importlib.util.module_from_spec(_m); _m.loader.exec_module(mscore)
+_e = importlib.util.spec_from_file_location("ec", ROOT / "scripts/exp_60d_entry_compare.py")
+ec = importlib.util.module_from_spec(_e); _e.loader.exec_module(ec)
+sim5 = ec.sim_buyclose_sellopen        # 真實 ⑤ 模擬(每日換股損益用)
 
 # agent 進程開記憶體快取:同股的還原OHLCV只算一次,大幅加速重複的 compute_picks(實盤不 import 本檔→不受影響)
 import tw_stock_agent.tools.finmind_client as _fc
@@ -57,6 +60,18 @@ def _names() -> dict:
             pass
         _NAMES_CACHE.update({c: v.get("name", c) for c, v in json.loads(UNIV.read_text(encoding="utf-8")).items()})
     return _NAMES_CACHE
+
+
+def _to_code(x) -> str:
+    """把『可能是中文名』的輸入轉成代號(LLM 常把名字當代號傳)。是代號就原樣回。"""
+    x = str(x).strip()
+    nm = _names()
+    if x in nm:                      # 已是代號
+        return x
+    for c, n in nm.items():          # 名稱→代號
+        if n == x:
+            return c
+    return x                         # 找不到就原樣(讓後續報「資料不足」)
 
 
 def _holdings() -> set:
@@ -94,7 +109,7 @@ def _invalidate_cache():
 # ─────────────────────── READ(查詢/測試)───────────────────────
 def query_score(args: dict) -> str:
     codes = args["codes"] if isinstance(args.get("codes"), list) else [args.get("codes")]
-    codes = [str(c) for c in codes]
+    codes = [_to_code(c) for c in codes]              # 中文名自動轉代號
     held = _holdings()                                # 持股→套 ×INC 黏著,反映「會不會被續抱」
     oh = v5live.get_daily_ohlcv("0050"); d = max(oh)
     uni = set(json.loads(UNIV.read_text(encoding="utf-8")))
@@ -229,23 +244,35 @@ def pnl_history(args: dict) -> str:
     """歷史N交易日「照買並持有」的損益試算。可用四種選法:
        mode=holdings 你的持股 / mode=list 今日策略名單(可帶 bonus 試算加減分後的名單) /
        mode=stocks 指定股(weight=equal 等權 或 score 分數加權;單一檔=100%)。"""
-    mode = args.get("mode", "list"); days = int(args.get("days", 5)); weight = args.get("weight", "equal")
+    mode = args.get("mode", "list"); days = int(args.get("days", 5))
+    # 策略名單預設「分數加權」(對齊真實配重:targets∝分數);其他模式預設等權
+    weight = args.get("weight") or ("score" if mode == "list" else "equal")
     nm = _names(); cap = args.get("capital")
 
+    # ── 持倉模式:你的『實際持倉』真實未實現損益(現價 vs 你的成本),點時間、非N天假設 ──
     if mode == "holdings":
         p = DATA_DIR / "positions.json"
         pos = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
         if not pos:
-            return "帳本無持倉"
-        items = [(c, float(v.get("qty", 0)) * float(v.get("cost", 0))) for c, v in pos.items()]
-        tot = sum(w for _, w in items) or 1.0
-        basket = [(c, w / tot) for c, w in items]
-        if cap is None:
-            cap = tot                                   # 預設投入=持股總成本
-        title = "你的持股(依成本權重)"
+            return "【持倉模式】你帳本目前沒有持倉。"
+        lines = []; tot_cost = tot_mv = 0.0
+        for c, v in pos.items():
+            qty = float(v.get("qty", 0)); cost = float(v.get("cost", 0))
+            o = v5live.get_daily_ohlcv(c); ds = sorted(o)
+            if not ds:
+                lines.append(f"  {c} {nm.get(c, c)}: 取價失敗"); continue
+            last = o[ds[-1]]["close"]; prev = o[ds[-2]]["close"] if len(ds) > 1 else last
+            mv = qty * last; cst = qty * cost; tot_mv += mv; tot_cost += cst
+            day = (last / prev - 1) * 100 if prev else 0.0
+            pnl = (last - cost) * qty; pct = (last / cost - 1) * 100 if cost else 0.0
+            lines.append(f"  {c} {nm.get(c, c)}: {qty:g}股 成本{cost:.2f}→現{last:.2f}  損益{pnl:+,.0f}({pct:+.1f}%)  今日{day:+.1f}%")
+        tot_pnl = tot_mv - tot_cost
+        return ("📊【持倉模式｜你的實際持倉｜現價(最新收盤)vs你的成本｜真實未實現損益】\n" + "\n".join(lines) +
+                f"\n→ 總成本 {tot_cost:,.0f} · 市值 {tot_mv:,.0f} · 未實現 {tot_pnl:+,.0f}元 "
+                f"({(tot_mv/tot_cost-1)*100 if tot_cost else 0:+.1f}%)｜含每檔『今日』單日漲跌")
     elif mode == "stocks":
         codes = args["codes"] if isinstance(args.get("codes"), list) else [args.get("codes")]
-        codes = [str(c) for c in codes]
+        codes = [_to_code(c) for c in codes]          # 中文名自動轉代號
         if len(codes) > 1 and weight == "score":
             oh = v5live.get_daily_ohlcv("0050"); pk = _picks_cached(max(oh), _holdings())
             sc = {c: pk["rank_of"].get(c, (0, 0.0))[1] for c in codes}
@@ -256,6 +283,7 @@ def pnl_history(args: dict) -> str:
             basket = [(c, 1.0 / len(codes)) for c in codes]
             title = (f"{codes[0]} 單一檔" if len(codes) == 1 else f"{len(codes)}檔(等權)")
     else:  # list = 今日策略名單(可帶加減分試算)
+        weight = "score"        # 策略名單一律分數加權(對齊真實配重 targets∝分數;不接受等權,免誤導)
         oh = v5live.get_daily_ohlcv("0050"); d = max(oh)
         ov = None
         if args.get("bonus"):
@@ -280,11 +308,126 @@ def pnl_history(args: dict) -> str:
             lines.append(f"  {c} {nm.get(c, c)}: 資料不足"); continue
         port += w * r
         lines.append(f"  {c} {nm.get(c, c)}: {r*100:+.1f}%（權重{w*100:.0f}%）")
-    head = f"過去{days}交易日「照買持有」損益試算 — {title}:"
+    wlab = "分數加權" if weight == "score" else "等權"
+    head = f"📊【假設模式｜不是你的持倉｜過去{days}交易日照買持有｜{wlab}】 {title}:"
     tail = f"\n→ 組合報酬 **{port*100:+.1f}%**"
     if cap:
         tail += f";投入 {float(cap):,.0f} TWD → 損益 **{float(cap)*port:+,.0f} TWD**"
-    return head + "\n" + "\n".join(lines) + tail + "\n(註:買進後持有N日的靜態試算,非每日換股)"
+    return (head + "\n" + "\n".join(lines) + tail +
+            "\n(假設模式=回測,非你實際下的單;要看你真實持倉損益請用『我的持倉損益』)")
+
+
+def pnl_strategy_daily(args: dict) -> str:
+    """過去N交易日「每日換股」真實⑤模擬損益(逐日收盤買/開盤賣掉出名單,含INC黏著),比靜態試算準。"""
+    days = int(args.get("days", 5))
+    window = sorted(v5live.get_daily_ohlcv("0050"))[-(days + 1):]
+    if len(window) < 2:
+        return "資料不足"
+    rows, involved = [], set()
+    for d in window:
+        for c, (rk, s) in _picks_cached(d, set())["rank_of"].items():
+            rows.append((d, c, s / 100)); involved.add(c)
+    opens, closes, limitup = {}, {}, {}
+    for c in involved:
+        o = v5live.get_daily_ohlcv(c); ds = sorted(o)
+        opens[c] = {d: o[d]["open"] for d in o}; closes[c] = {d: o[d]["close"] for d in o}
+        limitup[c] = {d for j, d in enumerate(ds) if j > 0 and o[ds[j-1]]["close"] > 0
+                      and o[d]["close"]/o[ds[j-1]]["close"]-1 >= 0.095}
+    inc = float(args["inc"]) if args.get("inc") is not None else v5live.INC   # 可調換手/黏著參數(實驗用)
+    r = sim5(rows, opens, closes, limitup, incumbent=inc, sell_mode="exit_only", open_buy="none")
+    if not r:
+        return "模擬無結果(視窗太短)"
+    note = f" 【實驗:換手/黏著INC={inc:g},非實盤值{v5live.INC}】" if inc != v5live.INC else ""
+    return (f"過去{days}交易日「每日換股」⑤模擬損益({window[0]}~{window[-1]}){note}:\n"
+            f"  報酬 {r['ret']:+.1f}% · 損益 {r['total_pnl']:+,.0f}元 · 換手 {r['turn']:.1f}x · 手續費 {r['fees']:,.0f}元\n"
+            f"  【回顧模擬:逐日收盤買/開盤賣、含×{inc:g}黏著;非你的實際下單,也不影響實盤設定】")
+
+
+def order_history(args: dict) -> str:
+    """過去N交易日,策略每天「買進/賣出」了什麼(逐日換股明細;帶持股黏著)。"""
+    days = int(args.get("days", 5))
+    inc = float(args["inc"]) if args.get("inc") is not None else None    # 可調換手/黏著(實驗)
+    window = sorted(v5live.get_daily_ohlcv("0050"))[-days:]
+    NM = _names(); held = set()
+    itag = f"(換手/黏著INC={inc:g})" if inc is not None else ""
+    out = [f"過去{days}交易日 逐日換股明細{itag}【回顧模擬:假設這N天就照策略每日換股,非你的實際下單】:"]
+    for d in window:
+        pk = _silent_picks(date=d, held=held, weights=_load_weights(), inc=inc) if inc is not None else _picks_cached(d, held)
+        sel = [c for _, c in pk["sel"]]
+        buys = [c for c in sel if c not in held]
+        sells = [c for c in held if c not in sel]
+        seg = []
+        if buys: seg.append("買[" + " ".join(NM.get(c, c) for c in buys) + "]")
+        if sells: seg.append("賣[" + " ".join(NM.get(c, c) for c in sells) + "]")
+        out.append(f"  {d}: {' '.join(seg) if seg else '無變動'}  → 持{len(sel)}檔")
+        held = set(sel)
+    out.append(f"  (模擬到今天會持有: {', '.join(NM.get(c, c) for c in held) or '無'};你的實際持倉請用 query_positions)")
+    return "\n".join(out)
+
+
+def compare_inc(args: dict) -> str:
+    """比較不同『換手/黏著參數 INC』在過去N天每日換股的結果(報酬/換手/損益)。
+       回答『換手權重/黏著 INC 該調多少、該不該這麼黏』。INC越低=換手越高。不影響實盤設定。"""
+    days = int(args.get("days", 5))
+    incs = args.get("incs") or [1.3, 1.5, 1.75, 2.0]
+    window = sorted(v5live.get_daily_ohlcv("0050"))[-(days + 1):]
+    if len(window) < 2:
+        return "資料不足"
+    rows, involved = [], set()
+    for d in window:
+        for c, (rk, s) in _picks_cached(d, set())["rank_of"].items():
+            rows.append((d, c, s / 100)); involved.add(c)
+    opens, closes, limitup = {}, {}, {}
+    for c in involved:
+        o = v5live.get_daily_ohlcv(c); ds = sorted(o)
+        opens[c] = {d: o[d]["open"] for d in o}; closes[c] = {d: o[d]["close"] for d in o}
+        limitup[c] = {d for j, d in enumerate(ds) if j > 0 and o[ds[j-1]]["close"] > 0
+                      and o[d]["close"]/o[ds[j-1]]["close"]-1 >= 0.095}
+    out = [f"過去{days}交易日 不同『換手/黏著 INC』比較(每日換股⑤模擬,INC越低換手越高):",
+           "  INC      報酬     換手    損益"]
+    for inc in incs:
+        r = sim5(rows, opens, closes, limitup, incumbent=float(inc), sell_mode="exit_only", open_buy="none")
+        if r:
+            mark = " ←實盤" if float(inc) == v5live.INC else ""
+            out.append(f"  {float(inc):<5g}{mark:<5} {r['ret']:+6.1f}%  {r['turn']:4.1f}x  {r['total_pnl']:+,.0f}元")
+    out.append("  ⚠️ 這只是過去N天單一視窗(雜訊大);要嚴謹決定 INC 該調多少,需多窗+regime回測(exp_trend_gate 那種),別只看這個。")
+    return "\n".join(out)
+
+
+def today_buy(args: dict) -> str:
+    """今天『該買什麼』的當日策略訊號(含目標金額;標出新買vs續抱)。非回測,是今天的動作。"""
+    held = _holdings()
+    d = max(v5live.get_daily_ohlcv("0050"))
+    pk = _picks_cached(d, held)          # 帶持股→INC黏著,跟實盤買腿同邏輯
+    NM = _names(); sel = pk["sel"]; tg = pk["targets"]
+    if not sel:
+        return f"📋【今日買進腿｜決策日{d}】名單空(空頭/下檔保險)→ 今天不買。"
+    lines = [f"📋【今日該買 — 買進腿｜決策日{d}｜大盤{'多頭' if pk['bull'] else '空頭'}｜曝險{pk['expo']:.0%}｜可投{pk.get('capital',0):,.0f}】"]
+    for s, c in sel:
+        lines.append(f"  {'續抱' if c in held else '🆕買'} {NM.get(c, c)}({c}) 分{s:.0f} → 目標 {tg.get(c, 0):,.0f}元")
+    lines.append("  (用最新收盤算的今日訊號;實盤13:15會用盤中即時價,數字可能微調。此處不下單)")
+    return "\n".join(lines)
+
+
+def today_sell(args: dict) -> str:
+    """今天『該賣什麼』的當日策略訊號(持倉掉出名單→賣;否則續抱)。非回測,是今天的動作。"""
+    held = _holdings()
+    if not held:
+        return "你目前無持倉,今日賣出腿無動作。"
+    d = max(v5live.get_daily_ohlcv("0050"))
+    pk = _picks_cached(d, held)
+    NM = _names(); sel = [c for _, c in pk["sel"]]
+    drop = [c for c in held if c not in sel]
+    keep = [c for c in held if c in sel]
+    head = f"📋【今日該賣 — 賣出腿｜決策日{d}】"
+    if not drop:
+        return f"{head} 你的持倉都還在名單內 → 全部續抱,今天不賣。\n  續抱: {', '.join(NM.get(c, c) for c in keep)}"
+    lines = [f"{head} 掉出名單、今天該賣:"]
+    for c in drop:
+        lines.append(f"  🔴賣 {NM.get(c, c)}({c})")
+    lines.append(f"  續抱: {', '.join(NM.get(c, c) for c in keep) or '無'}")
+    lines.append("  (用最新收盤算的今日訊號;實盤09:02會用開盤即時價。此處不下單)")
+    return "\n".join(lines)
 
 
 # ─────────────────────── MUTATE(設定,需閘門)───────────────────────
@@ -338,6 +481,12 @@ TOOLS = [
      "params": _p({"action": {"type": "string", "enum": ["count", "list", "check"]}, "code": {"type": "string"}})},
     {"name": "query_positions", "tier": "read", "category": "query", "fn": query_positions,
      "desc": "查目前帳本持倉。", "params": _p({})},
+    {"name": "today_buy", "tier": "read", "category": "query", "fn": today_buy,
+     "desc": "今天『該買什麼』的當日策略訊號(買進腿:今日名單+目標金額,標新買/續抱)。問『今天買什麼/今日該買/今日策略/買進訊號』用這個。不下單。",
+     "params": _p({})},
+    {"name": "today_sell", "tier": "read", "category": "query", "fn": today_sell,
+     "desc": "今天『該賣什麼』的當日策略訊號(賣出腿:持倉掉出名單就賣,否則續抱)。問『今天賣什麼/今日該賣/賣出訊號』用這個。不下單。",
+     "params": _p({})},
     {"name": "query_manual_scores", "tier": "read", "category": "query", "fn": query_manual_scores,
      "desc": "查目前生效中的手動加減分。", "params": _p({})},
     {"name": "query_config", "tier": "read", "category": "query", "fn": query_config,
@@ -352,10 +501,20 @@ TOOLS = [
     {"name": "bonus_sweep", "tier": "read", "category": "test", "fn": bonus_sweep,
      "desc": "算某股『要加幾分才會出現在過去N天的選股』,並列出加X分→入選幾天的階梯。回答「加幾分才會被選到/比例」就用這個(快)。",
      "params": _p({"code": {"type": "string"}, "days": {"type": "integer"}}, ["code"])},
+    {"name": "pnl_strategy_daily", "tier": "read", "category": "test", "fn": pnl_strategy_daily,
+     "desc": "過去N交易日『每日換股』的⑤模擬損益(逐日收盤買/開盤賣掉出名單,含持股黏著)。問「每日換股/每天那種/真實損益」用這個。可帶 inc 用『不同換手/黏著參數』重跑(不影響實盤)。",
+     "params": _p({"days": {"type": "integer"}, "inc": {"type": "number", "description": "換手/黏著參數(實盤1.75);越低換手越高"}})},
+    {"name": "order_history", "tier": "read", "category": "test", "fn": order_history,
+     "desc": "過去N交易日策略每天買進/賣出了什麼(逐日換股明細)。問「下單明細/每天買賣什麼」用這個。可帶 inc 看不同換手參數下的換股。",
+     "params": _p({"days": {"type": "integer"}, "inc": {"type": "number"}})},
+    {"name": "compare_inc", "tier": "read", "category": "test", "fn": compare_inc,
+     "desc": "比較不同『換手權重/黏著參數 INC』(如1.3/1.5/1.75/2.0)在過去N天每日換股的報酬與換手。使用者說「換手權重/黏著 改成X再跑」「該不該這麼黏」「換手權重該調多少」就用這個。INC越低換手越高。不會改實盤設定。",
+     "params": _p({"days": {"type": "integer"}, "incs": {"type": "array", "items": {"type": "number"}, "description": "要比較的INC清單,預設[1.3,1.5,1.75,2.0]"}})},
     {"name": "pnl_history", "tier": "read", "category": "test", "fn": pnl_history,
-     "desc": ("歷史N交易日『照買並持有』的損益試算(回看過去、不是預測未來)。"
-              "mode=holdings 算你的持股;mode=list 算今日策略名單(可帶 bonus={code,bonus} 試算加減分後名單的損益);"
-              "mode=stocks 算指定股(weight=equal 等權/score 分數加權;單檔=100%)。可給 capital 算 TWD 損益。"),
+     "desc": ("損益。mode=holdings=你『實際持倉』的真實未實現損益(現價vs你的成本+今日單日漲跌,點時間,非假設)——"
+              "問『我的損益/我賺多少/我持股損益』用這個。"
+              "mode=list/stocks=『假設模式』回測(過去N日照買持有,非你的持倉):list=今日策略名單(可帶 bonus 試算),"
+              "stocks=指定股(weight equal/score)。"),
      "params": _p({"mode": {"type": "string", "enum": ["holdings", "list", "stocks"]},
                    "codes": {"type": "array", "items": {"type": "string"}},
                    "weight": {"type": "string", "enum": ["equal", "score"]},
