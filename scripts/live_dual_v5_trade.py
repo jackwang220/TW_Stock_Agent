@@ -66,7 +66,7 @@ ALT_MIN_SCORE_PCT = 0.85   # 備選分數門檻:須 ≥ 正取最低分 × 此�
 CAP_INITIAL = 15_000           # 起始資金
 CAP_DAILY   = 1_000            # 每交易日加碼
 CAP_MAX     = 50_000           # 累計上限(封頂)
-CAP_START   = "2026-06-15"     # DCA 起算日(上線首日);此日當天=15000,之後每交易日+1000
+CAP_START   = "2026-06-18"     # DCA 起算日(上線首日);此日當天=15000,之後每交易日+1000
 
 # ── 安全參數（上線前依你的資金調）────────────────────────────────────────────
 MAX_POSITION_TWD  = 20_000     # 單一個股「持有」金額上限
@@ -82,6 +82,7 @@ SPACING_SEC       = 1.0        # 永豐 API 呼叫間隔
 LEDGER            = DATA_DIR / "positions.json"   # 手動帳本(元大手動交易用;--ledger 讀它算持有/損益)
 CAP_FILE          = DATA_DIR / "capital.json"      # 手動現金池;有設就覆蓋 DCA(ledger.py cash 設定)
 WEIGHTS_FILE      = DATA_DIR / "weights.json"      # 雙引擎權重;有設就覆蓋預設(ledger.py weights 設定)
+MANUAL_FILE       = DATA_DIR / "manual_scores.json"  # 手動觀察加減分;{code:{bonus,until,note}};加在排名分上、不被×INC(manual_score.py 設)
 
 # 零股 vs 整股：預設盤中零股(IntradayOdd,1股起,小資金/高價股可買;⑤買在13:00盤中正好可用)
 ODD_LOT = True
@@ -99,23 +100,32 @@ def fetch_all_snapshots(api) -> dict:
         if ct is not None:
             cts.append((c, ct))
     bars: dict[str, dict] = {}
-    for i in range(0, len(cts), 100):
-        batch = cts[i:i + 100]
-        try:
-            snaps = api.snapshots([ct for _, ct in batch])
-        except Exception as e:
-            log(f"  snapshot 批次失敗: {e}"); continue
-        for (c, _), sn in zip(batch, snaps):
-            close = float(getattr(sn, "close", 0) or 0)
-            if close <= 0:
-                continue
-            bars[c] = {"open": float(getattr(sn, "open", 0) or close),
-                       "high": float(getattr(sn, "high", 0) or close),
-                       "low":  float(getattr(sn, "low", 0) or close),
-                       "close": close,
-                       "volume": float(getattr(sn, "total_volume", 0) or 0),
-                       "amount": float(getattr(sn, "total_amount", 0) or 0)}
-        time.sleep(0.5)
+    need = max(1, len(cts) // 2)          # 至少抓到半數才算成功(開盤瞬間常全 0)
+    for attempt in range(3):
+        bars = {}
+        for i in range(0, len(cts), 100):
+            batch = cts[i:i + 100]
+            try:
+                snaps = api.snapshots([ct for _, ct in batch])
+            except Exception as e:
+                log(f"  snapshot 批次失敗: {e}"); continue
+            for (c, _), sn in zip(batch, snaps):
+                close = float(getattr(sn, "close", 0) or 0)
+                if close <= 0:
+                    continue
+                bars[c] = {"open": float(getattr(sn, "open", 0) or close),
+                           "high": float(getattr(sn, "high", 0) or close),
+                           "low":  float(getattr(sn, "low", 0) or close),
+                           "close": close,
+                           "volume": float(getattr(sn, "total_volume", 0) or 0),
+                           "amount": float(getattr(sn, "total_amount", 0) or 0)}
+            time.sleep(0.5)
+        if "0050" in bars and len(bars) >= need:        # 0050 必抓到(決策日靠它)
+            break
+        if attempt < 2:
+            log(f"  即時報價只抓到 {len(bars)}/{len(cts)} 檔(0050={'有' if '0050' in bars else '無'})"
+                f",3 秒後重試 {attempt + 2}/3 ...")
+            time.sleep(3)
     log(f"  抓到 {len(bars)} 檔即時報價")
     return bars
 
@@ -233,20 +243,31 @@ def h_score(ff, tp: float) -> float:
 def compute_picks(capital: float | None = None, date: str | None = None, refresh: bool = False,
                   live_bars: dict | None = None,
                   weights: tuple = (1.0, 0.0, 0.0, 1.5),
-                  held: set | None = None) -> dict:
+                  held: set | None = None, require_today: bool = False,
+                  manual_override: dict | None = None, extra_codes: list | None = None) -> dict:
     """weights=(多頭H, 多頭reb, 空頭H, 空頭reb)。預設(1,0,0,1.5)=B純切。
     v9 H雙引擎C=(1,0.6,0.3,1.3)；v8 雙引擎A溫和=(1,0.7,0.6,1.3)。
     capital=None → 用 DCA 模型自動算(起始15000、每交易日+1000、5萬封頂)。
-    held=目前持股代號集合 → 排名時 ×INC 黏著(配重/曝險仍用原始分數;對齊回測)。"""
+    held=目前持股代號集合 → 排名時 ×INC 黏著(配重/曝險仍用原始分數;對齊回測)。
+    extra_codes=池外要一起算分的股(查詢用);手動加減分名單裡的池外股也會自動納入候選(觀察股加分後可被選/買)。"""
     held = held or set()
     u = json.loads((DATA_DIR / "base_universe.json").read_text(encoding="utf-8"))
-    codes = list(u.keys())
-    names = {c: u[c].get("name", c) for c in codes}
-    turns = {c: u[c].get("avg_turnover", 0.0) for c in codes}
+    # 池外候選:呼叫端 extra_codes + 手動加減分名單裡不在 universe 的股(讓觀察股加分後也能進候選)
+    _man_codes = (list(manual_override.keys()) if manual_override is not None
+                  else (list(json.loads(MANUAL_FILE.read_text(encoding="utf-8")).keys()) if MANUAL_FILE.exists() else []))
+    extra = [c for c in dict.fromkeys(list(extra_codes or []) + _man_codes) if c not in u]
+    codes = list(u.keys()) + extra
+    names = {c: u[c].get("name", c) for c in u}
+    for c in extra:
+        names.setdefault(c, c)
+    turns = {c: u[c].get("avg_turnover", 0.0) for c in u}
 
-    log(f"載入行情({len(codes)} 檔{'+強制更新' if refresh else ''})...")
+    log(f"載入行情({len(codes)} 檔{('+池外'+str(len(extra))) if extra else ''}{'+強制更新' if refresh else ''})...")
     OH = {c: get_daily_ohlcv(c, force_refresh=refresh) for c in codes}
     OH["0050"] = get_daily_ohlcv("0050", force_refresh=refresh)
+    for c in extra:                      # 池外股:turns 從成交額算(universe 才有 avg_turnover)
+        amts = [OH[c][x].get("amount", 0) for x in sorted(OH.get(c, {}))][-120:]
+        turns[c] = sum(amts) / len(amts) if amts else 0.0
     # 即時訊號：把今日盤中即時 bar 灌進去，讓決策日=今天、訊號用今日盤中價（避免追高已反彈的股）
     if live_bars:
         n = 0
@@ -263,6 +284,21 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
     d = date or max(OH["0050"])
     if d not in twii_feat:
         raise SystemExit(f"❌ 決策日 {d} 無 0050 資料")
+    # 即時訊號模式 fail-closed:即時 bar 沒灌成功(決策日≠今天)或歷史過期 → 中止,
+    # 絕不拿舊資料去下單/「名單空就出清全部」(這正是 6/18 誤賣廣達的根因)。
+    if require_today:
+        _hist = [x for x in OH["0050"] if x != TODAY]
+        _hmax = max(_hist) if _hist else None
+        if d != TODAY:
+            m = (f"🛑 TW v5 中止(即時資料異常):決策日={d}≠今天{TODAY},即時報價灌入失敗"
+                 f"(開盤瞬間常抓不到)→ 未送任何委託、未動倉位。請稍後手動重跑;多次失敗檢查永豐/網路。")
+            log(m); notify(m)
+            raise SystemExit(2)
+        if _hmax and (datetime.fromisoformat(TODAY) - datetime.fromisoformat(_hmax)).days > 5:
+            m = (f"🛑 TW v5 中止(歷史資料過期):最新只到 {_hmax}(今天{TODAY}),FinMind 增量補資料可能失敗"
+                 f"→ 未動倉位。請用 --refresh 強制更新後重跑(若逢長假休市可忽略)。")
+            log(m); notify(m)
+            raise SystemExit(2)
     bull = bool(twii_feat[d].get("close") and twii_feat[d].get("ma20")
                 and twii_feat[d]["close"] > twii_feat[d]["ma20"])
     # 下檔保險:0050 收盤跌破 MA60 = 下降趨勢 → 當天曝險砍半(見頂部 PROTECT_*)
@@ -294,8 +330,22 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
                   key=lambda x: x[1])
     tp = {c: (i + 1) / len(vals) for i, (c, _) in enumerate(vals)} if vals else {}
 
+    # 手動觀察加減分:override(試算用)優先;否則讀 manual_scores.json,只取在決策日 d 仍未到期(until>=d)的
+    if manual_override is not None:
+        mscores = {c: float(b) for c, b in manual_override.items()}
+    else:
+        mscores = {}
+        if MANUAL_FILE.exists():
+            try:
+                for c, e in json.loads(MANUAL_FILE.read_text(encoding="utf-8")).items():
+                    if str(e.get("until", "")) >= d:        # 到期(d>until)自動失效
+                        mscores[c] = float(e.get("bonus", 0))
+            except Exception as ex:
+                log(f"  手動加分讀取失敗: {ex}")
+
     whb, wrb, whs, wrs = weights
     scored = []
+    raw_map: dict[str, float] = {}; bon_map: dict[str, float] = {}
     for c in codes:
         f = feats.get(c, {})
         if d not in f or math.isnan(f[d].get("ma20", float("nan"))):
@@ -305,10 +355,12 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
         sig = rebound_signal(closes, turns.get(c, 0.0))
         rb = sig["score"] * 100 if sig.get("fired") else 0.0
         sc = max(hh * whb, rb * wrb) if bull else max(hh * whs, rb * wrs)
-        if sc > 0:
-            scored.append((sc, c))
-    # 排名:持股 ×INC 黏著(配重/曝險仍用原始分數 it[0],對齊回測)
-    rk = lambda it: it[0] * (INC if it[1] in held else 1.0)
+        bonus = mscores.get(c, 0.0)
+        size_score = sc + bonus              # 加分後分數(sizing/曝險用;bonus 加在分上、不被×INC)
+        if size_score > 0:                   # bonus 可把 sc=0 的觀察股拉進候選
+            scored.append((size_score, c)); raw_map[c] = sc; bon_map[c] = bonus
+    # 排名:持股「原始分」×INC 黏著 + 手動bonus(flat,絕不被×INC);sizing/曝險用 size_score(it[0]=原始+bonus)
+    rk = lambda it: raw_map[it[1]] * (INC if it[1] in held else 1.0) + bon_map[it[1]]
     scored = sorted(scored, key=rk, reverse=True)
 
     sel = scored[:MAX_SIG]
@@ -336,7 +388,9 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
     per_slot = round(capital * expo / max(1, len(sel))) if sel else 0
     return {"date": d, "bull": bull, "defensive": defensive, "expo": expo, "targets": targets,
             "sel": sel, "names": names, "ref_price": ref_price, "capital": capital,
-            "ranked": scored[:15], "per_slot": per_slot}
+            "ranked": scored[:15], "per_slot": per_slot,
+            "bonus": {c: bon_map.get(c, 0.0) for c in bon_map if bon_map.get(c, 0.0)},
+            "rank_of": {c: (i + 1, s) for i, (s, c) in enumerate(scored)}}   # 全排名查找(試算用):{code:(名次,加分後分數)}
 
 
 # ── Shioaji 登入 ─────────────────────────────────────────────────────────────
@@ -530,11 +584,14 @@ def main() -> int:
     # ── 3) 算今日名單(--live-signal 用今日盤中即時訊號;持股分數 ×INC 黏著)──
     live_bars = fetch_all_snapshots(api) if args.live_signal else None
     picks = compute_picks(args.capital, date=args.date, refresh=args.refresh,
-                          live_bars=live_bars, weights=W, held=set(cur))
+                          live_bars=live_bars, weights=W, held=set(cur),
+                          require_today=args.live_signal)
     targets, names, sel = picks["targets"], picks["names"], picks["sel"]
     log(f"決策日 {picks['date']}｜今日名單({'多頭H動能' if picks['bull'] else '空頭反彈'}, 曝險 {picks['expo']:.0%}):")
+    _bon = picks.get("bonus", {})
     for s, c in sel:
-        log(f"  {c} {names.get(c,c)[:6]:<7} 分數{s:.0f}{'(持股×'+str(INC)+')' if c in cur else ''} → 目標 {targets[c]:,.0f} TWD")
+        tags = ('(持股×'+str(INC)+')' if c in cur else '') + (f'(+{_bon[c]:.0f}觀察)' if _bon.get(c) else '')
+        log(f"  {c} {names.get(c,c)[:6]:<7} 分數{s:.0f}{tags} → 目標 {targets[c]:,.0f} TWD")
     if not sel:
         log("今日無訊號 → 名單空(buy 不買;sell 會出清全部持倉)。")
 

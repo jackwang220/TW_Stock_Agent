@@ -20,7 +20,8 @@ v5,v6,ec=nine.v5,nine.v6,nine.ec; sim5=ec.sim_buyclose_sellopen
 features=v5.features; get_ohlcv=nine.get_daily_ohlcv
 DETECT=nine.DETECT; REGIMES=nine.REGIMES; START=nine.START
 
-u=json.loads((DATA_DIR/"base_universe.json").read_text(encoding="utf-8"))
+_UF=sys.argv[1] if len(sys.argv)>1 else str(DATA_DIR/"base_universe.json")   # 可傳 universe 檔路徑對照(預設112)
+u=json.loads(Path(_UF).read_text(encoding="utf-8"))
 codes=list(u.keys()); turns={c:u[c].get("avg_turnover",0.0) for c in codes}
 print("載入(v9引擎,全史)...",flush=True)
 OH={c:get_ohlcv(c,start=START) for c in codes}; OH["0050"]=get_ohlcv("0050",start=START)

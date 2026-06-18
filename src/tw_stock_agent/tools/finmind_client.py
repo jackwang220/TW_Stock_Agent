@@ -99,12 +99,36 @@ def _save_cache(dataset: str, ticker: str, rows: list[dict]) -> None:
     )
 
 
+_TOPPED: set = set()    # 本進程已增量補過的 (dataset,ticker)，避免同一次跑重複打 API
+
+
 def _get_data(dataset: str, ticker: str,
               start: str = "2024-01-01",
-              force_refresh: bool = False) -> list[dict]:
-    """取得資料（優先用快取，快取不存在或 force_refresh 則呼叫 API）。"""
+              force_refresh: bool = False,
+              topup_field: str | None = None) -> list[dict]:
+    """取得資料（優先用快取，快取不存在或 force_refresh 則呼叫 API）。
+
+    topup_field 指定時（如日線價格 "date"）：快取存在但「落後今天」會自動增量補抓
+    （從快取最新日 → 今天）再合併存回。這樣排程 live 跑法不必每天 --refresh，
+    快取也不會像以前那樣凍在某一天。每進程每檔只補一次（_TOPPED 去重）。
+    """
     cached = None if force_refresh else _load_cache(dataset, ticker)
     if cached is not None:
+        if topup_field and (dataset, ticker) not in _TOPPED:
+            _TOPPED.add((dataset, ticker))
+            last = max((str(r.get(topup_field, "")) for r in cached if r.get(topup_field)),
+                       default="")
+            today = date.today().isoformat()
+            if last and last < today:                       # 快取落後 → 增量補到今天（FinMind 最多給到最近收盤日）
+                new = _fetch_api(dataset, ticker, last, today)
+                if new:
+                    merged = {str(r.get(topup_field)): r for r in cached if r.get(topup_field)}
+                    for r in new:
+                        if r.get(topup_field):
+                            merged[str(r[topup_field])] = r
+                    cached = [merged[k] for k in sorted(merged)]
+                    _save_cache(dataset, ticker, cached)
+                    logger.debug(f"  FinMind topup {dataset} {ticker}: → {max(merged)} ({len(cached)} rows)")
         return cached
     today = date.today().isoformat()
     rows = _fetch_api(dataset, ticker, start, today)
@@ -493,6 +517,10 @@ def _dividend_adjust(ticker: str, oh: dict, force_refresh: bool = False) -> dict
     return out
 
 
+_OHLCV_MEMO: dict = {}      # 同進程記憶體快取(還原後成品),省掉重複的除息還原+清洗
+MEMOIZE = False             # 預設關(實盤一次性跑不需要);agent/批次工具可設 True 大幅加速
+
+
 def get_daily_ohlcv(
     ticker: str,
     start: str = "2024-01-01",
@@ -502,8 +530,12 @@ def get_daily_ohlcv(
 
     複用 TaiwanStockPrice 快取（與 get_daily_prices 同一份），跨股研究/型態用。
     還原順序:① 官方除權息表精確還原(抓中小額除息) → ② _sanitize_ohlcv 清壞tick+補大跳動(減資/分割)。
+    MEMOIZE=True 時(agent/批次)同進程同股直接回記憶體成品,免重算。
     """
-    rows = _get_data("TaiwanStockPrice", ticker, start=start, force_refresh=force_refresh)
+    if MEMOIZE and not force_refresh and (ticker, start) in _OHLCV_MEMO:
+        return _OHLCV_MEMO[(ticker, start)]
+    rows = _get_data("TaiwanStockPrice", ticker, start=start,
+                     force_refresh=force_refresh, topup_field="date")
     out: dict[str, dict] = {}
     for r in rows:
         c = r.get("close")
@@ -521,7 +553,21 @@ def get_daily_ohlcv(
         except (ValueError, TypeError):
             continue
     out = _dividend_adjust(ticker, out, force_refresh=force_refresh)
-    return _sanitize_ohlcv(out)
+    out = _sanitize_ohlcv(out)
+    if MEMOIZE and not force_refresh:
+        _OHLCV_MEMO[(ticker, start)] = out
+    return out
+
+
+def get_stock_names(force_refresh: bool = False) -> dict[str, str]:
+    """全上市櫃股票 {代號: 名稱}(FinMind TaiwanStockInfo,本地快取)。給查名/名稱→代號解析用。"""
+    rows = _get_data("TaiwanStockInfo", "", start="2020-01-01", force_refresh=force_refresh)
+    out: dict[str, str] = {}
+    for r in rows:
+        sid, snm = r.get("stock_id"), r.get("stock_name")
+        if sid and snm and sid not in out:
+            out[sid] = snm
+    return out
 
 
 def get_close_on_or_before(ticker: str, as_of: date) -> tuple[str, float] | None:

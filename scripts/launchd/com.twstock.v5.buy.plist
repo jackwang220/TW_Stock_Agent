@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-  v5 實盤「買進腿」排程:每天 13:05(收盤前)觸發 run_leg.sh buy。
-  預設 dry-run(只算單+推播、不送單)。要送單:把 ProgramArguments 末尾加 <string>--sim</string>(模擬)
-  或 <string>--live</string>(真實,且 .env 需 SHIOAJI_LIVE_CONFIRM=YES)。
-  安裝:  cp scripts/launchd/com.twstock.v5.buy.plist ~/Library/LaunchAgents/
-         launchctl load -w ~/Library/LaunchAgents/com.twstock.v5.buy.plist
-  停用:  launchctl unload -w ~/Library/LaunchAgents/com.twstock.v5.buy.plist
-  注意:系統時區需為台北;Mac 在 13:05 必須開機且未睡眠(見 runbook 的 caffeinate/pmset)。
--->
 <plist version="1.0">
 <dict>
-  <key>Label</key>
-  <string>com.twstock.v5.buy</string>
-  <key>ProgramArguments</key>
-  <array>
-    <string>/bin/bash</string>
-    <string>/Users/test/Documents/Code/TW_Stock_Agent/scripts/run_leg.sh</string>
-    <string>buy</string>
-    <string>--live-signal</string>
-    <string>--ledger</string>
-  </array>
-  <key>StartCalendarInterval</key>
-  <dict>
-    <key>Hour</key><integer>13</integer>
-    <key>Minute</key><integer>5</integer>
-  </dict>
-  <key>RunAtLoad</key>
-  <false/>
-  <key>StandardOutPath</key>
-  <string>/Users/test/Documents/Code/TW_Stock_Agent/reports/live/launchd.buy.out.log</string>
-  <key>StandardErrorPath</key>
-  <string>/Users/test/Documents/Code/TW_Stock_Agent/reports/live/launchd.buy.err.log</string>
+	<key>Label</key>
+	<string>com.twstock.v5.buy</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/test/Documents/Code/TW_Stock_Agent/scripts/run_leg.sh</string>
+		<string>buy</string>
+		<string>--live-signal</string>
+		<string>--ledger</string>
+	</array>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>StandardErrorPath</key>
+	<string>/Users/test/Documents/Code/TW_Stock_Agent/reports/live/launchd.buy.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/test/Documents/Code/TW_Stock_Agent/reports/live/launchd.buy.out.log</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>13</integer>
+		<key>Minute</key>
+		<integer>15</integer>
+	</dict>
 </dict>
 </plist>
