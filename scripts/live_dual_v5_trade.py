@@ -160,58 +160,67 @@ def fmt_plan(leg: str, mode: str, picks: dict, plan: list,
     regime = "🟢多頭→H動能" if picks.get("bull") else "🔴空頭→反彈"
     tag = {"buy": "買進腿(收盤前)", "sell": "賣出腿(開盤)"}[leg]
     cap = picks.get("capital")
-    cap_s = f"｜可投{cap:,.0f}" if cap else ""
-    L = [f"📊 v5實盤 {tag}｜{picks.get('date')}｜{regime}｜曝險{picks.get('expo', 0):.0%}{cap_s}｜[{mode}]"]
+    cap_s = f" · 可投{cap:,.0f}" if cap else ""
+    # 標題在框外(emoji/粗體會渲染);明細包進程式碼框 → 每則訊息=獨立框,不會黏在一起
+    head = f"📊 **v5實盤 {tag}** · {picks.get('date')} · {regime} · 曝險{picks.get('expo', 0):.0%}{cap_s} · [{mode}]"
     if picks.get("warn"):
-        L.append(picks["warn"])
+        head += f"\n⚠️ {picks['warn']}"
     sent = {r.get("code"): r for r in (records or [])}
-    # 分數對照(ranked 含主名單+備選;sel 補漏)
-    score_of = {c: s for s, c in picks.get("ranked", [])}
+    score_of = {c: s for s, c in picks.get("ranked", [])}       # ranked 含主名單+備選
     for s, c in picks.get("sel", []):
         score_of.setdefault(c, s)
     def sc(code):
         s = score_of.get(code)
-        return f"分數{s:.0f} " if s is not None else ""
-
+        return f"分{s:.0f}" if s is not None else ""
     def mark(code):
         if records is None:
             return ""
         r = sent.get(code)
-        return " ✅" if (r and not r.get("error")) else " ❌"
+        return "  ✅" if (r and not r.get("error")) else "  ❌"
+    _first = [True]
+    def div(t):
+        corner = "┌" if _first[0] else "├"
+        _first[0] = False
+        return f"{corner}─── {t} " + "─" * max(3, 20 - len(t) * 2)
 
+    B = []          # 框內各行
     buys = [o for o in plan if o[1] == "Buy"]
     sells = [o for o in plan if o[1] == "Sell"]
     if buys:
-        L.append("\n【買進】")
+        B.append(div("買進"))
         for code, _a, qty, lp, why in buys:
             alt = " 🔻備選" if "備選" in str(why) else ""
-            L.append(f"買 {nm(code)}({code}) {sc(code)}股價:{px(lp)} 買{qty}股 共{qty*lp:,.0f}元{alt}{mark(code)}")
+            B.append(f"│ 買 {nm(code)}({code}) {sc(code)}")
+            B.append(f"│    {px(lp)} × {qty}股 = {qty*lp:,.0f}元{alt}{mark(code)}")
     if sells:
-        L.append("\n【賣出】")
+        B.append(div("賣出"))
         for code, _a, qty, lp, _w in sells:
-            L.append(f"賣 {nm(code)}({code}) 股價:{px(lp)} 賣{qty}股 共{qty*lp:,.0f}元(掉出名單){mark(code)}")
+            B.append(f"│ 賣 {nm(code)}({code})  掉出名單")
+            B.append(f"│    {px(lp)} × {qty}股 = {qty*lp:,.0f}元{mark(code)}")
     if not plan:
-        L.append("\n→ 今日無需調整(無買賣)")
+        B.append(div("今日"))
+        B.append("│ → 無需調整(無買賣)")
 
-    # ── 目前持有 + 損益 ──
     tot_cost = tot_mv = 0.0
     if positions:
-        L.append("\n【目前持有】")
+        B.append(div("目前持有"))
         for p in sorted(positions, key=lambda x: -x["last"] * x["qty"]):
             mv, cost = p["last"] * p["qty"], p["cost"] * p["qty"]
-            tot_mv += mv
-            tot_cost += cost
+            tot_mv += mv; tot_cost += cost
             pc = (p["last"] / p["cost"] - 1) * 100 if p["cost"] > 0 else 0.0
-            L.append(f"持 {nm(p['code'])}({p['code']}) {sc(p['code'])}股價:{px(p['last'])} 持有{p['qty']}股 "
-                     f"共{mv:,.0f}元 (損益 {mv-cost:+,.0f}元 {pc:+.1f}%)")
+            B.append(f"│ {nm(p['code'])}({p['code']}) {sc(p['code'])}  {p['qty']}股")
+            B.append(f"│    現{px(p['last'])} = {mv:,.0f}元  損益{mv-cost:+,.0f} ({pc:+.1f}%)")
     else:
-        L.append("\n【目前持有】無")
+        B.append(div("目前持有"))
+        B.append("│ 無")
 
     if tot_cost > 0:
         pnl = tot_mv - tot_cost
-        L.append(f"\n💰 總投入 {tot_cost:,.0f}元｜市值 {tot_mv:,.0f}元")
-        L.append(f"📈 未實現損益 {pnl:+,.0f}元 ({pnl/tot_cost*100:+.1f}%)")
-    return "\n".join(L)
+        B.append(div("總計"))
+        B.append(f"│ 投入 {tot_cost:,.0f} · 市值 {tot_mv:,.0f}")
+        B.append(f"│ 未實現 {pnl:+,.0f}元 ({pnl/tot_cost*100:+.1f}%)")
+    B.append("└" + "─" * 24)
+    return head + "\n```\n" + "\n".join(B) + "\n```"
 
 
 def round_lots(shares: float) -> int:
