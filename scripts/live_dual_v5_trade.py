@@ -453,7 +453,7 @@ def place(api, stock_acc, code, action, qty_shares, limit_px):
     else:
         lot = sj.StockOrderLot.Common
         quantity = qty_shares // LOT_SHARES     # 整股:數量=張
-    order = api.Order(
+    order = sj.StockOrder(                       # 原 api.Order 已棄用,改 sj.StockOrder(參數相同)
         price=limit_px, quantity=quantity,
         action=sj.Action.Buy if action == "Buy" else sj.Action.Sell,
         price_type=sj.StockPriceType.LMT, order_type=sj.OrderType.ROD,
