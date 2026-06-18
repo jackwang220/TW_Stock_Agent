@@ -253,7 +253,8 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
                   live_bars: dict | None = None,
                   weights: tuple = (1.0, 0.0, 0.0, 1.5),
                   held: set | None = None, require_today: bool = False,
-                  manual_override: dict | None = None, extra_codes: list | None = None) -> dict:
+                  manual_override: dict | None = None, extra_codes: list | None = None,
+                  inc: float | None = None) -> dict:
     """weights=(多頭H, 多頭reb, 空頭H, 空頭reb)。預設(1,0,0,1.5)=B純切。
     v9 H雙引擎C=(1,0.6,0.3,1.3)；v8 雙引擎A溫和=(1,0.7,0.6,1.3)。
     capital=None → 用 DCA 模型自動算(起始15000、每交易日+1000、5萬封頂)。
@@ -369,7 +370,8 @@ def compute_picks(capital: float | None = None, date: str | None = None, refresh
         if size_score > 0:                   # bonus 可把 sc=0 的觀察股拉進候選
             scored.append((size_score, c)); raw_map[c] = sc; bon_map[c] = bonus
     # 排名:持股「原始分」×INC 黏著 + 手動bonus(flat,絕不被×INC);sizing/曝險用 size_score(it[0]=原始+bonus)
-    rk = lambda it: raw_map[it[1]] * (INC if it[1] in held else 1.0) + bon_map[it[1]]
+    _inc = inc if inc is not None else INC          # 可被呼叫端覆蓋(調參數測試用;live 不傳=用全域INC)
+    rk = lambda it: raw_map[it[1]] * (_inc if it[1] in held else 1.0) + bon_map[it[1]]
     scored = sorted(scored, key=rk, reverse=True)
 
     sel = scored[:MAX_SIG]
