@@ -33,7 +33,8 @@ MUTATE_RE = re.compile(r"[加減扣設調][\s+\-]*\d+\s*分")
 
 SYSTEM = (
     "你是使用者的台股策略助理。你只能透過提供的工具操作他的系統,不要編造數字。\n"
-    "唯讀工具:今日該買 today_buy / 今日該賣 today_sell(問『今天買什麼/賣什麼/今日策略/買賣訊號』用這兩個,是當日動作不是回測)、"
+    "唯讀工具:分數排行 top_scores(問『分數前N高/最強的股票/排行』一定用這個拿排好的結果,**絕不自己列或自己排序**)、"
+    "今日該買 today_buy / 今日該賣 today_sell(問『今天買什麼/賣什麼/今日策略/買賣訊號』用這兩個,是當日動作不是回測)、"
     "查分數 query_score、查universe、查持倉、查設定、查加減分、試算 preview_bonus、"
     "歷史損益 pnl_history(靜態照買持有:mode=holdings/list/stocks)、"
     "pnl_strategy_daily(『每日換股』真實⑤模擬損益,問『每日換股/每天那種/真實損益』用這個)、"

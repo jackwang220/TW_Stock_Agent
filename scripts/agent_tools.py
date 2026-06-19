@@ -394,6 +394,20 @@ def compare_inc(args: dict) -> str:
     return "\n".join(out)
 
 
+def top_scores(args: dict) -> str:
+    """今日分數最高的前 N 檔(原始分數由高到低排序)。問『分數前N高/最強的股票/排行』用這個,別自己排。"""
+    n = int(args.get("n", 5))
+    d = max(v5live.get_daily_ohlcv("0050"))
+    pk = _picks_cached(d, set())            # held=空→原始分數排名(INC黏著不影響原始分)
+    NM = _names()
+    ranked = sorted(pk["rank_of"].items(), key=lambda kv: -kv[1][1])[:n]
+    lines = [f"📊 今日({d})分數最高 {n} 檔(原始分,大盤{'多頭' if pk['bull'] else '空頭'}):"]
+    for i, (c, (rk, s)) in enumerate(ranked, 1):
+        lines.append(f"  {i}. {NM.get(c, c)}({c}) 分{s:.0f}")
+    lines.append("  (依原始分數排序。注意:換手/黏著 INC 只影響『選股名單(持股黏著)』,不改原始分數排名)")
+    return "\n".join(lines)
+
+
 def today_buy(args: dict) -> str:
     """今天『該買什麼』的當日策略訊號(含目標金額;標出新買vs續抱)。非回測,是今天的動作。"""
     held = _holdings()
@@ -481,6 +495,9 @@ TOOLS = [
      "params": _p({"action": {"type": "string", "enum": ["count", "list", "check"]}, "code": {"type": "string"}})},
     {"name": "query_positions", "tier": "read", "category": "query", "fn": query_positions,
      "desc": "查目前帳本持倉。", "params": _p({})},
+    {"name": "top_scores", "tier": "read", "category": "query", "fn": top_scores,
+     "desc": "今日分數最高的前N檔(原始分由高到低,已排好序)。問『分數前N高/最強的股票/分數排行』一定用這個,不要自己列/自己排序。",
+     "params": _p({"n": {"type": "integer", "description": "前幾名,預設5"}})},
     {"name": "today_buy", "tier": "read", "category": "query", "fn": today_buy,
      "desc": "今天『該買什麼』的當日策略訊號(買進腿:今日名單+目標金額,標新買/續抱)。問『今天買什麼/今日該買/今日策略/買進訊號』用這個。不下單。",
      "params": _p({})},
