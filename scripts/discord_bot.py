@@ -29,6 +29,11 @@ ac = importlib.util.module_from_spec(_s); _s.loader.exec_module(ac)
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 OWNER = os.getenv("DISCORD_OWNER_ID")
+ALLOWED_CHANNEL = os.getenv("DISCORD_CHANNEL", "股票交易")   # 只在這個頻道回應(其他頻道一律忽略);DM 也允許
+
+
+def _chan_ok(msg) -> bool:
+    return msg.guild is None or getattr(msg.channel, "name", "") == ALLOWED_CHANNEL
 AFFIRM = {"確定", "好", "yes", "y", "ok", "對", "可以", "沒問題", "go", "確認"}
 SESSIONS: dict = {}     # uid -> messages(對話記憶,跨訊息)
 
@@ -53,6 +58,8 @@ def make_panel() -> discord.ui.View:
         async def cb(interaction: discord.Interaction, _tool=tool, _args=targs):
             if OWNER and str(interaction.user.id) != str(OWNER):
                 await interaction.response.send_message("⛔ 只有擁有者能用", ephemeral=True); return
+            if interaction.guild is not None and getattr(interaction.channel, "name", "") != ALLOWED_CHANNEL:
+                await interaction.response.send_message(f"⛔ 請在「{ALLOWED_CHANNEL}」頻道使用", ephemeral=True); return
             await interaction.response.defer(thinking=True)
             print(f"[按鈕] {interaction.user} → {_tool}{_args}", flush=True)
             try:
@@ -69,16 +76,10 @@ def make_panel() -> discord.ui.View:
 
 @bot.event
 async def on_ready():
-    print(f"✅ 上線: {bot.user}（只聽 OWNER={OWNER or '未設'}）", flush=True)
-    for g in bot.guilds:
-        chans = [ch for ch in g.text_channels if ch.permissions_for(g.me).send_messages]
-        print(f"  伺服器「{g.name}」可發言頻道: {[ch.name for ch in chans] or '無(權限不足)'}", flush=True)
-        if chans:
-            try:
-                await chans[0].send("🤖 TW Stock bot 上線!**請在這個頻道**跟我說話(例:`2330 分數多少`)")
-                print(f"  → 已發測試訊息到 #{chans[0].name}", flush=True)
-            except Exception as e:
-                print(f"  → 發訊息失敗: {e}", flush=True)
+    print(f"✅ 上線: {bot.user}（只聽 OWNER={OWNER or '未設'}、只回應頻道「{ALLOWED_CHANNEL}」）", flush=True)
+    for g in bot.guilds:                      # 只記錄,不主動發訊息(避免在一般等頻道講話)
+        chans = [ch.name for ch in g.text_channels if ch.permissions_for(g.me).send_messages]
+        print(f"  伺服器「{g.name}」可發言頻道: {chans}", flush=True)
 
 
 @bot.event
@@ -86,10 +87,12 @@ async def on_message(msg: discord.Message):
     if msg.author.bot:
         return
     text = (msg.content or "").strip()
-    print(f"[收到] from={msg.author}({msg.author.id}) owner={OWNER} match={str(msg.author.id)==str(OWNER)} "
-          f"content={text[:50]!r}", flush=True)
+    print(f"[收到] from={msg.author} ch={getattr(msg.channel,'name','DM')} owner_ok={not OWNER or str(msg.author.id)==str(OWNER)} "
+          f"chan_ok={_chan_ok(msg)} content={text[:50]!r}", flush=True)
     if OWNER and str(msg.author.id) != str(OWNER):     # 只聽本人
         print("  → 非owner,忽略", flush=True); return
+    if not _chan_ok(msg):                              # 只在指定頻道(其他如一般一律忽略)
+        print(f"  → 非「{ALLOWED_CHANNEL}」頻道,忽略", flush=True); return
     if not text:
         print("  → 空內容(可能 Message Content Intent 沒生效)", flush=True); return
     if text.lower() in ("reset", "清除", "重置"):
